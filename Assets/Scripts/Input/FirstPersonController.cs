@@ -30,10 +30,17 @@ public class FirstPersonController : MonoBehaviour
         trans = transform;
         controller = GetComponent<CharacterController>();
     }
-
+    
     private void Start()
     {
+#if UNITY_EDITOR_LINUX
+        // in Linux editor, mouse get captured and you can't move at all,
+        // so you need to press Escape to move, despite having some cursor offset
+        // and risking to leave the viewport... we might as well not lock cursor at all
+        Cursor.lockState = CursorLockMode.None;
+#else
         Cursor.lockState = CursorLockMode.Locked;
+#endif
     }
 
     private void Update()
