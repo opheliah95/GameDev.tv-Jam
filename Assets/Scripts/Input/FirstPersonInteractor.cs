@@ -40,8 +40,11 @@ public class FirstPersonInteractor : MonoBehaviour
     /// Derived attribute: can the character interact now?
     private bool m_CanInteract;
     
-    /// Interactable currently hovered
+    /// Interactable currently hovered (cleared on interaction start)
     private Interactable m_HoveredInteractable;
+    
+    /// Object currently interacted with
+    private Interactable m_ActiveInteractable;
 
     private void Awake()
     {
@@ -61,6 +64,7 @@ public class FirstPersonInteractor : MonoBehaviour
         UpdateCanInteract();  // to be rigorous, but currently does nothing
         
         m_HoveredInteractable = null;
+        m_ActiveInteractable = null;
         
         ResetCursor();
     }
@@ -186,10 +190,16 @@ public class FirstPersonInteractor : MonoBehaviour
     {
         if (value.isPressed && m_HoveredInteractable != null)
         {
-            m_HoveredInteractable.Interact();
+            // transfer hovered to active interactable
+            m_ActiveInteractable = m_HoveredInteractable;
+            m_HoveredInteractable = null;
             
-            // set this *after* interaction as it will clear the currently hovered interactable
+            // flag we are interacting to prevent further interaction and update cursor
+            // (this also normally clears the hovered interactable, but it's already done here)
             SetIsInteracting(true);
+            
+            // start interaction sequence
+            m_ActiveInteractable.Interact();
         }
     }
     
