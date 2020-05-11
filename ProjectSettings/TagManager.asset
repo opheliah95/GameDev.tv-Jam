@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - Environment
   - 
   - 
   - 
@@ -25,7 +25,7 @@ TagManager:
   - PropDynamic
   - 
   - 
-  - 
+  - Interactable
   - 
   - 
   - 

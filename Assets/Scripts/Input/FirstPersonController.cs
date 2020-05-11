@@ -10,8 +10,8 @@ public class FirstPersonController : MonoBehaviour
     float xRotation = 0;
     public static bool isTalking;
 
-    [SerializeField]
-    Camera playerCamera;
+    [SerializeField, Tooltip("Player camera")]
+    Camera playerCamera = null;
 
     [SerializeField]
     Vector2 move = Vector2.zero;
@@ -55,7 +55,7 @@ public class FirstPersonController : MonoBehaviour
 
     void playerMove()
     {
-        float xMovement =  move.x;
+        float xMovement = move.x;
         float yMovement = move.y;
         tempSpeed = isRunning ? runSpeed : walkSpeed;
 
@@ -75,18 +75,20 @@ public class FirstPersonController : MonoBehaviour
         trans.Rotate(Vector3.up * mouseX);
     }
 
-    public void OnPlayerLook(InputAction.CallbackContext context)
+    private void OnLook(InputValue value)
     {
-        cameraRotation = context.ReadValue<Vector2>();
+        cameraRotation = value.Get<Vector2>();
     }
 
-    public void OnPlayerMove(InputAction.CallbackContext context)
+    private void OnMovement(InputValue value)
     {
-        move = context.ReadValue<Vector2>();
+        move = value.Get<Vector2>();
     }
 
-    public void OnPlayerRun(InputAction.CallbackContext context)
+    private void OnRun(InputValue value)
     {
-        isRunning = (context.phase == InputActionPhase.Performed);
+        // input is binary anyway, so just check for any threshold between 0 and 1
+        isRunning = value.isPressed;
+        Debug.LogFormat("isRunning: {0}", isRunning);
     }
 }

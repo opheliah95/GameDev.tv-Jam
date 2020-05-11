@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "2efb8047-69e3-483a-a26b-38933b9f02fc",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -19,7 +19,7 @@
                     "id": "6ab0cf08-348a-4dda-9fe8-5c5eb31619df",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press(behavior=2)"
                 },
                 {
                     "name": "Inspect",
@@ -109,6 +109,28 @@
                     "name": "",
                     "id": "e017e301-88e6-4708-bd48-6b6ed4ed1db5",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inspect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3bdbe451-287b-4b24-bfc2-f9da67a30a38",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inspect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c754110-ef84-4f62-afb7-fa70e9e5e4d2",
+                    "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

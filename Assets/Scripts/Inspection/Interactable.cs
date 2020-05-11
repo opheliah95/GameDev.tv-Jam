@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inspectable : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
+    [Tooltip("Dialogue sequence played on interaction")]
     public List<Dialogue> dialogues;
 
-    public void TriggerDialogue()
+    public void Interact()
     {
         FindObjectOfType<DialogueManager>().startDialogue(dialogues);
     }
+
 }
+

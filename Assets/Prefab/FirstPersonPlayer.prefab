@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 2660603383783624706}
   - component: {fileID: 2660603383783624705}
   - component: {fileID: 2660603383783624704}
+  - component: {fileID: 2015062456}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -177,6 +178,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2660603383783624767}
   m_Enabled: 1
+--- !u!114 &2015062456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660603383783624767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &2660603384332830767
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,9 +206,10 @@ GameObject:
   - component: {fileID: 2660603384332830769}
   - component: {fileID: 2660603384332830770}
   - component: {fileID: 2660603384332830772}
+  - component: {fileID: 1434346050826542017}
   m_Layer: 0
   m_Name: FirstPersonPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 8fc8194b54dac514b8af8bb030aa4f30,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -325,8 +343,64 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 34291bf3-ae4e-4030-aa9a-a88bed49ca5a
     m_ActionName: Gameplay/Look[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2e41ae0e-3f7d-4f47-a607-9870c993c647
+    m_ActionName: UI/Navigate[/Gamepad/leftStick/up,/Gamepad/leftStick/up,/Gamepad/rightStick/up,/Gamepad/rightStick/up,/Gamepad/leftStick/down,/Gamepad/leftStick/down,/Gamepad/rightStick/down,/Gamepad/rightStick/down,/Gamepad/leftStick/left,/Gamepad/leftStick/left,/Gamepad/rightStick/left,/Gamepad/rightStick/left,/Gamepad/leftStick/right,/Gamepad/leftStick/right,/Gamepad/rightStick/right,/Gamepad/rightStick/right,/Gamepad/dpad,/Gamepad/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 68a3617b-fc47-4cb2-9330-f0dfda73e013
+    m_ActionName: UI/Submit[/Keyboard/enter,/Gamepad/buttonSouth,/Gamepad/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f58f1fb6-dfdc-4dfa-8357-cf61185022f9
+    m_ActionName: UI/Cancel[/Keyboard/escape,/Gamepad/buttonEast,/Gamepad/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 284ae840-cc4b-4625-bf6c-09296a7b49ee
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: afdb9706-4291-4a7d-986b-9db7275568e5
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 76e936cf-ab28-48fa-9f95-203d48182642
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce3d7620-00d7-4ea9-82ab-5267727fed3c
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77173e29-c64c-4c07-9e84-41c058b4cc75
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a933e9f-ba1d-4696-8ed7-c0002b523fef
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b4474e06-9b1f-4691-b6c6-e14e11c8274a
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1434346050826542017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660603384332830767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c355f441ad5588ee6a18e29be4b840a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorImage: {fileID: 0}
+  hoverCursorImage: {fileID: 0}
+  firstPersonCamera: {fileID: 2660603383783624705}
+  m_MaxInteractDistance: 2

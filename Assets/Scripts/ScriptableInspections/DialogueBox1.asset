@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25aa0f83924e6dd4e88d8a593a3e7026, type: 3}
   m_Name: DialogueBox1
   m_EditorClassIdentifier: 
-  name: Player
+  speakerName: Player
   sentences:
   - This person looks terrified
   - I wonder what had happened to him?

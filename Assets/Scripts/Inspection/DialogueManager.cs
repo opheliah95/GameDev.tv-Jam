@@ -43,7 +43,6 @@ public class DialogueManager : MonoBehaviour {
         }
 
         nextChunk(); // read next chunk of dialogue
-
     }
 
     // got to the next character's turn
@@ -56,7 +55,7 @@ public class DialogueManager : MonoBehaviour {
             Dialogue chunk = dialogueChunks.Dequeue();
             dequedDialogue = chunk; // assign it to dialogue to be removed
 
-            nameText.GetComponent<TextMeshProUGUI>().text = chunk.name;
+            nameText.GetComponent<TextMeshProUGUI>().text = chunk.speakerName;
             characterImage.GetComponent<Image>().sprite = chunk.characterImage;
 
             StartIndividualDialogue(chunk);
@@ -74,7 +73,7 @@ public class DialogueManager : MonoBehaviour {
     // start a chunk of individual dialogue
     public void StartIndividualDialogue (Dialogue dialogue)
 	{
-		nameText.text = dialogue.name;
+		nameText.text = dialogue.speakerName;
 
 		sentences.Clear();
 
