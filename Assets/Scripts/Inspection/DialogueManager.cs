@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 public class DialogueManager : MonoBehaviour {
 
+	// Events
+	public delegate void DialogueEndedEventHandler();
+	public static event DialogueEndedEventHandler onDialogueEnded;
+	
     public GameObject dialogueBox;
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
@@ -120,6 +124,8 @@ public class DialogueManager : MonoBehaviour {
         FirstPersonController.isTalking = false;
         dialogueEnd = true;
         sentenceEnd = true;
+        
+        onDialogueEnded?.Invoke();
 	}
 
    

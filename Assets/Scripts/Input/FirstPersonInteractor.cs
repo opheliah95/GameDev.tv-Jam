@@ -58,20 +58,31 @@ public class FirstPersonInteractor : MonoBehaviour
     {
         m_IsInteracting = false;
         m_IsCinematicPlaying = false;
-        UpdateCanInteract();
+        UpdateCanInteract();  // to be rigorous, but currently does nothing
         
         m_HoveredInteractable = null;
         
         ResetCursor();
     }
-    
+
+    private void OnEnable()
+    {
+        DialogueManager.onDialogueEnded += OnDialogueEnded;
+    }
+
+    private void OnDisable()
+    {
+        DialogueManager.onDialogueEnded -= OnDialogueEnded;
+    }
+
     private void Update()
     {
+        // detect interactable under cursor every frame
+        // no performance issue found, but if any, just do it every 5 frames or so (and/or when moving)
         if (m_CanInteract)
         {
             Interactable interactable = null;
             
-            // detect interactable under cursor every frame
             // OLD: actual cursor position
 //            Ray mouseRay = firstPersonCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             // NEW: always center position (should be the same when cursor is Locked)
@@ -100,6 +111,18 @@ public class FirstPersonInteractor : MonoBehaviour
                 m_HoveredInteractable = interactable;
             }
         }
+    }
+
+    private void SetIsInteracting(bool value)
+    {
+        m_IsInteracting = value;
+        UpdateCanInteract();
+    }
+    
+    private void SetIsCinematicPlaying(bool value)
+    {
+        m_IsCinematicPlaying = value;
+        UpdateCanInteract();
     }
     
     private void UpdateCanInteract()
@@ -164,6 +187,17 @@ public class FirstPersonInteractor : MonoBehaviour
         if (value.isPressed && m_HoveredInteractable != null)
         {
             m_HoveredInteractable.Interact();
+            
+            // set this *after* interaction as it will clear the currently hovered interactable
+            SetIsInteracting(true);
         }
+    }
+    
+    private void OnDialogueEnded()
+    {
+        // for now, we only leave interacting state when dialogue is over
+        // later, we'll have a broader variety of interaction events and will need to check for the
+        // end of the current event sequence
+        SetIsInteracting(false);
     }
 }

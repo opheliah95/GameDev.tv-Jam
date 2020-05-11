@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 2660603384332830770}
   - component: {fileID: 2660603384332830772}
   - component: {fileID: 1434346050826542017}
+  - component: {fileID: 1417588806}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -404,3 +405,15 @@ MonoBehaviour:
   hoverCursorImage: {fileID: 0}
   firstPersonCamera: {fileID: 2660603383783624705}
   m_MaxInteractDistance: 2
+--- !u!114 &1417588806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660603384332830767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb590611699d6803cb1b893d2011df16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
