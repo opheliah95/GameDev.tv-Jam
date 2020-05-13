@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25aa0f83924e6dd4e88d8a593a3e7026, type: 3}
   m_Name: Victim_Sim
   m_EditorClassIdentifier: 
-  speakerName: 
-  sentences: []
+  speakerName: Player
+  sentences:
+  - He was shoot dead!  [clue added to inventory]
   characterImage: {fileID: 0}

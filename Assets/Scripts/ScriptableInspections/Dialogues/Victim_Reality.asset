@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Player
   sentences:
-  - 'John Doe was shot dead
+  - 'John Doe was dead, body highly decomposed
 
 '
   characterImage: {fileID: 0}
