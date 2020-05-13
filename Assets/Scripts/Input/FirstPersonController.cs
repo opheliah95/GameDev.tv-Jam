@@ -8,7 +8,7 @@ public class FirstPersonController : MonoBehaviour
     public float walkSpeed = 3f, runSpeed = 6f;
     public float mouseSensitivity = 100f;
     float xRotation = 0;
-    public static bool isTalking;
+    public static bool isTalking = false;
 
     [SerializeField, Tooltip("Player camera")]
     Camera playerCamera = null;
@@ -33,14 +33,16 @@ public class FirstPersonController : MonoBehaviour
     
     private void Start()
     {
+        /*
 #if UNITY_EDITOR_LINUX
         // in Linux editor, mouse get captured and you can't move at all,
         // so you need to press Escape to move, despite having some cursor offset
         // and risking to leave the viewport... we might as well not lock cursor at all
         Cursor.lockState = CursorLockMode.None;
 #else
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
 #endif
+*/
     }
 
     private void Update()
