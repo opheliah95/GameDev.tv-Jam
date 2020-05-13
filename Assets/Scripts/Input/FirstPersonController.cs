@@ -39,7 +39,7 @@ public class FirstPersonController : MonoBehaviour
         // and risking to leave the viewport... we might as well not lock cursor at all
         Cursor.lockState = CursorLockMode.None;
 #else
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 #endif
     }
 

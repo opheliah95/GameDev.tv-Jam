@@ -36,6 +36,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Reconstruction",
+                    "type": "Button",
+                    "id": "1ab02d17-3b88-4f05-8547-d416b5a2910e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -190,6 +198,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b543aff0-404d-4170-9046-61d48a5a0b72",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reconstruction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
