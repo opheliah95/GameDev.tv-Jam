@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ReconstructionManager : MonoBehaviour
 {
+    [Tooltip("Items only exist in simulation, i.e. victim's last memory.")]
     [SerializeField]
     List<GameObject> itemsToReconstruct = new List<GameObject>() ;
 
