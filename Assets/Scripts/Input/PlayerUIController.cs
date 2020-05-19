@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerUIController : MonoBehaviour
 {
+    [Tooltip("In Game Menu")]
+    public InGameMenu inGameMenu;
+    
     private void OnSubmit(InputValue value)
     {
         if (value.isPressed)
@@ -15,5 +18,15 @@ public class PlayerUIController : MonoBehaviour
                 FindObjectOfType<DialogueManager>().DisplayNextSentence();
             }
         }
+    }
+
+    private void OnToggleInGameMenu()
+    {
+        inGameMenu.Toggle();
+    }
+    
+    private void OnShowOptions()
+    {
+        
     }
 }
