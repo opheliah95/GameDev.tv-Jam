@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityConstants;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using UnityConstants;
+
 public class InGameMenu : MonoBehaviour
 {
+    /* Child references */
+
+    [Tooltip("Canvas root")]
+    public Canvas canvas;
+    
+    [Tooltip("Case File root")]
+    public CaseFile caseFile;
+    
     /* State */
 
-    private bool m_Open;
+    private bool m_Open = false;
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
     
     public void Toggle()
@@ -30,14 +39,18 @@ public class InGameMenu : MonoBehaviour
     public void Open()
     {
         m_Open = true;
-        
-        gameObject.SetActive(true);
+        canvas.gameObject.SetActive(true);
+
+        // for now, always open on Case File
+        if (!caseFile.IsOpen)
+        {
+            caseFile.Open();
+        }
     }
 
     public void Close()
     {
         m_Open = false;
-
-        gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
 }

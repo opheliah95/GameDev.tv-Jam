@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SPRATL_UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5d5d5492f0c6830a79c89d79385fb67f, type: 3}
+    totalSpriteSurfaceArea: 5832534
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8a9f4d500b2623c6280a5016291e1ec2, type: 3}
+  - {fileID: 21300000, guid: 07190d9263d2b6804812811fff2713d9, type: 3}
+  - {fileID: 21300000, guid: 83b27c03b82b4916cbfa4b15ff984074, type: 3}
+  - {fileID: 21300000, guid: d3573224f5bd04728b747b340d883007, type: 3}
+  - {fileID: 21300000, guid: cc4f39e4f77175a86808a6e7585b24d1, type: 3}
+  - {fileID: 21300000, guid: f144a5e86809281748b2bcd3e50b50e1, type: 3}
+  - {fileID: 21300000, guid: ef3fdfb9103ba7dc2824be6fe160120c, type: 3}
+  - {fileID: 21300000, guid: 8dfdf67a396550c4f9d1096d65c59a42, type: 3}
+  - {fileID: 21300000, guid: e9ab7aba9d6b86e4fbd6f48c9114ad47, type: 3}
+  - {fileID: 21300000, guid: 7ef7734bbd03dcca29e889009a96148c, type: 3}
+  - {fileID: 21300000, guid: ffa0a12c6b4aaac318df4daa4544b871, type: 3}
+  - {fileID: 21300000, guid: 10ff687c2c448020f80b626c38589e50, type: 3}
+  - {fileID: 21300000, guid: 57716acc17d087ef88ece34d757a8dcd, type: 3}
+  - {fileID: 21300000, guid: 8cc0765f2f86905b4961a56418646df0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SPR_UI_CluesTab_Left
+  - SPR_UI_SuspectsPage_Left
+  - SPR_UI_SuspectsTab_Left
+  - SPR_UI_ScenesTab_Left
+  - SPR_UI_VictimPage_Left
+  - SPR_UI_ScenesPage_Left
+  - SPR_UI_Binder
+  - SPR_UI_MousePointer_64x64
+  - SPR_UI_HandPointer_64x64
+  - SPR_UI_BinderRings
+  - SPR_UI_CluesPage_Left
+  - SPR_UI_BriefPage_Left
+  - SPR_UI_VictimTab_Left
+  - SPR_UI_BriefTab_Left
+  m_Tag: SPRATL_UI
+  m_IsVariant: 0
