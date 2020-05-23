@@ -1418,6 +1418,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 678461877}
     m_Modifications:
+    - target: {fileID: 1309639467, guid: f648b6c3461ed7e949aa811f1d002334, type: 3}
+      propertyPath: m_Name
+      value: SceneGrid
+      objectReference: {fileID: 0}
     - target: {fileID: 638506414807664948, guid: f648b6c3461ed7e949aa811f1d002334,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1467,11 +1471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 638506415735245300, guid: f648b6c3461ed7e949aa811f1d002334,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 638506416591127360, guid: f648b6c3461ed7e949aa811f1d002334,
         type: 3}
