@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 2660603384332830772}
   - component: {fileID: 1434346050826542017}
   - component: {fileID: 1417588806}
+  - component: {fileID: 7818102094728178067}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -416,6 +417,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b4474e06-9b1f-4691-b6c6-e14e11c8274a
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ab02d17-3b88-4f05-8547-d416b5a2910e
+    m_ActionName: Gameplay/Reconstruction[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -436,7 +441,7 @@ MonoBehaviour:
   defaultCursorImage: {fileID: 0}
   hoverCursorImage: {fileID: 0}
   firstPersonCamera: {fileID: 2660603383783624705}
-  m_MaxInteractDistance: 2
+  m_MaxInteractDistance: 4
 --- !u!114 &1417588806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,3 +454,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb590611699d6803cb1b893d2011df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inGameMenu: {fileID: 0}
+--- !u!114 &7818102094728178067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660603384332830767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f756b6966e9bc64d9e20e7d23043bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inReconstruction: 0

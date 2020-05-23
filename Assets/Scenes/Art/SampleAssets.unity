@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.496
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08942064, g: 0.11195402, b: 0.15223359, a: 0.496}
+  m_IndirectSpecularColor: {r: 0.089420535, g: 0.11195385, b: 0.15223344, a: 0.496}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -653,25 +653,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11ed7d3cc908cec41a752c3d2cdaa97a, type: 3}
---- !u!1 &750185988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2660603384332830767, guid: 09c4198d4412f1f40b493ab72a8f2070,
-    type: 3}
-  m_PrefabInstance: {fileID: 2660603383072568160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &750185995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750185988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f756b6966e9bc64d9e20e7d23043bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inReconstruction: 0
 --- !u!1 &764753736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,11 +2847,6 @@ PrefabInstance:
       propertyPath: hoverCursorImage
       value: 
       objectReference: {fileID: 1885838356}
-    - target: {fileID: 1434346050826542017, guid: 09c4198d4412f1f40b493ab72a8f2070,
-        type: 3}
-      propertyPath: m_MaxInteractDistance
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2660603384332830767, guid: 09c4198d4412f1f40b493ab72a8f2070,
         type: 3}
       propertyPath: m_Name
@@ -2931,70 +2907,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2660603384332830770, guid: 09c4198d4412f1f40b493ab72a8f2070,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2660603384332830772, guid: 09c4198d4412f1f40b493ab72a8f2070,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2660603384332830772, guid: 09c4198d4412f1f40b493ab72a8f2070,
-        type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2660603384332830772, guid: 09c4198d4412f1f40b493ab72a8f2070,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
-      value: 1ab02d17-3b88-4f05-8547-d416b5a2910e
-      objectReference: {fileID: 0}
-    - target: {fileID: 2660603384332830772, guid: 09c4198d4412f1f40b493ab72a8f2070,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
-      value: Gameplay/Reconstruction[/Keyboard/p]
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09c4198d4412f1f40b493ab72a8f2070, type: 3}
---- !u!1 &2660603383072568161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2660603383783624767, guid: 09c4198d4412f1f40b493ab72a8f2070,
-    type: 3}
-  m_PrefabInstance: {fileID: 2660603383072568160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2660603383072568162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2660603383072568161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!4 &2715457938314451495
 Transform:
   m_ObjectHideFlags: 0

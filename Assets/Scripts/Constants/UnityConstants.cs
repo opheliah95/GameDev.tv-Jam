@@ -134,9 +134,9 @@ namespace UnityConstants
         /// </summary>
         public const int MainMenu = 0;
         /// <summary>
-        /// ID of scene 'TestScene'.
+        /// ID of scene 'TestScene_Long'.
         /// </summary>
-        public const int TestScene = 1;
+        public const int TestScene_Long = 1;
     }
 
     public static class Axes
@@ -185,6 +185,46 @@ namespace UnityConstants
         /// Input axis 'Cancel'.
         /// </summary>
         public const string Cancel = "Cancel";
+        /// <summary>
+        /// Input axis 'Enable Debug Button 1'.
+        /// </summary>
+        public const string Enable_Debug_Button_1 = "Enable Debug Button 1";
+        /// <summary>
+        /// Input axis 'Enable Debug Button 2'.
+        /// </summary>
+        public const string Enable_Debug_Button_2 = "Enable Debug Button 2";
+        /// <summary>
+        /// Input axis 'Debug Reset'.
+        /// </summary>
+        public const string Debug_Reset = "Debug Reset";
+        /// <summary>
+        /// Input axis 'Debug Next'.
+        /// </summary>
+        public const string Debug_Next = "Debug Next";
+        /// <summary>
+        /// Input axis 'Debug Previous'.
+        /// </summary>
+        public const string Debug_Previous = "Debug Previous";
+        /// <summary>
+        /// Input axis 'Debug Validate'.
+        /// </summary>
+        public const string Debug_Validate = "Debug Validate";
+        /// <summary>
+        /// Input axis 'Debug Persistent'.
+        /// </summary>
+        public const string Debug_Persistent = "Debug Persistent";
+        /// <summary>
+        /// Input axis 'Debug Multiplier'.
+        /// </summary>
+        public const string Debug_Multiplier = "Debug Multiplier";
+        /// <summary>
+        /// Input axis 'Debug Horizontal'.
+        /// </summary>
+        public const string Debug_Horizontal = "Debug Horizontal";
+        /// <summary>
+        /// Input axis 'Debug Vertical'.
+        /// </summary>
+        public const string Debug_Vertical = "Debug Vertical";
     }
 }
 

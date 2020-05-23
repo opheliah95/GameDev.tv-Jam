@@ -20,18 +20,18 @@ public class CaseFileSide : MonoBehaviour
     private int m_CurrentPageIndex = 0;
     public int CurrentPageIndex => m_CurrentPageIndex;
 
-    public Transform[] GetAllPages()
+    public CaseFilePage[] GetAllPages()
     {
         int childCount = pagesParent.childCount;
         
-        var pageTransforms = new Transform[childCount];
+        var pages = new CaseFilePage[childCount];
         
         for (int i = 0; i < childCount; i++)
         {
-            pageTransforms[i] = pagesParent.GetChild(i);
+            pages[i] = pagesParent.GetChild(i).GetComponentOrFail<CaseFilePage>();
         }
 
-        return pageTransforms;
+        return pages;
     }
 
     public void HideAllPages()
@@ -42,40 +42,21 @@ public class CaseFileSide : MonoBehaviour
         }
     }
     
-    private void HideCurrentPage(Transform[] pageTransforms)
+    private void HideCurrentPage(CaseFilePage[] pages)
     {
-        Debug.AssertFormat(m_CurrentPageIndex < pageTransforms.Length, this,
+        Debug.AssertFormat(m_CurrentPageIndex < pages.Length, this,
             "We registered {0} pages, side {1} cannot hide current page {2}",
-            this, pageTransforms.Length, m_CurrentPageIndex);
+            this, pages.Length, m_CurrentPageIndex);
 
-        pageTransforms[m_CurrentPageIndex].gameObject.SetActive(false);
+        pages[m_CurrentPageIndex].gameObject.SetActive(false);
     }
     
     /// Show page of given index and transform on this side,
     /// without hiding anything else (should only be called after HideAllPages)
-    public void ShowPage(int pageIndex, Transform[] pageTransforms)
+    public void ShowPage(int pageIndex, CaseFilePage[] pages)
     {
-        Transform pageTransform = pageTransforms[pageIndex];
-        
-        // update model
-        m_CurrentPageIndex = pageIndex;
-        // move page to this side, preserving local position
-        pageTransform.SetParent(pagesParent, false);
-        // show page if not already active
-        pageTransform.gameObject.SetActive(true);
-    }
-    
-    /// Show page of given index and transform on this side,
-    /// hiding any current page
-    public void ShowOnlyPage(int pageIndex, Transform[] pageTransforms)
-    {
-        HideCurrentPage(pageTransforms);
-     
-        Debug.AssertFormat(pageIndex < pageTransforms.Length, this,
-            "We registered {0} pages, side {1} cannot show page {2}",
-            this, pageTransforms.Length, pageIndex);
-        
-        Transform pageTransform = pageTransforms[pageIndex];
+        CaseFilePage page = pages[pageIndex];
+        Transform pageTransform = page.transform;
         
         // update model
         m_CurrentPageIndex = pageIndex;
@@ -85,7 +66,22 @@ public class CaseFileSide : MonoBehaviour
             pageTransform.SetParent(pagesParent, false);
         }
         // show page if not already active
-        pageTransform.gameObject.SetActive(true);
+        page.gameObject.SetActive(true);
+        
+        page.OnShow();
+    }
+    
+    /// Show page of given index and transform on this side,
+    /// hiding any current page
+    public void ShowOnlyPage(int pageIndex, CaseFilePage[] pages)
+    {
+        HideCurrentPage(pages);
+     
+        Debug.AssertFormat(pageIndex < pages.Length, this,
+            "We registered {0} pages, side {1} cannot show page {2}",
+            this, pages.Length, pageIndex);
+
+        ShowPage(pageIndex, pages);
     }
     
     /// Switch to page by index, moving page from another side if needed.

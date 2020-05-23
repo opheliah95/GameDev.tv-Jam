@@ -13,7 +13,7 @@ public class CaseFile : MonoBehaviour
 
     /// Array of all page transforms, whatever side they are on.
     /// Start with None, then all "real" pages in same order as the tabs
-    private Transform[] pageTransforms;
+    private CaseFilePage[] pages;
     
     /* State */
 
@@ -27,15 +27,15 @@ public class CaseFile : MonoBehaviour
         Debug.AssertFormat(sides[1].GetAllPages().Length == 0, sides[1], "Right Side has {0} child(ren), expected 0", sides[1].transform.childCount);
 
         // store references to all pages on left side now, we'll move them later between sides
-        pageTransforms = sides[0].GetAllPages();
+        pages = sides[0].GetAllPages();
         
         // on left side, start by showing page 1 (Brief)
         sides[0].HideAllPages();
-        sides[0].ShowPage(1, pageTransforms);
+        sides[0].ShowPage(1, pages);
         
         // on right side, start by showing page 0 (None)
         // there are no pages to start with, according to assertions above, so no need to hide first
-        sides[1].ShowPage(0, pageTransforms);
+        sides[1].ShowPage(0, pages);
     }
 
     public void Open()
@@ -73,20 +73,21 @@ public class CaseFile : MonoBehaviour
         }
 
         // check if page is not already shown on the target side
-        Transform page = pageTransforms[pageIndex];
+        CaseFilePage page = pages[pageIndex];
+        Transform pageParent = page.transform.parent;
         CaseFileSide oldSide = null;
-        if (page.gameObject.activeSelf && page.parent != side.pagesParent)
+        if (page.gameObject.activeSelf && pageParent != side.pagesParent)
         {
             // Page is on another side at the moment, so we will move it to the target side
             // in side.ShowOnlyPage more below.
             // On the old side, we will fallback to page 0 (None).
             // However, we wait for side.ShowOnlyPage below first so it doesn't re-hide
             // the None page afterward.
-            oldSide = page.parent.parent.GetComponentOrFail<CaseFileSide>();
+            oldSide = pageParent.parent.GetComponentOrFail<CaseFileSide>();
         }
 
         // show new page on target side, moving it if needed
-        side.ShowOnlyPage(pageIndex, pageTransforms);
+        side.ShowOnlyPage(pageIndex, pages);
         
         // check if page has moved
         if (oldSide != null)
@@ -95,7 +96,7 @@ public class CaseFile : MonoBehaviour
             // We must not hide what the old side thinks is the current page
             // (it's now the target page on the new side), so we must use ShowPage
             // instead of ShowOnlyPage.
-            oldSide.ShowPage(0, pageTransforms);
+            oldSide.ShowPage(0, pages);
         }
     }
 }
