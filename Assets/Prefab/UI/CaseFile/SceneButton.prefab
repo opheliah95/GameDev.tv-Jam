@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2042436524990464875}
   - component: {fileID: 2042436524990464874}
   - component: {fileID: 2042436524990464872}
+  - component: {fileID: 5094618420858235649}
   m_Layer: 5
   m_Name: SceneButton
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 280, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2042436524990464875
 CanvasRenderer:
@@ -117,7 +118,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2042436524990464874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5094618420858235649}
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5094618420858235649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042436524990464876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42d81515b00b9a41b354ac8c333de40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneNameText: {fileID: 2042436525980230412}
 --- !u!1 &2042436525980230414
 GameObject:
   m_ObjectHideFlags: 0

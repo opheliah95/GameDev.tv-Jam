@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using CommonsHelper;
+using UnityConstants;
+
 public class CaseFilePageScenes : CaseFilePage
 {
     [Tooltip("Grid containing widgets for scenes to go to")]
@@ -15,20 +18,38 @@ public class CaseFilePageScenes : CaseFilePage
     {
         Debug.Log("OnShow Scenes");
         
-        // First, create enough scene widgets for the current mission
+        // First, create enough scene widgets for the current case
         // there may already be one or more scene widgets under sceneGrid to visualize better
         // in the editor, so only add what you need.
         // We assume all children of sceneGrid are actually scene widgets, so just count them.
         // If you open the Scenes page for the second time in this mission, nothing should be added.
         int currentSceneButtonsCount = sceneGrid.transform.childCount;
-        // TODO: get actual mission info
-        int missionInfoSceneCount = 4;
-        if (currentSceneButtonsCount < 4)
+        CaseData caseData = CaseManager.Instance.CurrentCaseData;
+        CaseData.SceneData[] sceneDataArray = caseData.sceneDataArray;
+        
+        Debug.AssertFormat(sceneDataArray != null, caseData, "SceneDataArray is null on CaseData {0}", caseData);
+        
+        for (int i = currentSceneButtonsCount; i < sceneDataArray.Length; i++)
         {
-            for (int i = currentSceneButtonsCount; i < 4; i++)
-            {
-                Instantiate(sceneButtonPrefab, sceneGrid.transform);
-            }
+            Instantiate(sceneButtonPrefab, sceneGrid.transform);
+        }
+        
+        // Second, disable any extra widgets (e.g. created from a previous case that had more scenes than the current one)
+        for (int i = sceneDataArray.Length; i < currentSceneButtonsCount; i++)
+        {
+            sceneGrid.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        // Third, setup the scene widgets for each available scene
+        for (int i = 0; i < sceneDataArray.Length; i++)
+        {
+            Transform sceneWidgetTr = sceneGrid.transform.GetChild(i);
+            Debug.AssertFormat(sceneWidgetTr != null, sceneGrid,
+                "Scene widget grid {0} has no child of index {1}, yet we should have created up to {2} widgets " +
+                "after the existing {3}.", sceneGrid, i, sceneDataArray.Length, currentSceneButtonsCount);
+            var widget = sceneWidgetTr.GetComponentOrFail<CaseFileSceneWidget>();
+            CaseData.SceneData sceneData = sceneDataArray[i];
+            widget.Init(sceneData);
         }
     }
 }
