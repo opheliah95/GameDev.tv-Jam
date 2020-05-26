@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: CaseData1
   m_EditorClassIdentifier: 
   title: Case Title
-  sceneDataArray:
+  realSceneDataArray:
   - sceneID: 1
-    name: Bloody Bathroom
+    name: Bloody bathroom
+    unlockedOnStart: 1
   - sceneID: 2
     name: Bank
+    unlockedOnStart: 0
+  reconstructionSceneDataArray:
+  - sceneID: 3
+    name: Memory
+    unlockedOnStart: 0

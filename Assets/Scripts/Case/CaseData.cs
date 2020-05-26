@@ -16,11 +16,17 @@ public class CaseData : ScriptableObject
 
         [Tooltip("Readable scene name")]
         public string name;
+
+        [Tooltip("Is the scene unlocked on case start?")]
+        public bool unlockedOnStart;
     }
     
     [Tooltip("Readable title for the case")]
     public string title = "Case Title";
 
-    [Tooltip("Array of navigatable scene data. The first one is the default one and unlocked, others start locked.")]
-    public SceneData[] sceneDataArray;
+    [Tooltip("Array of navigatable real world scene data. Make sure that at least one of them is unlocked")]
+    public SceneData[] realSceneDataArray;
+    
+    [Tooltip("Array of navigatable reconstruction scene data. Make sure that at least one of them is unlocked")]
+    public SceneData[] reconstructionSceneDataArray;
 }

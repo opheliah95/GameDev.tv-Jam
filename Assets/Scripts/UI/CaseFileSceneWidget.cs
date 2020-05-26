@@ -19,7 +19,6 @@ public class CaseFileSceneWidget : MonoBehaviour
     
     public void Init(CaseData.SceneData sceneData)
     {
-        Debug.LogFormat("init with {0}", sceneData);
         m_SceneID = sceneData.sceneID;
         sceneNameText.text = sceneData.name;
     }
