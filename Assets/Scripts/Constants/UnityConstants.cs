@@ -137,6 +137,22 @@ namespace UnityConstants
         /// ID of scene 'TestScene_Long'.
         /// </summary>
         public const int TestScene_Long = 1;
+        /// <summary>
+        /// ID of scene 'TestScene_Long2'.
+        /// </summary>
+        public const int TestScene_Long2 = 2;
+        /// <summary>
+        /// ID of scene 'Shader_Oph'.
+        /// </summary>
+        public const int Shader_Oph = 3;
+    }
+
+    public enum ScenesEnum
+    {
+        MainMenu = 0,
+        TestScene_Long = 1,
+        TestScene_Long2 = 2,
+        Shader_Oph = 3,
     }
 
     public static class Axes
