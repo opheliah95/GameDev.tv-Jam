@@ -15,12 +15,18 @@ MonoBehaviour:
   title: Case Title
   realSceneDataArray:
   - sceneID: 1
-    name: Bloody bathroom
+    name: Forest
     unlockedOnStart: 1
   - sceneID: 2
-    name: Bank
+    name: Hotel
+    unlockedOnStart: 0
+  - sceneID: 2
+    name: Bedroom
     unlockedOnStart: 0
   reconstructionSceneDataArray:
   - sceneID: 3
-    name: Memory
+    name: Hotel_Past
+    unlockedOnStart: 0
+  - sceneID: 3
+    name: Hotel_Present
     unlockedOnStart: 0
