@@ -43,15 +43,20 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 5d5d5492f0c6830a79c89d79385fb67f, type: 3}
-    totalSpriteSurfaceArea: 5832534
+    totalSpriteSurfaceArea: 9004078
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 8a9f4d500b2623c6280a5016291e1ec2, type: 3}
+  - {fileID: 21300000, guid: eb8848217e7d1614182c5b08364f4faa, type: 3}
   - {fileID: 21300000, guid: 07190d9263d2b6804812811fff2713d9, type: 3}
   - {fileID: 21300000, guid: 83b27c03b82b4916cbfa4b15ff984074, type: 3}
+  - {fileID: 21300000, guid: 4fe6a0f3cd04ccaf58c0fa8c52bcb233, type: 3}
   - {fileID: 21300000, guid: d3573224f5bd04728b747b340d883007, type: 3}
   - {fileID: 21300000, guid: cc4f39e4f77175a86808a6e7585b24d1, type: 3}
+  - {fileID: 21300000, guid: c360c5f6a4090ff7da4467d59df2e888, type: 3}
+  - {fileID: 21300000, guid: 838b5927c1b0b9a42a076823b520aee5, type: 3}
+  - {fileID: 21300000, guid: 774eecd756fe1894ca2de50279f49b6b, type: 3}
   - {fileID: 21300000, guid: f144a5e86809281748b2bcd3e50b50e1, type: 3}
   - {fileID: 21300000, guid: ef3fdfb9103ba7dc2824be6fe160120c, type: 3}
   - {fileID: 21300000, guid: 8dfdf67a396550c4f9d1096d65c59a42, type: 3}
@@ -60,13 +65,19 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ffa0a12c6b4aaac318df4daa4544b871, type: 3}
   - {fileID: 21300000, guid: 10ff687c2c448020f80b626c38589e50, type: 3}
   - {fileID: 21300000, guid: 57716acc17d087ef88ece34d757a8dcd, type: 3}
+  - {fileID: 21300000, guid: b8b0368e11ad10064ae0394aba597673, type: 3}
   - {fileID: 21300000, guid: 8cc0765f2f86905b4961a56418646df0, type: 3}
   m_PackedSpriteNamesToIndex:
   - SPR_UI_CluesTab_Left
+  - MainMenu_V1
   - SPR_UI_SuspectsPage_Left
   - SPR_UI_SuspectsTab_Left
+  - SPR_UI_NonePage_Left
   - SPR_UI_ScenesTab_Left
   - SPR_UI_VictimPage_Left
+  - SPR_UI_FrameScene_Reconstruction
+  - Bottom_Hover
+  - Logo
   - SPR_UI_ScenesPage_Left
   - SPR_UI_Binder
   - SPR_UI_MousePointer_64x64
@@ -75,6 +86,7 @@ SpriteAtlas:
   - SPR_UI_CluesPage_Left
   - SPR_UI_BriefPage_Left
   - SPR_UI_VictimTab_Left
+  - SPR_UI_FrameScene
   - SPR_UI_BriefTab_Left
   m_Tag: SPRATL_UI
   m_IsVariant: 0
