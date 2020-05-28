@@ -14,8 +14,7 @@ public class PlayerUIController : MonoBehaviour
         {
             if (DialogueManager.sentenceEnd)
             {
-                // BAD, make DialogueManager a singleton or save reference on Start
-                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                DialogueManager.Instance.DisplayNextSentence();
             }
         }
     }

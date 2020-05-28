@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
-        FindObjectOfType<DialogueManager>().startDialogue(dialogues);
+        DialogueManager.Instance.startDialogue(dialogues);
     }
 
 }
