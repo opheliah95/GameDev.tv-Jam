@@ -7,6 +7,16 @@ using UnityConstants;
 
 public class CaseProgress
 {
-    public HashSet<ScenesEnum> unlockedRealScenesSet = new HashSet<ScenesEnum>();
-    public HashSet<ScenesEnum> unlockedReconstructionScenesSet = new HashSet<ScenesEnum>();
+    /// Array of set of unlocked scene enums, index by SceneType enum as integer
+    private readonly HashSet<ScenesEnum>[] m_UnlockedSceneEnumsSetBySceneType = {new HashSet<ScenesEnum>(), new HashSet<ScenesEnum>()};
+    
+    public bool HasUnlockedScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
+    {
+        return m_UnlockedSceneEnumsSetBySceneType[(int) sceneType].Contains(sceneEnum);
+    }
+    
+    public bool UnlockScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
+    {
+        return m_UnlockedSceneEnumsSetBySceneType[(int) sceneType].Add(sceneEnum);
+    }
 }

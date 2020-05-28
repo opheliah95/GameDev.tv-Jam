@@ -27,11 +27,11 @@ public class CaseFilePageScenes : CaseFilePage
         Debug.AssertFormat(caseData.realSceneDataArray != null, caseData, "realSceneDataArray is null on CaseData {0}", caseData);
         Debug.AssertFormat(caseData.reconstructionSceneDataArray != null, caseData, "reconstructionSceneDataArray is null on CaseData {0}", caseData);
 
-        InitSceneWidgets(realSceneGrid, caseData.realSceneDataArray, realSceneButtonPrefab);
-        InitSceneWidgets(reconstructionSceneGrid, caseData.reconstructionSceneDataArray, reconstructionSceneButtonPrefab);
+        InitSceneWidgets(CaseSceneType.Real, realSceneGrid, caseData.realSceneDataArray, realSceneButtonPrefab);
+        InitSceneWidgets(CaseSceneType.Reconstruction, reconstructionSceneGrid, caseData.reconstructionSceneDataArray, reconstructionSceneButtonPrefab);
     }
 
-    private static void InitSceneWidgets(GridLayoutGroup sceneGrid, CaseData.SceneData[] sceneDataArray, GameObject sceneButtonPrefab)
+    private static void InitSceneWidgets(CaseSceneType sceneType, GridLayoutGroup sceneGrid, CaseData.SceneData[] sceneDataArray, GameObject sceneButtonPrefab)
     {
         // First, create enough scene widgets for the current case
         // there may already be one or more scene widgets under sceneGrid to visualize better
@@ -55,13 +55,21 @@ public class CaseFilePageScenes : CaseFilePage
         // Third, setup the scene widgets for each available scene
         for (int i = 0; i < sceneDataArray.Length; i++)
         {
+            // get widget script
             Transform sceneWidgetTr = sceneGrid.transform.GetChild(i);
             Debug.AssertFormat(sceneWidgetTr != null, sceneGrid,
                 "Scene widget grid {0} has no child of index {1}, yet we should have created up to {2} widgets " +
                 "after the existing {3}.", sceneGrid, i, sceneDataArray.Length, currentSceneButtonsCount);
             var widget = sceneWidgetTr.GetComponentOrFail<CaseFileSceneWidget>();
+            
+            // get scene data
             CaseData.SceneData sceneData = sceneDataArray[i];
-            widget.Init(sceneData);
+            
+            // check if scene is unlocked
+            bool isSceneUnlocked = sceneData.unlockedOnStart || CaseManager.Instance.HasUnlockedScene(sceneType, sceneData.sceneEnum);
+            
+            // init scene button widget
+            widget.Init(sceneData, isSceneUnlocked);
         }
     }
 }
