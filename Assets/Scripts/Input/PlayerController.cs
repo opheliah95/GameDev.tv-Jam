@@ -51,14 +51,6 @@ public class @Player : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Reconstruction"",
-                    ""type"": ""Button"",
-                    ""id"": ""1ab02d17-3b88-4f05-8547-d416b5a2910e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""ToggleInGameMenu"",
                     ""type"": ""Button"",
                     ""id"": ""9ac537ff-3ea9-42f8-81b1-84a13f89ef1b"",
@@ -276,39 +268,6 @@ public class @Player : IInputActionCollection, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b543aff0-404d-4170-9046-61d48a5a0b72"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reconstruction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a25faa53-fecf-43b5-8ebe-0399d9df8f58"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reconstruction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9e44f4ac-728b-4011-b338-9ff5cd82fe9a"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reconstruction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -860,7 +819,6 @@ public class @Player : IInputActionCollection, IDisposable
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
         m_Gameplay_Inspect = m_Gameplay.FindAction("Inspect", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
-        m_Gameplay_Reconstruction = m_Gameplay.FindAction("Reconstruction", throwIfNotFound: true);
         m_Gameplay_ToggleInGameMenu = m_Gameplay.FindAction("ToggleInGameMenu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -927,7 +885,6 @@ public class @Player : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Run;
     private readonly InputAction m_Gameplay_Inspect;
     private readonly InputAction m_Gameplay_Look;
-    private readonly InputAction m_Gameplay_Reconstruction;
     private readonly InputAction m_Gameplay_ToggleInGameMenu;
     public struct GameplayActions
     {
@@ -937,7 +894,6 @@ public class @Player : IInputActionCollection, IDisposable
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
         public InputAction @Inspect => m_Wrapper.m_Gameplay_Inspect;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
-        public InputAction @Reconstruction => m_Wrapper.m_Gameplay_Reconstruction;
         public InputAction @ToggleInGameMenu => m_Wrapper.m_Gameplay_ToggleInGameMenu;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -960,9 +916,6 @@ public class @Player : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
-                @Reconstruction.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnReconstruction;
-                @Reconstruction.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnReconstruction;
-                @Reconstruction.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnReconstruction;
                 @ToggleInGameMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
                 @ToggleInGameMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
                 @ToggleInGameMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
@@ -982,9 +935,6 @@ public class @Player : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Reconstruction.started += instance.OnReconstruction;
-                @Reconstruction.performed += instance.OnReconstruction;
-                @Reconstruction.canceled += instance.OnReconstruction;
                 @ToggleInGameMenu.started += instance.OnToggleInGameMenu;
                 @ToggleInGameMenu.performed += instance.OnToggleInGameMenu;
                 @ToggleInGameMenu.canceled += instance.OnToggleInGameMenu;
@@ -1103,7 +1053,6 @@ public class @Player : IInputActionCollection, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnInspect(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnReconstruction(InputAction.CallbackContext context);
         void OnToggleInGameMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
