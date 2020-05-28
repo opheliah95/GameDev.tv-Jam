@@ -15,8 +15,9 @@ public class CaseProgress
         return m_UnlockedSceneEnumsSetBySceneType[(int) sceneType].Contains(sceneEnum);
     }
     
-    public bool UnlockScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
+    public void UnlockScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
     {
-        return m_UnlockedSceneEnumsSetBySceneType[(int) sceneType].Add(sceneEnum);
+        m_UnlockedSceneEnumsSetBySceneType[(int) sceneType].Add(sceneEnum);
+        Debug.LogFormat("Unlock scene: type {0}, enum {1}", sceneType, sceneEnum);
     }
 }
