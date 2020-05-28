@@ -21,13 +21,13 @@ public class CaseManager : SingletonManager<CaseManager>
         m_CurrentCaseProgress = new CaseProgress();
     }
 
-    public void UnlockRealScene(ScenesEnum sceneEnum)
+    public bool HasUnlockedScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
     {
-        m_CurrentCaseProgress.unlockedRealScenesSet.Add(sceneEnum);
+        return m_CurrentCaseProgress.HasUnlockedScene(sceneType, sceneEnum);
     }
     
-    public void UnlockReconstructionScene(ScenesEnum sceneEnum)
+    public void UnlockScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
     {
-        m_CurrentCaseProgress.unlockedReconstructionScenesSet.Add(sceneEnum);
+        m_CurrentCaseProgress.UnlockScene(sceneType, sceneEnum);
     }
 }
