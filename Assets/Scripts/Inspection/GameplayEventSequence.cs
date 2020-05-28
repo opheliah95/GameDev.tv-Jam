@@ -14,32 +14,39 @@ public class GameplayEventSequence : GameplayEvent
     /// Current event index
     int m_CurrentEventIndex;
     
-    void Awake () {
-        // reverse reference this for each event, to allow access later
-        // to notify this of advancing sequence on event end
-        foreach (var gameplayEvent in eventSequence) {
-            gameplayEvent.RegisterMasterSequence(this);
-        }
-    }
-
     public override void Execute()
     {
         m_CurrentEventIndex = 0;
-        ExecuteEventAtCurrentIndex();
+        TryExecuteEventAtCurrentIndex();
     }
     
     /// Continue sequence, called from slave event on end
     public void Continue () {
         ++m_CurrentEventIndex;
-        ExecuteEventAtCurrentIndex();
+        TryExecuteEventAtCurrentIndex();
     }
 
-    private void ExecuteEventAtCurrentIndex()
+    private void TryExecuteEventAtCurrentIndex()
     {
         if (m_CurrentEventIndex < eventSequence.Count) {
-            eventSequence[m_CurrentEventIndex].Execute();
+            GameplayEvent gameplayEvent = eventSequence[m_CurrentEventIndex];
+            // we will continue sequence as soon as this event ends
+            // register end callback now in case Execute immediately ends
+            gameplayEvent.end += OnEventEnd;
+            // actually execute the next event
+            gameplayEvent.Execute();
         } else {
             Debug.LogFormat(this, "Event sequence {0} over after {1} events", this, eventSequence.Count);
         }
+    }
+
+    // Callback for individual event ending in the sequence
+    private void OnEventEnd()
+    {
+        // unsubscribe now to avoid duplicate End signal on this event if this sequence is replayed (one-time event)
+        GameplayEvent gameplayEvent = eventSequence[m_CurrentEventIndex];
+        gameplayEvent.end -= OnEventEnd;
+        
+        Continue();
     }
 }

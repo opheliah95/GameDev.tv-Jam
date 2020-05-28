@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityConstants;
 using UnityEngine;
 
@@ -14,5 +12,6 @@ public class UnlockSceneEvent : GameplayEvent
     public override void Execute()
     {
         CaseManager.Instance.UnlockScene(sceneType, sceneEnum);
+        End();
     }
 }
