@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using CommonsPattern;
 
-public class ReconstructionManager : MonoBehaviour
+public class ReconstructionManager : SingletonManager<ReconstructionManager>
 {
     [Tooltip("Items only exist in simulation, i.e. victim's last memory.")]
     [SerializeField]

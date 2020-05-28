@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour {
 
 	public void TriggerDialogue ()
 	{
-        FindObjectOfType<DialogueManager>().startDialogue(dialogues);
+        DialogueManager.Instance.startDialogue(dialogues);
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class DialogueTrigger : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            FindObjectOfType<DialogueManager>().EndDialogue();
+            DialogueManager.Instance.EndDialogue();
             FirstPersonController.isTalking = false;
         }
     }

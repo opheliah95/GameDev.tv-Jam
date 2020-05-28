@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class DialogueManager : MonoBehaviour {
+
+using CommonsPattern;
+
+public class DialogueManager : SingletonManager<DialogueManager> {
 
 	// Events
 	public delegate void DialogueEndedEventHandler();

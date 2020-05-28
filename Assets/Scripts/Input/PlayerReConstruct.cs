@@ -18,13 +18,13 @@ public class PlayerReConstruct : MonoBehaviour
 
     private void StartReconstruct()
     {
-        FindObjectOfType<ReconstructionManager>().ShowReconstruction();
+        ReconstructionManager.Instance.ShowReconstruction();
         inReconstruction = true;
     }
 
     private void ExitReconstruct()
     {
-        FindObjectOfType<ReconstructionManager>().ExitReconstruction();
+        ReconstructionManager.Instance.ExitReconstruction();
         inReconstruction = false;
     }
 }
