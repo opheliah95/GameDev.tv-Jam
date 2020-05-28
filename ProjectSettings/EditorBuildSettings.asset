@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Art/Shader_Oph.unity
     guid: 4b77802a2ea2d724b94a9f0f2875b478
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level0_Forest.unity
+    guid: a45503e7f39e3e64a986867e2c581ce5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 57fe8fc94229ae54cb579f70b1c187a5,
       type: 2}
