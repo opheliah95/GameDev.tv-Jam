@@ -12,7 +12,7 @@ public class CaseData : ScriptableObject
     public struct SceneData
     {
         [Tooltip("Scene ID")]
-        public ScenesEnum sceneID;
+        public ScenesEnum sceneEnum;
 
         [Tooltip("Readable scene name")]
         public string name;

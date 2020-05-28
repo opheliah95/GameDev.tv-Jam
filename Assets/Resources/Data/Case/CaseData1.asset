@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Case Title
   realSceneDataArray:
-  - sceneID: 1
+  - sceneEnum: 1
     name: Forest
     unlockedOnStart: 1
-  - sceneID: 2
+  - sceneEnum: 2
     name: Hotel
     unlockedOnStart: 0
-  - sceneID: 2
+  - sceneEnum: 2
     name: Bedroom
     unlockedOnStart: 0
   reconstructionSceneDataArray:
-  - sceneID: 3
+  - sceneEnum: 3
     name: Hotel_Past
     unlockedOnStart: 0
-  - sceneID: 3
+  - sceneEnum: 3
     name: Hotel_Present
     unlockedOnStart: 0
