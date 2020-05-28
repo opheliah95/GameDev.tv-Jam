@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [Tooltip("Dialogue sequence played on interaction")]
-    public List<Dialogue> dialogues;
+    [Tooltip("Gameplay event to execute on Interact")]
+    public GameplayEvent targetEvent;
 
     public void Interact()
     {
-        DialogueManager.Instance.startDialogue(dialogues);
+        targetEvent.Execute();
     }
 
 }
