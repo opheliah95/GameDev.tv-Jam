@@ -9,6 +9,17 @@ public class DialogueEvent : GameplayEvent
 
     public override void Execute()
     {
+        // register callback on dialogue end so we can notify this event as ended
+        DialogueManager.onDialogueEnded += OnDialogueEnded;
+        
         DialogueManager.Instance.startDialogue(dialogues);
+    }
+
+    private void OnDialogueEnded()
+    {
+        // unsubscribe now to avoid duplicate End signal on next dialogue (one-time event)
+        DialogueManager.onDialogueEnded -= OnDialogueEnded;
+        
+        End();
     }
 }

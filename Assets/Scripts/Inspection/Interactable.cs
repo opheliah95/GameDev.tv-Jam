@@ -9,6 +9,8 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        Debug.AssertFormat(targetEvent != null, this, "targetEvent not set on Interactable {0}", this);
+        
         targetEvent.Execute();
     }
 
