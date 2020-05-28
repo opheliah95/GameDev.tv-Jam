@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityConstants;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+using UnityConstants;
 
 public class MainMenu : MonoBehaviour
 {
