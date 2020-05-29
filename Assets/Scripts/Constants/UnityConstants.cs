@@ -138,9 +138,9 @@ namespace UnityConstants
     public static class Scenes
     {
         /// <summary>
-        /// ID of scene 'MainMenu'.
+        /// ID of scene 'MainMenu_WithEffects'.
         /// </summary>
-        public const int MainMenu = 0;
+        public const int MainMenu_WithEffects = 0;
         /// <summary>
         /// ID of scene 'Level0_Forest'.
         /// </summary>
@@ -150,27 +150,42 @@ namespace UnityConstants
         /// </summary>
         public const int Level0_HotelRoom_Present = 2;
         /// <summary>
+        /// ID of scene 'Level0_Bedroom_Present'.
+        /// </summary>
+        public const int Level0_Bedroom_Present = 3;
+        /// <summary>
+        /// ID of scene 'Level0_Bedroom_Past'.
+        /// </summary>
+        public const int Level0_Bedroom_Past = 4;
+        /// <summary>
         /// ID of scene 'Shader_Oph'.
         /// </summary>
-        public const int Shader_Oph = 3;
+        public const int Shader_Oph = 5;
         /// <summary>
         /// ID of scene 'TestScene_Long'.
         /// </summary>
-        public const int TestScene_Long = 4;
+        public const int TestScene_Long = 6;
         /// <summary>
         /// ID of scene 'TestScene_Long2'.
         /// </summary>
-        public const int TestScene_Long2 = 5;
+        public const int TestScene_Long2 = 7;
+        /// <summary>
+        /// ID of scene 'MainMenu'.
+        /// </summary>
+        public const int MainMenu = 8;
     }
 
     public enum ScenesEnum
     {
-        MainMenu = 0,
+        MainMenu_WithEffects = 0,
         Level0_Forest = 1,
         Level0_HotelRoom_Present = 2,
-        Shader_Oph = 3,
-        TestScene_Long = 4,
-        TestScene_Long2 = 5,
+        Level0_Bedroom_Present = 3,
+        Level0_Bedroom_Past = 4,
+        Shader_Oph = 5,
+        TestScene_Long = 6,
+        TestScene_Long2 = 7,
+        MainMenu = 8,
     }
 
     public static class Axes
