@@ -6,11 +6,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 using UnityConstants;
+using UnityEngine.Serialization;
 
 public class FirstPersonInteractor : MonoBehaviour
 {
     /* External references */
-    
+
     [Tooltip("Mouse image to use when not hovering mouse over interactable object")]
     public Image defaultCursorImage;
     
@@ -25,8 +26,24 @@ public class FirstPersonInteractor : MonoBehaviour
     
     /* Parameters */
     
+    [Tooltip("Mouse texture to use when not hovering mouse over interactable object (Free cursor only)")]
+    public Texture2D defaultCursor;
+
+    [SerializeField, Tooltip("Hotspot for default cursor")]
+    protected Vector2 defaultHotspot;
+
+    [Tooltip("Mouse texture to use when hovering mouse over interactable object (Free cursor only)")]
+    public Texture2D hoverCursor;
+
+    [SerializeField, Tooltip("Hotspot for hover cursor")]
+    protected Vector2 hoverHotspot;
+    
+    [SerializeField, Tooltip("Cursor mode to use when changing cursor. Use ForceSoftware if, when moving/looking away" +
+                             "from an interactable hover area using keyboard/gamepad motion only, the cursor doesn't refresh.")]
+    private CursorMode cursorMode = CursorMode.Auto;
+    
     [SerializeField, Tooltip("Max distance (m) over which the character can interact with an object")]
-    private float m_MaxInteractDistance = 2f;
+    private float maxInteractDistance = 2f;
     
     
     /* State vars */
@@ -45,6 +62,7 @@ public class FirstPersonInteractor : MonoBehaviour
     
     /// Object currently interacted with
     private Interactable m_ActiveInteractable;
+
 
     private void Awake()
     {
@@ -68,7 +86,7 @@ public class FirstPersonInteractor : MonoBehaviour
         
         ResetCursor();
     }
-
+    
     private void OnEnable()
     {
         DialogueManager.onDialogueEnded += OnDialogueEnded;
@@ -87,14 +105,11 @@ public class FirstPersonInteractor : MonoBehaviour
         {
             Interactable interactable = null;
             
-            // OLD: actual cursor position
-//            Ray mouseRay = firstPersonCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            // NEW: always center position (should be the same when cursor is Locked)
-            Ray mouseRay = firstPersonCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            RaycastHit hitInfo;
-            
+            // use actual cursor position, since in unlocked cursor mode it's not always the screen center
+            Ray mouseRay = firstPersonCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
             // detect Interactable objects with rays blocked by various obstacles
-            if (Physics.Raycast(mouseRay, out hitInfo, m_MaxInteractDistance, 
+            if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, maxInteractDistance, 
                 Layers.InteractableMask | Layers.EnvironmentMask))
             {
                 // don't fail if there is no component, as it must simply be an Environment object
@@ -116,6 +131,7 @@ public class FirstPersonInteractor : MonoBehaviour
             }
         }
     }
+    
 
     private void SetIsInteracting(bool value)
     {
@@ -174,16 +190,43 @@ public class FirstPersonInteractor : MonoBehaviour
     
     private void ResetCursor()
     {
+        // set cursor image for both modes (in practice, cursor will teleport to center on lock,
+        // so it's less meaningful than updating the cursor image on next frame, and only for the current mode,
+        // but it is more convenient to just update everything at once)
+        
+        // set Free cursor texture
+        Cursor.SetCursor(defaultCursor, defaultHotspot, cursorMode);
+        
         // set Locked cursor image
         defaultCursorImage.enabled = true;
         hoverCursorImage.enabled = false;
+        
+        OnCursorChange();
     }
-
+    
+    
     private void SetHoverCursor()
     {
+        // set Free cursor texture
+        Cursor.SetCursor(hoverCursor, hoverHotspot, cursorMode);
+        
         // set Locked cursor image
         defaultCursorImage.enabled = false;
         hoverCursorImage.enabled = true;
+        
+        OnCursorChange();
+    }
+
+    private void OnCursorChange()
+    {
+        if (cursorMode == CursorMode.Auto)
+        {
+            // when using Hardware cursor, cursor will not refresh when leaving hover area
+            // without moving the mouse (e.g. by moving with WASD only), so we need to force refresh
+            // however, this will cause a blink so we only do this if needed
+            Cursor.visible = false;
+            Cursor.visible = true;
+        }
     }
     
     private void OnInspect(InputValue value)
@@ -202,7 +245,7 @@ public class FirstPersonInteractor : MonoBehaviour
             m_ActiveInteractable.Interact();
         }
     }
-    
+
     private void OnDialogueEnded()
     {
         // for now, we only leave interacting state when dialogue is over

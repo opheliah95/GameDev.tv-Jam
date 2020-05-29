@@ -3068,6 +3068,11 @@ PrefabInstance:
       objectReference: {fileID: 507829998}
     - target: {fileID: 1434346050826542017, guid: 09c4198d4412f1f40b493ab72a8f2070,
         type: 3}
+      propertyPath: pointerCanvas
+      value: 
+      objectReference: {fileID: 1496253276}
+    - target: {fileID: 1434346050826542017, guid: 09c4198d4412f1f40b493ab72a8f2070,
+        type: 3}
       propertyPath: defaultCursorImage
       value: 
       objectReference: {fileID: 1629281183}
@@ -3136,6 +3141,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2660603384332830770, guid: 09c4198d4412f1f40b493ab72a8f2070,
+        type: 3}
+      propertyPath: pointerCanvas
+      value: 
+      objectReference: {fileID: 1496253276}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09c4198d4412f1f40b493ab72a8f2070, type: 3}
 --- !u!1001 &5183518344634721634

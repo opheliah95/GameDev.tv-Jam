@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
-using UnityConstants;
 
 public class InGameMenu : MonoBehaviour
 {
+    /* Events */
+    
+    public static event Action menuOpened;
+    public static event Action menuClosed;
+
     /* Child references */
 
     [Tooltip("Canvas root")]
@@ -51,11 +54,25 @@ public class InGameMenu : MonoBehaviour
         // refresh both sides in case content changed since last time it was opened (or since Start showing Brief page),
         // whether opened or not
         caseFile.RefreshBothSides();
+
+        OnMenuOpened();
     }
 
     public void Close()
     {
         m_Open = false;
         canvas.gameObject.SetActive(false);
+
+        OnMenuClosed();
+    }
+
+    private static void OnMenuOpened()
+    {
+        menuOpened?.Invoke();
+    }
+
+    private static void OnMenuClosed()
+    {
+        menuClosed?.Invoke();
     }
 }
