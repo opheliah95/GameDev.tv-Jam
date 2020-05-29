@@ -20,13 +20,13 @@ MonoBehaviour:
   - sceneEnum: 2
     name: Hotel
     unlockedOnStart: 0
-  - sceneEnum: 2
+  - sceneEnum: 4
     name: Bedroom
     unlockedOnStart: 0
   reconstructionSceneDataArray:
   - sceneEnum: 3
     name: Hotel_Past
     unlockedOnStart: 0
-  - sceneEnum: 3
-    name: Hotel_Present
+  - sceneEnum: 5
+    name: Bedroom_Past
     unlockedOnStart: 0
