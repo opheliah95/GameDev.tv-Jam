@@ -9,6 +9,30 @@ public class FirstPersonController : MonoBehaviour
     public Canvas pointerCanvas;
 
     
+    /* Child references */
+    
+    [SerializeField, Tooltip("Player camera")]
+    private Camera playerCamera = null;
+    
+    
+    /* Parameters */
+    
+    [SerializeField, Tooltip("How much the Free cursor must be close to the screen's left/right to trigger yaw rotation (ratio of screen width)")]
+    private float freeCursorRotateScreenRatioMarginX = 0.2f;
+
+    [SerializeField, Tooltip("How fast the the camera rotates on yaw when the cursor is completely on the left/right edge of the screen (in deg/s)")]
+    private float freeCursorMaxRotateYawSpeed = 90f;
+
+    [SerializeField, Tooltip("How much the Free cursor must be close to the screen's up/down to trigger pitch rotation (ratio of screen height)")]
+    private float freeCursorRotateScreenRatioMarginY = 0.2f;
+
+    [SerializeField, Tooltip("How fast the the camera rotates on pitch when the cursor is completely on the left/right edge of the screen (in deg/s)")]
+    private float freeCursorMaxRotatePitchSpeed = 90f;
+
+    [SerializeField, Tooltip("Absolute margin to ignore mouse near the screen edges to avoid rotation stuck when mouse leaves screen (px)")]
+    private float freeCursorScreenEdgeDeadMargin = 10f;
+    
+    
     /* State vars */
     
     /// Is the cursor is lock mode?
@@ -25,20 +49,15 @@ public class FirstPersonController : MonoBehaviour
     float xRotation = 0;
     public static bool isTalking = false;
 
-    [SerializeField, Tooltip("Player camera")]
-    Camera playerCamera = null;
 
-    [SerializeField]
-    Vector2 move = Vector2.zero;
+    /// Last move intention
+    private Vector2 move = Vector2.zero;
 
-    [SerializeField]
-    Vector2 cameraRotation;
+    /// Accumulated mouse movement to rotate camera
+    private Vector2 cameraMouseRotation = Vector2.zero;
 
-    [SerializeField]
-    bool isRunning;
-
-    [SerializeField]
-    float tempSpeed;
+    /// Is the character running?
+    private bool isRunning;
 
     private void Awake()
     {
@@ -87,7 +106,7 @@ public class FirstPersonController : MonoBehaviour
     {
         float xMovement = move.x;
         float yMovement = move.y;
-        tempSpeed = isRunning ? runSpeed : walkSpeed;
+        float tempSpeed = isRunning ? runSpeed : walkSpeed;
 
         controller.Move(trans.right * xMovement * tempSpeed * Time.deltaTime);
         controller.Move(trans.forward * yMovement * tempSpeed * Time.deltaTime);
@@ -95,23 +114,87 @@ public class FirstPersonController : MonoBehaviour
 
     void playerLook()
     {
+        // initialize yaw and pitch
+        float yRotationDelta = 0f;
+        float xRotationDelta = 0f;
+        
         if (m_IsCursorLocked)
         {
-            float mouseX = cameraRotation.x * mouseSensitivity * Time.deltaTime;
-            float mouseY = cameraRotation.y * mouseSensitivity * Time.deltaTime;
-            
-            // consume rotation
-            cameraRotation = Vector2.zero;
-
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90, 90);
-            playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            trans.Rotate(Vector3.up * mouseX);
+            // use accumulated rotation motion (we'll consume it at the bottom of this method so it's also
+            // cleared if cursor is unlocked)
+            yRotationDelta = cameraMouseRotation.x * mouseSensitivity * Time.deltaTime;
+            xRotationDelta = cameraMouseRotation.y * mouseSensitivity * Time.deltaTime;
         }
         else
         {
-            
+            // Viewport is clamped, so check if mouse is inside game window with mouse position directly.
+            // Unfortunately, mouse position will only be tracked one frame when leaving the screen
+            //  sometimes, the first position outside the screen won't be caught at all,
+            //  and the mouse position will be stuck, causing uninterrupted motion while mouse is outside window.
+            // Therefore, I add a small margin near the exact edge of the screen where I will ignore rotation
+            // due to mouse position.
+            // This margin must be small, so we don't care adapting the boundaries of the Lerp to max rotate speed
+            // In fullscreen, this is not a problem so ignore the margin.
+            // Unity 2019 Editor seems to be considered fullscreen, so for the editor just enable the margin
+#if UNITY_EDITOR
+            float deadMargin = freeCursorScreenEdgeDeadMargin;
+#else
+            float deadMargin = Screen.fullScreen ? 0f : freeCursorScreenEdgeDeadMargin;
+#endif
+            Vector2 mousePosition = Mouse.current.position.ReadValue();
+            if (mousePosition.x >= deadMargin && mousePosition.x <= Screen.width - deadMargin &&
+                mousePosition.y >= deadMargin && mousePosition.y <= Screen.height - deadMargin)
+            {
+                // rotate when mouse is near the screen edge, a la StarCraft
+                // (I would have preferred a Confined cursor where extra delta farther than the edge move,
+                // but Confined doesn't work correctly, at least in Linux builds)
+                Vector3 viewportPoint = playerCamera.ScreenToViewportPoint(mousePosition);
+
+                // on left and side edges, change yaw
+                float ratioMarginX = Mathf.Clamp(freeCursorRotateScreenRatioMarginX, 0.01f, 0.5f);
+                if (viewportPoint.x < ratioMarginX)
+                {
+                    yRotationDelta = - Mathf.Lerp(freeCursorMaxRotateYawSpeed, 0f, viewportPoint.x / ratioMarginX);
+                }
+                else
+                {
+                    float relativeMousePosX = viewportPoint.x - (1f - ratioMarginX);
+                    if (relativeMousePosX > 0)
+                    {
+                        yRotationDelta = Mathf.Lerp(0f, freeCursorMaxRotateYawSpeed, relativeMousePosX / ratioMarginX);
+                    }
+                }
+                yRotationDelta *= Time.deltaTime;
+                
+                // on top and bottom edges, change pitch
+                float ratioMarginY = Mathf.Clamp(freeCursorRotateScreenRatioMarginY, 0.01f, 0.5f);
+                if (viewportPoint.y < ratioMarginY)
+                {
+                    xRotationDelta = - Mathf.Lerp(freeCursorMaxRotatePitchSpeed, 0f, viewportPoint.y / ratioMarginY);
+                }
+                else
+                {
+                    float relativeMousePosY = viewportPoint.y - (1f - ratioMarginY);
+                    if (relativeMousePosY > 0)
+                    {
+                        xRotationDelta = Mathf.Lerp(0f, freeCursorMaxRotatePitchSpeed, relativeMousePosY / ratioMarginY);
+                    }
+                }
+                xRotationDelta *= Time.deltaTime;
+            }
         }
+        
+        // consume/clear rotation accumulated over the last frames
+        cameraMouseRotation = Vector2.zero;
+        
+        // cumulate pitch
+        xRotation -= xRotationDelta;
+        xRotation = Mathf.Clamp(xRotation, -90, 90);
+
+        // apply yaw on body, but pitch on camera head
+        trans.Rotate(Vector3.up * yRotationDelta);
+        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
     }
     
     
@@ -164,12 +247,12 @@ public class FirstPersonController : MonoBehaviour
     }
     
     
-    /* Input Action callbacks */
+    /* put Action callbacks */
 
     private void OnLook(InputValue value)
     {
-        // accumulate rotation
-        cameraRotation += value.Get<Vector2>();
+        // accumulate rotation (may be called multiple times between Updates)
+        cameraMouseRotation += value.Get<Vector2>();
     }
 
     private void OnMovement(InputValue value)
@@ -185,8 +268,8 @@ public class FirstPersonController : MonoBehaviour
     
     private void OnToggleCursorLock(InputValue value)
     {
-        bool test = value.isPressed;
+        Debug.Assert(value.isPressed, "OnToggleCursorLock received value not isPressed, make sure not to set " +
+                                      "ToggleCursorLock interaction to Press and Release so it only detects press.");
         ToggleCursorLock();
-        Debug.LogFormat("Toggle Cursor Lock: {0}", test);
     }
 }

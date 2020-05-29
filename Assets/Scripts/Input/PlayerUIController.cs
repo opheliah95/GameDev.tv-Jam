@@ -19,6 +19,17 @@ public class PlayerUIController : MonoBehaviour
         }
     }
 
+    private void OnClick(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            if (DialogueManager.sentenceEnd)
+            {
+                DialogueManager.Instance.DisplayNextSentence();
+            }
+        }
+    }
+
     private void OnToggleInGameMenu()
     {
         inGameMenu.Toggle();
