@@ -8,6 +8,8 @@ public class PlayerUIController : MonoBehaviour
     [Tooltip("In Game Menu")]
     public InGameMenu inGameMenu;
     
+    /* Input Action callbacks */
+    
     private void OnSubmit(InputValue value)
     {
         if (value.isPressed)
@@ -30,13 +32,8 @@ public class PlayerUIController : MonoBehaviour
         }
     }
 
-    private void OnToggleInGameMenu()
+    private void OnToggleInGameMenu(InputValue value)
     {
         inGameMenu.Toggle();
-    }
-    
-    private void OnShowOptions()
-    {
-        
     }
 }

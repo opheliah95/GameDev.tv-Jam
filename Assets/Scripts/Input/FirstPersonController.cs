@@ -269,7 +269,7 @@ public class FirstPersonController : MonoBehaviour
     private void OnToggleCursorLock(InputValue value)
     {
         Debug.Assert(value.isPressed, "OnToggleCursorLock received value not isPressed, make sure not to set " +
-                                      "ToggleCursorLock interaction to Press and Release so it only detects press.");
+                                      "ToggleCursorLock interaction to Pass Through nor Press and Release so it only detects press.");
         ToggleCursorLock();
     }
 }

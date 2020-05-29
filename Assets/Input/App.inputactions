@@ -1,0 +1,66 @@
+{
+    "name": "App",
+    "maps": [
+        {
+            "name": "Global",
+            "id": "94cc21e5-c4d3-4449-a812-f491b4b0d6ce",
+            "actions": [
+                {
+                    "name": "ToggleFullscreen",
+                    "type": "Button",
+                    "id": "5b8282d5-2ff5-4b59-9d49-323b99c6f3e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7254cdc0-8592-43c8-91e1-7fc552495dec",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleFullscreen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Alt+Enter",
+                    "id": "e6daae99-ddcb-454e-9e84-2c00c9150448",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleFullscreen",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "17e03c34-7268-4f69-9b78-c485074cdf3d",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleFullscreen",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "ef69abc4-2572-425c-add8-0f6c963855af",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleFullscreen",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
