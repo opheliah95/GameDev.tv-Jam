@@ -43,15 +43,17 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 5d5d5492f0c6830a79c89d79385fb67f, type: 3}
-    totalSpriteSurfaceArea: 9582059
+    totalSpriteSurfaceArea: 9819539
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 8a9f4d500b2623c6280a5016291e1ec2, type: 3}
   - {fileID: 21300000, guid: 852a4da0f6267994ab9dc82ebc334492, type: 3}
+  - {fileID: 21300000, guid: 7e5064e170d5a3244a5bdc49cd1dd5ba, type: 3}
   - {fileID: 21300000, guid: db9bccf1b151792459e51adf69685451, type: 3}
   - {fileID: 21300000, guid: 07190d9263d2b6804812811fff2713d9, type: 3}
   - {fileID: 21300000, guid: 83b27c03b82b4916cbfa4b15ff984074, type: 3}
+  - {fileID: 21300000, guid: e93fd623a8633b047a73e47897eb1203, type: 3}
   - {fileID: 21300000, guid: 4fe6a0f3cd04ccaf58c0fa8c52bcb233, type: 3}
   - {fileID: 21300000, guid: d3573224f5bd04728b747b340d883007, type: 3}
   - {fileID: 21300000, guid: cc4f39e4f77175a86808a6e7585b24d1, type: 3}
@@ -65,6 +67,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ef3fdfb9103ba7dc2824be6fe160120c, type: 3}
   - {fileID: 21300000, guid: 8dfdf67a396550c4f9d1096d65c59a42, type: 3}
   - {fileID: 21300000, guid: e9ab7aba9d6b86e4fbd6f48c9114ad47, type: 3}
+  - {fileID: 21300000, guid: e11a9feae57da3445b0a8c778513a866, type: 3}
   - {fileID: 21300000, guid: 7ef7734bbd03dcca29e889009a96148c, type: 3}
   - {fileID: 21300000, guid: cf86c3bbafbe3514fba616d5056b2436, type: 3}
   - {fileID: 21300000, guid: ffa0a12c6b4aaac318df4daa4544b871, type: 3}
@@ -76,9 +79,11 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - SPR_UI_CluesTab_Left
   - SPR_button_hovered
+  - SPR_scene_frame01
   - SPR_Tag_unlit
   - SPR_UI_SuspectsPage_Left
   - SPR_UI_SuspectsTab_Left
+  - SPR_scene_frame_unlit03
   - SPR_UI_NonePage_Left
   - SPR_UI_ScenesTab_Left
   - SPR_UI_VictimPage_Left
@@ -92,6 +97,7 @@ SpriteAtlas:
   - SPR_UI_Binder
   - SPR_UI_MousePointer_64x64
   - SPR_UI_HandPointer_64x64
+  - SPR_scene_frame02
   - SPR_UI_BinderRings
   - SPR_Page
   - SPR_UI_CluesPage_Left

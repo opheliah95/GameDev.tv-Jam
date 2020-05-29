@@ -69,6 +69,10 @@ namespace UnityConstants
         /// </summary>
         public const int Environment = 8;
         /// <summary>
+        /// Index of layer 'IgnoreLight'.
+        /// </summary>
+        public const int IgnoreLight = 9;
+        /// <summary>
         /// Index of layer 'PlayerCharacter'.
         /// </summary>
         public const int PlayerCharacter = 12;
@@ -110,6 +114,10 @@ namespace UnityConstants
         /// </summary>
         public const int EnvironmentMask = 1 << 8;
         /// <summary>
+        /// Bitmask of layer 'IgnoreLight'.
+        /// </summary>
+        public const int IgnoreLightMask = 1 << 9;
+        /// <summary>
         /// Bitmask of layer 'PlayerCharacter'.
         /// </summary>
         public const int PlayerCharacterMask = 1 << 12;
@@ -134,25 +142,35 @@ namespace UnityConstants
         /// </summary>
         public const int MainMenu = 0;
         /// <summary>
-        /// ID of scene 'TestScene_Long'.
+        /// ID of scene 'Level0_Forest'.
         /// </summary>
-        public const int TestScene_Long = 1;
+        public const int Level0_Forest = 1;
         /// <summary>
-        /// ID of scene 'TestScene_Long2'.
+        /// ID of scene 'Level0_HotelRoom_Present'.
         /// </summary>
-        public const int TestScene_Long2 = 2;
+        public const int Level0_HotelRoom_Present = 2;
         /// <summary>
         /// ID of scene 'Shader_Oph'.
         /// </summary>
         public const int Shader_Oph = 3;
+        /// <summary>
+        /// ID of scene 'TestScene_Long'.
+        /// </summary>
+        public const int TestScene_Long = 4;
+        /// <summary>
+        /// ID of scene 'TestScene_Long2'.
+        /// </summary>
+        public const int TestScene_Long2 = 5;
     }
 
     public enum ScenesEnum
     {
         MainMenu = 0,
-        TestScene_Long = 1,
-        TestScene_Long2 = 2,
+        Level0_Forest = 1,
+        Level0_HotelRoom_Present = 2,
         Shader_Oph = 3,
+        TestScene_Long = 4,
+        TestScene_Long2 = 5,
     }
 
     public static class Axes
