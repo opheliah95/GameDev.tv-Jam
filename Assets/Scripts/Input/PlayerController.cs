@@ -57,6 +57,14 @@ public class @Player : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleCursorLock"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf9c156b-3425-4e08-97a0-355e046edf15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -288,6 +296,28 @@ public class @Player : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleInGameMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87671748-5876-442f-8e24-a73708b4039f"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleCursorLock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3033009-dac4-4a2a-a5bc-8878fb970fc6"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleCursorLock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -820,6 +850,7 @@ public class @Player : IInputActionCollection, IDisposable
         m_Gameplay_Inspect = m_Gameplay.FindAction("Inspect", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_ToggleInGameMenu = m_Gameplay.FindAction("ToggleInGameMenu", throwIfNotFound: true);
+        m_Gameplay_ToggleCursorLock = m_Gameplay.FindAction("ToggleCursorLock", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -886,6 +917,7 @@ public class @Player : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Inspect;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_ToggleInGameMenu;
+    private readonly InputAction m_Gameplay_ToggleCursorLock;
     public struct GameplayActions
     {
         private @Player m_Wrapper;
@@ -895,6 +927,7 @@ public class @Player : IInputActionCollection, IDisposable
         public InputAction @Inspect => m_Wrapper.m_Gameplay_Inspect;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @ToggleInGameMenu => m_Wrapper.m_Gameplay_ToggleInGameMenu;
+        public InputAction @ToggleCursorLock => m_Wrapper.m_Gameplay_ToggleCursorLock;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -919,6 +952,9 @@ public class @Player : IInputActionCollection, IDisposable
                 @ToggleInGameMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
                 @ToggleInGameMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
                 @ToggleInGameMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
+                @ToggleCursorLock.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleCursorLock;
+                @ToggleCursorLock.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleCursorLock;
+                @ToggleCursorLock.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleCursorLock;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -938,6 +974,9 @@ public class @Player : IInputActionCollection, IDisposable
                 @ToggleInGameMenu.started += instance.OnToggleInGameMenu;
                 @ToggleInGameMenu.performed += instance.OnToggleInGameMenu;
                 @ToggleInGameMenu.canceled += instance.OnToggleInGameMenu;
+                @ToggleCursorLock.started += instance.OnToggleCursorLock;
+                @ToggleCursorLock.performed += instance.OnToggleCursorLock;
+                @ToggleCursorLock.canceled += instance.OnToggleCursorLock;
             }
         }
     }
@@ -1054,6 +1093,7 @@ public class @Player : IInputActionCollection, IDisposable
         void OnInspect(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnToggleInGameMenu(InputAction.CallbackContext context);
+        void OnToggleCursorLock(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

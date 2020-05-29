@@ -437,10 +437,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c355f441ad5588ee6a18e29be4b840a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointerCanvas: {fileID: 0}
   defaultCursorImage: {fileID: 0}
   hoverCursorImage: {fileID: 0}
   firstPersonCamera: {fileID: 2660603383783624705}
-  m_MaxInteractDistance: 4
+  defaultCursor: {fileID: 2800000, guid: 6743e8d7e3430064e8ab3dcb796ed438, type: 3}
+  defaultHotspot: {x: 0, y: 0}
+  hoverCursor: {fileID: 2800000, guid: 525046af68db89c46bb0a9d19f464f36, type: 3}
+  hoverHotspot: {x: 22, y: 0}
+  cursorMode: 0
+  maxInteractDistance: 4
 --- !u!114 &1417588806
 MonoBehaviour:
   m_ObjectHideFlags: 0
