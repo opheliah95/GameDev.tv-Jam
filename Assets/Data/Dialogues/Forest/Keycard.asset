@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25aa0f83924e6dd4e88d8a593a3e7026, type: 3}
-  m_Name: Victim_Reality
+  m_Name: Keycard
   m_EditorClassIdentifier: 
   speakerName: Player
   sentences:
-  - 'John Doe was dead, body highly decomposed
-
-'
+  - A keycard to a nearby hotel
   characterImage: {fileID: 0}
