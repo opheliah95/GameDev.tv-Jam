@@ -293,14 +293,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedfd15ff21817843b3211c8fa6dc460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointerCanvas: {fileID: 0}
+  playerCamera: {fileID: 2660603383783624705}
+  freeCursorRotateScreenRatioMarginX: 0.3
+  freeCursorMaxRotateYawSpeed: 90
+  freeCursorRotateScreenRatioMarginY: 0.3
+  freeCursorMaxRotatePitchSpeed: 90
+  freeCursorScreenEdgeDeadMargin: 15
   walkSpeed: 10
   runSpeed: 20
   mouseSensitivity: 100
-  playerCamera: {fileID: 2660603383783624705}
-  move: {x: 0, y: 0}
-  cameraRotation: {x: 0, y: 0}
-  isRunning: 0
-  tempSpeed: 0
 --- !u!114 &2660603384332830772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,7 +439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c355f441ad5588ee6a18e29be4b840a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointerCanvas: {fileID: 0}
   defaultCursorImage: {fileID: 0}
   hoverCursorImage: {fileID: 0}
   firstPersonCamera: {fileID: 2660603383783624705}
