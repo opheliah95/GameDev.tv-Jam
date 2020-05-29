@@ -17,6 +17,7 @@ public class InGameMenu : MonoBehaviour
     
     /* State */
 
+    /// Is the in-game menu open?
     private bool m_Open = false;
 
     private void Start()
@@ -46,6 +47,10 @@ public class InGameMenu : MonoBehaviour
         {
             caseFile.Open();
         }
+        
+        // refresh both sides in case content changed since last time it was opened (or since Start showing Brief page),
+        // whether opened or not
+        caseFile.RefreshBothSides();
     }
 
     public void Close()
