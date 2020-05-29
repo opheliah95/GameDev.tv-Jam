@@ -85,9 +85,20 @@ public class CaseFileSide : MonoBehaviour
     }
     
     /// Switch to page by index, moving page from another side if needed.
-    /// Main entry function for case file page navigation, used by tab buttons.
+    /// Callback for case file page navigation, used by tab buttons.
     public void SwitchToPage(int pageIndex)
     {
         caseFile.SwitchSideToPage(this, pageIndex);
+    }
+    
+    /// Refresh page content. Call when case file is opened, in case content changed on page since last time.
+    public void RefreshCurrentPage(CaseFilePage[] pages)
+    {
+        Debug.AssertFormat(m_CurrentPageIndex < pages.Length, this,
+            "Side {0} has m_CurrentPageIndex {1}, but only {2} pages have been passed from CaseFile.",
+            this, m_CurrentPageIndex, pages.Length);
+        
+        CaseFilePage page = pages[m_CurrentPageIndex];
+        page.OnShow();
     }
 }

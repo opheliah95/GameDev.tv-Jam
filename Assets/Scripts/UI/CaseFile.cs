@@ -17,11 +17,15 @@ public class CaseFile : MonoBehaviour
     
     /* State */
 
+    /// Is the case file open itself under the in-game menu? (even if hidden because parent menu is closed)
     private bool m_Open = false;
     public bool IsOpen => m_Open;
 
-    private void Start()
+    private void Awake()
     {
+        // setup is done on Awake so we are sure that pages are ready during Open before side.RefreshCurrentPage
+        // even if CaseFile is deactivated in the editor, unlike Start, Awake is immediately called on SetActive(true)
+        
         // all pages should be on Pages_Left on start
         Debug.AssertFormat(sides.Length == 2, this, "sides has length {0}, expected 2", sides.Length);
         Debug.AssertFormat(sides[1].GetAllPages().Length == 0, sides[1], "Right Side has {0} child(ren), expected 0", sides[1].transform.childCount);
@@ -42,8 +46,16 @@ public class CaseFile : MonoBehaviour
     {
         m_Open = true;
         
-        // will call Start if activated for the first time
+        // will call Awake immediately if activated for the first time
         gameObject.SetActive(true);
+    }
+
+    public void RefreshBothSides()
+    {
+        foreach (CaseFileSide side in sides)
+        {
+            side.RefreshCurrentPage(pages);
+        }
     }
     
     public void Close()
