@@ -28,8 +28,8 @@ public class InGameMenu : SingletonManager<InGameMenu>
     /// Is the in-game menu open?
     private bool m_Open = false;
 
-    
-    private void Awake()
+
+    protected override void Init()
     {
         canvas = this.GetComponentOrFail<Canvas>();
     }
