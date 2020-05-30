@@ -255,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2660603384332830767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.11, y: -2.49, z: -9.22}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2660603383783624706}
@@ -293,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedfd15ff21817843b3211c8fa6dc460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointerCanvas: {fileID: 0}
   playerCamera: {fileID: 2660603383783624705}
   freeCursorRotateScreenRatioMarginX: 0.3
   freeCursorMaxRotateYawSpeed: 90
@@ -439,8 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c355f441ad5588ee6a18e29be4b840a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCursorImage: {fileID: 0}
-  hoverCursorImage: {fileID: 0}
   firstPersonCamera: {fileID: 2660603383783624705}
   defaultCursor: {fileID: 2800000, guid: 6743e8d7e3430064e8ab3dcb796ed438, type: 3}
   defaultHotspot: {x: 0, y: 0}
@@ -460,4 +457,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb590611699d6803cb1b893d2011df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGameMenu: {fileID: 0}
