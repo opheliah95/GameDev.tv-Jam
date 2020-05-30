@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(Scenes.TestScene_Long);
+        SceneLoader.Instance.UnloadMainMenuAndLoadLevelAsync();
     }
 
     public void ShowOptions()
@@ -21,4 +21,6 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    
+
 }
