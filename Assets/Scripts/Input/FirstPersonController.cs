@@ -3,12 +3,6 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
-    /* External references */
-    
-    [Tooltip("Canvas containing cursor image")]
-    public Canvas pointerCanvas;
-
-    
     /* Child references */
     
     [SerializeField, Tooltip("Player camera")]
@@ -217,13 +211,13 @@ public class FirstPersonController : MonoBehaviour
             // avoid flicker by hiding early
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            pointerCanvas.enabled = true;
+            CursorCanvas.Instance.SetCanvasEnable(true);
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            pointerCanvas.enabled = false;
+            CursorCanvas.Instance.SetCanvasEnable(false);
         }
     }
 

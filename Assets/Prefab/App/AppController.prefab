@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4091486833881496067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4091486833881496069}
+  - component: {fileID: 4091486833881496070}
+  m_Layer: 0
+  m_Name: AppController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4091486833881496069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091486833881496067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4091486833881496070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091486833881496067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f278042386e849df856775b0ab31c228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleFullscreenInputAction:
+    m_Name: Toggle Fullscreen Input
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 6a69ef59-3278-40eb-a113-94ffe34bc6c8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: e980df7d-ee39-4176-bd1a-2d08cd80d1c5
+      m_Path: <Keyboard>/f11
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle Fullscreen Input
+      m_Flags: 0
+    - m_Name: Alt+Enter
+      m_Id: 68754484-875a-4275-8539-d33ded78a381
+      m_Path: ButtonWithOneModifier
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle Fullscreen Input
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: a84c5bc1-5cc7-4c94-b9e5-f52c92981038
+      m_Path: <Keyboard>/alt
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle Fullscreen Input
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 264cf6c2-8b4e-45d7-ab79-97fc7b7a2c81
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle Fullscreen Input
+      m_Flags: 8
+    - m_Name: Alt+Enter
+      m_Id: fa623016-5ec2-4c19-bea8-11cb62ff961f
+      m_Path: ButtonWithOneModifier
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: f6f302fb-3dde-4e4d-a313-a92ecf677481
+      m_Path: <Keyboard>/alt
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 8
+    - m_Name: button
+      m_Id: c6f60aec-523d-48d5-ba72-03ced9245eff
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 8
+    - m_Name: Alt+Enter
+      m_Id: 16919bcc-7836-4416-96b2-9495dea24b4d
+      m_Path: ButtonWithOneModifier
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: c4523d30-eebb-4a08-bbfd-abb79bb7696c
+      m_Path: <Keyboard>/alt
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 0783e0de-20f9-42b9-86a6-3c914ca2eb37
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 8
+    - m_Name: Alt+Enter
+      m_Id: 0668082e-ed83-4c7a-84f3-f08639b6b952
+      m_Path: ButtonWithOneModifier
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: ccc06f11-e2c2-44fa-8ec2-ba19ff328191
+      m_Path: <Keyboard>/alt
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 8
+    - m_Name: button
+      m_Id: b563e577-aeef-4089-b92d-1f1b9a236210
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: ToggleFullscreen
+      m_Flags: 8

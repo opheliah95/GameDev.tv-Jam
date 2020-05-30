@@ -1,24 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using CommonsDebug;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
+using CommonsDebug;
 using UnityConstants;
-using UnityEngine.Serialization;
 
 public class FirstPersonInteractor : MonoBehaviour
 {
-    /* External references */
-
-    [Tooltip("Mouse image to use when not hovering mouse over interactable object")]
-    public Image defaultCursorImage;
-    
-    [Tooltip("Mouse image to use when hovering mouse over interactable object")]
-    public Image hoverCursorImage;
-    
-    
     /* Children references */
     
     public Camera firstPersonCamera;
@@ -64,12 +53,6 @@ public class FirstPersonInteractor : MonoBehaviour
     private Interactable m_ActiveInteractable;
 
 
-    private void Awake()
-    {
-        Debug.Assert(defaultCursorImage != null, "No defaultCursorImage defined", this);
-        Debug.Assert(hoverCursorImage != null, "No hoverCursorImage defined", this);
-    }
-    
     private void Start()
     {
         Setup();
@@ -197,9 +180,7 @@ public class FirstPersonInteractor : MonoBehaviour
         // set Free cursor texture
         Cursor.SetCursor(defaultCursor, defaultHotspot, cursorMode);
         
-        // set Locked cursor image
-        defaultCursorImage.enabled = true;
-        hoverCursorImage.enabled = false;
+        CursorCanvas.Instance.SetCursorImage(isHovering: false);
         
         OnCursorChange();
     }
@@ -210,9 +191,7 @@ public class FirstPersonInteractor : MonoBehaviour
         // set Free cursor texture
         Cursor.SetCursor(hoverCursor, hoverHotspot, cursorMode);
         
-        // set Locked cursor image
-        defaultCursorImage.enabled = false;
-        hoverCursorImage.enabled = true;
+        CursorCanvas.Instance.SetCursorImage(isHovering: true);
         
         OnCursorChange();
     }

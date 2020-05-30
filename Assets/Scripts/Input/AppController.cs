@@ -5,11 +5,29 @@ using UnityEngine.InputSystem;
 
 public class AppController : MonoBehaviour
 {
-    void OnToggleFullscreen(InputValue value)
-    {
-        Debug.Assert(value.isPressed, "OnToggleFullscreen received value not isPressed, make sure not to set " +
-                                      "ToggleFullscreen interaction to Pass Through nor Press and Release so it only detects press.");
+    /// PlayerInput is made for actual players and not Rewired-style "System Player"
+    /// They own devices and in our case, would reserve the keyboard, preventing the actual Player from using it
+    /// Therefore, we use a custom InputAction here and bind the perform event manually instead of using input messages.
+    [SerializeField, Tooltip("Input action to toggle fullscreen")]
+    private InputAction toggleFullscreenInputAction;
 
+    private void Awake()
+    {
+        toggleFullscreenInputAction.performed += OnToggleFullscreen;
+    }
+
+    private void OnEnable()
+    {
+        toggleFullscreenInputAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        toggleFullscreenInputAction.Disable();
+    }
+
+    private void OnToggleFullscreen(InputAction.CallbackContext context)
+    {
         Screen.fullScreen = !Screen.fullScreen;
         Debug.LogFormat("Toggled fullscreen: {0}", Screen.fullScreen);
     }
