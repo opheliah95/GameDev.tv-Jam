@@ -26,7 +26,7 @@ public class AppController : MonoBehaviour
         toggleFullscreenInputAction.Disable();
     }
 
-    private void OnToggleFullscreen(InputAction.CallbackContext context)
+    private void OnToggleFullscreen(InputAction.CallbackContext ctx)
     {
         Screen.fullScreen = !Screen.fullScreen;
         Debug.LogFormat("Toggled fullscreen: {0}", Screen.fullScreen);

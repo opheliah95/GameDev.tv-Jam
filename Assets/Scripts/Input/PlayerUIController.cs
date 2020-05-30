@@ -5,9 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerUIController : MonoBehaviour
 {
-    [Tooltip("In Game Menu")]
-    public InGameMenu inGameMenu;
-    
     /* Input Action callbacks */
     
     private void OnSubmit(InputValue value)
@@ -34,6 +31,6 @@ public class PlayerUIController : MonoBehaviour
 
     private void OnToggleInGameMenu(InputValue value)
     {
-        inGameMenu.Toggle();
+        InGameMenu.Instance.Toggle();
     }
 }
