@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using CommonsHelper;
 using CommonsPattern;
 
 public class InGameMenu : SingletonManager<InGameMenu>
@@ -12,10 +13,12 @@ public class InGameMenu : SingletonManager<InGameMenu>
     public static event Action menuOpened;
     public static event Action menuClosed;
 
+    
+    /* Sibling components */
+    private Canvas canvas;
+    
+    
     /* Child references */
-
-    [Tooltip("Canvas root")]
-    public Canvas canvas;
     
     [Tooltip("Case File root")]
     public CaseFile caseFile;
@@ -24,6 +27,12 @@ public class InGameMenu : SingletonManager<InGameMenu>
 
     /// Is the in-game menu open?
     private bool m_Open = false;
+
+    
+    private void Awake()
+    {
+        canvas = this.GetComponentOrFail<Canvas>();
+    }
 
     private void Start()
     {
