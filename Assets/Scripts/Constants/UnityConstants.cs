@@ -32,6 +32,10 @@ namespace UnityConstants
         /// Name of tag 'GameController'.
         /// </summary>
         public const string GameController = "GameController";
+        /// <summary>
+        /// Name of tag 'SpawnTransform'.
+        /// </summary>
+        public const string SpawnTransform = "SpawnTransform";
     }
 
     public static class SortingLayers
@@ -162,21 +166,29 @@ namespace UnityConstants
         /// </summary>
         public const int Level0_Bedroom_Past = 5;
         /// <summary>
+        /// ID of scene '_GlobalManagers'.
+        /// </summary>
+        public const int _GlobalManagers = 6;
+        /// <summary>
+        /// ID of scene '_InGameManagers'.
+        /// </summary>
+        public const int _InGameManagers = 7;
+        /// <summary>
         /// ID of scene 'Shader_Oph'.
         /// </summary>
-        public const int Shader_Oph = 6;
+        public const int Shader_Oph = 8;
         /// <summary>
         /// ID of scene 'TestScene_Long'.
         /// </summary>
-        public const int TestScene_Long = 7;
+        public const int TestScene_Long = 9;
         /// <summary>
         /// ID of scene 'TestScene_Long2'.
         /// </summary>
-        public const int TestScene_Long2 = 8;
+        public const int TestScene_Long2 = 10;
         /// <summary>
         /// ID of scene 'MainMenu'.
         /// </summary>
-        public const int MainMenu = 9;
+        public const int MainMenu = 11;
     }
 
     public enum ScenesEnum
@@ -187,10 +199,12 @@ namespace UnityConstants
         Level0_HotelRoom_Past = 3,
         Level0_Bedroom_Present = 4,
         Level0_Bedroom_Past = 5,
-        Shader_Oph = 6,
-        TestScene_Long = 7,
-        TestScene_Long2 = 8,
-        MainMenu = 9,
+        _GlobalManagers = 6,
+        _InGameManagers = 7,
+        Shader_Oph = 8,
+        TestScene_Long = 9,
+        TestScene_Long2 = 10,
+        MainMenu = 11,
     }
 
     public static class Axes

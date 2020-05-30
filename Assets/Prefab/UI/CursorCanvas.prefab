@@ -157,8 +157,9 @@ GameObject:
   - component: {fileID: 410009676789355424}
   - component: {fileID: 410009676789355425}
   - component: {fileID: 410009676789355430}
+  - component: {fileID: 6333311560052364655}
   m_Layer: 5
-  m_Name: CanvasCursor
+  m_Name: CursorCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,3 +229,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &6333311560052364655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410009676789355431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6124ff84f6b8c768ca719bc9a460e339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorImage: {fileID: 410009676121590626}
+  hoverCursorImage: {fileID: 410009676374609129}

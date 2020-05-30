@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level0_Bedroom_Past.unity
     guid: 63e629a5d0dce1a4b8a520b1ac448de4
   - enabled: 1
+    path: Assets/Scenes/_GlobalManagers.unity
+    guid: 0bdaa628b956a67d48ecba6dff4d2adc
+  - enabled: 1
+    path: Assets/Scenes/_InGameManagers.unity
+    guid: 4af5aded8303e3c83ad0298f9b7c9784
+  - enabled: 1
     path: Assets/Scenes/Art/Shader_Oph.unity
     guid: 4b77802a2ea2d724b94a9f0f2875b478
   - enabled: 1
