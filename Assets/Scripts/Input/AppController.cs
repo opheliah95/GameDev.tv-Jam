@@ -9,7 +9,7 @@ public class AppController : MonoBehaviour
     /// They own devices and in our case, would reserve the keyboard, preventing the actual Player from using it
     /// Therefore, we use a custom InputAction here and bind the perform event manually instead of using input messages.
     [SerializeField, Tooltip("Input action to toggle fullscreen")]
-    private InputAction toggleFullscreenInputAction;
+    private InputAction toggleFullscreenInputAction = new InputAction();
 
     private void Awake()
     {
