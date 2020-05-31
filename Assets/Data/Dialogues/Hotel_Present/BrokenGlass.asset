@@ -17,4 +17,4 @@ MonoBehaviour:
   - 'The glass is broken
 
 '
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 648d1df9162383d4487139b1653f321d, type: 3}

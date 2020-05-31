@@ -15,4 +15,4 @@ MonoBehaviour:
   speakerName: Player
   sentences:
   - Some size 9 male footprints, washed away by rain
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 648d1df9162383d4487139b1653f321d, type: 3}

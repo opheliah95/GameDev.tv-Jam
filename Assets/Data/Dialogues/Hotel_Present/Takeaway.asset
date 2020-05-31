@@ -16,4 +16,4 @@ MonoBehaviour:
   sentences:
   - She had takeaway from "Golden Dragon" resturant on Saturday
   - Resturant confirms collected at 6pm
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 21300000, guid: 648d1df9162383d4487139b1653f321d, type: 3}
