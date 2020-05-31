@@ -33,7 +33,12 @@ public class FirstPersonController : MonoBehaviour
 
     [SerializeField, Tooltip("Absolute margin to ignore mouse near the screen edges to avoid rotation stuck when mouse leaves screen (px)")]
     private float freeCursorScreenEdgeDeadMargin = 10f;
-    
+
+    [SerializeField, Tooltip("Check for smooth rotation when using mouse in locked cursor mode")]
+    private bool smoothMouseDelta = true;
+
+    [SerializeField, Tooltip("Smooth time factor for mouse delta, normalized for Slerp ratio"), Range(0f, 1f)]
+    private float smoothMouseDeltaTimeFactor = 0.5f;
     
     /* State vars */
     
@@ -46,7 +51,8 @@ public class FirstPersonController : MonoBehaviour
     public float walkSpeed = 3f, runSpeed = 6f;
     public float mouseSensitivity = 100f;
     public float gamepadKeyboardSensitivity = 100f;
-    float xRotation = 0;
+    float xRotationTarget = 0;
+    float yRotationTarget = 0;
     
     /// Tracks if a dialogue is active
     /// Superseded by canMove and canLook
@@ -118,17 +124,20 @@ public class FirstPersonController : MonoBehaviour
         InGameMenu.menuOpened -= OnMenuOpened;
         InGameMenu.menuClosed -= OnMenuClosed;
     }
-    
+
     private void Update()
+    {
+        if (m_CanLook)
+        {
+            playerLook();
+        }
+    }
+    
+    private void FixedUpdate()
     {
         if (m_CanMove)
         {
             playerMove();
-        }
-
-        if (m_CanLook)
-        {
-            playerLook();
         }
     }
 
@@ -152,8 +161,8 @@ public class FirstPersonController : MonoBehaviour
         {
             // use accumulated rotation motion (we'll consume it at the bottom of this method so it's also
             // cleared if cursor is unlocked)
-            yRotationDelta = cameraMouseRotation.x * mouseSensitivity * Time.deltaTime;
-            xRotationDelta = cameraMouseRotation.y * mouseSensitivity * Time.deltaTime;
+            yRotationDelta = cameraMouseRotation.x * mouseSensitivity;
+            xRotationDelta = cameraMouseRotation.y * mouseSensitivity;
         }
         else
         {
@@ -221,14 +230,31 @@ public class FirstPersonController : MonoBehaviour
         yRotationDelta += cameraGamepadKeyboardRotation.x * gamepadKeyboardSensitivity * Time.deltaTime;
         xRotationDelta += cameraGamepadKeyboardRotation.y * gamepadKeyboardSensitivity * Time.deltaTime;
         
-        // cumulate pitch
-        xRotation -= xRotationDelta;
-        xRotation = Mathf.Clamp(xRotation, -90, 90);
+        // cumulate pitch (convention requires sign opposition)
+        xRotationTarget -= xRotationDelta;
+        xRotationTarget = Mathf.Clamp(xRotationTarget, -90, 90);
+        
+        // cumulate yaw (modulo/repeat to avoid crazy numbers when doing many turns)
+        yRotationTarget += yRotationDelta;
+        yRotationTarget = Mathf.Repeat(yRotationTarget, 360f);
 
-        // apply yaw on body, but pitch on camera head
-        trans.Rotate(Vector3.up * yRotationDelta);
-        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
+        Quaternion characterRotationTarget = Quaternion.Euler(0f, yRotationTarget, 0f);
+        Quaternion cameraRotationTarget = Quaternion.Euler(xRotationTarget, 0f, 0f);
+        
+        if (smoothMouseDelta)
+        {
+            trans.localRotation = Quaternion.Slerp (trans.localRotation, characterRotationTarget,
+                smoothMouseDeltaTimeFactor);
+            playerCamera.transform.localRotation = Quaternion.Slerp (playerCamera.transform.localRotation, cameraRotationTarget,
+                smoothMouseDeltaTimeFactor);
+        }
+        else
+        {
+            // apply yaw on body, but pitch on camera head
+            trans.localRotation = characterRotationTarget;
+//            trans.Rotate(Vector3.up * yRotationDelta);
+            playerCamera.transform.localRotation = cameraRotationTarget;
+        }
     }
     
     
