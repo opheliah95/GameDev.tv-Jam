@@ -43,13 +43,14 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 5d5d5492f0c6830a79c89d79385fb67f, type: 3}
-    totalSpriteSurfaceArea: 10466545
+    totalSpriteSurfaceArea: 10731893
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 8a9f4d500b2623c6280a5016291e1ec2, type: 3}
   - {fileID: 21300000, guid: 852a4da0f6267994ab9dc82ebc334492, type: 3}
   - {fileID: 21300000, guid: 9afe2ac1c8ee5784d9d93876c031f0e2, type: 3}
+  - {fileID: 21300000, guid: e53527d1ff5395c44bbb59ab6dee185d, type: 3}
   - {fileID: 21300000, guid: 7e5064e170d5a3244a5bdc49cd1dd5ba, type: 3}
   - {fileID: 21300000, guid: db9bccf1b151792459e51adf69685451, type: 3}
   - {fileID: 21300000, guid: 07190d9263d2b6804812811fff2713d9, type: 3}
@@ -64,16 +65,20 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4334f535b8acd5b4eac6f1895ef48a53, type: 3}
   - {fileID: 21300000, guid: 8aa8cf36fdcbfd04c82b88178215a8cf, type: 3}
   - {fileID: 21300000, guid: 42dc25b673ae14a469a43b24599ff85a, type: 3}
+  - {fileID: 21300000, guid: e3acf0e65d75de3459dc23906b657e4e, type: 3}
   - {fileID: 21300000, guid: c360c5f6a4090ff7da4467d59df2e888, type: 3}
   - {fileID: 21300000, guid: 838b5927c1b0b9a42a076823b520aee5, type: 3}
+  - {fileID: 21300000, guid: c51fc9576506b484e9d6b5b42b5b9080, type: 3}
   - {fileID: 21300000, guid: 774eecd756fe1894ca2de50279f49b6b, type: 3}
   - {fileID: 21300000, guid: f144a5e86809281748b2bcd3e50b50e1, type: 3}
   - {fileID: 21300000, guid: ef3fdfb9103ba7dc2824be6fe160120c, type: 3}
+  - {fileID: 21300000, guid: b1b7bcc9c2b8e074abf8588e837bc31c, type: 3}
   - {fileID: 21300000, guid: e730c34a73b73ed4fbea8b590ad9efb2, type: 3}
   - {fileID: 21300000, guid: 8dfdf67a396550c4f9d1096d65c59a42, type: 3}
   - {fileID: 21300000, guid: e9ab7aba9d6b86e4fbd6f48c9114ad47, type: 3}
   - {fileID: 21300000, guid: a5b4e3ea083afe64790d8e2401046734, type: 3}
   - {fileID: 21300000, guid: e11a9feae57da3445b0a8c778513a866, type: 3}
+  - {fileID: 21300000, guid: f09a820bbd22a3f42a5c97a57c413029, type: 3}
   - {fileID: 21300000, guid: 7ef7734bbd03dcca29e889009a96148c, type: 3}
   - {fileID: 21300000, guid: cf86c3bbafbe3514fba616d5056b2436, type: 3}
   - {fileID: 21300000, guid: ffa0a12c6b4aaac318df4daa4544b871, type: 3}
@@ -90,6 +95,7 @@ SpriteAtlas:
   - SPR_UI_CluesTab_Left
   - SPR_button_hovered
   - SPR_Page_Transparent
+  - SPR_Clue_Frame
   - SPR_scene_frame01
   - SPR_Tag_unlit
   - SPR_UI_SuspectsPage_Left
@@ -104,16 +110,20 @@ SpriteAtlas:
   - SPR_Slider_Button
   - SPR_UI_Slider
   - SPR_RingBinds
+  - SPR_Knife
   - SPR_UI_FrameScene_Reconstruction
   - Bottom_Hover
+  - SPR_Not_Found
   - Logo
   - SPR_UI_ScenesPage_Left
   - SPR_UI_Binder
+  - SPR_Paper
   - SPR_New_Cursor
   - SPR_UI_MousePointer_64x64
   - SPR_UI_HandPointer_64x64
   - SPR_PLUS
   - SPR_scene_frame02
+  - SPR_Button
   - SPR_UI_BinderRings
   - SPR_Page
   - SPR_UI_CluesPage_Left
