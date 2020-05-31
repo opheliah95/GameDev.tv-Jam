@@ -99,6 +99,10 @@ public class FirstPersonController : MonoBehaviour
 
         m_CanLook = true;
         m_CanMove = true;
+        
+        // initialize target x rotation to initial yaw, so if SpawnTransform was oriented toward some direction
+        // we keep it on Start
+        yRotationTarget = transform.localRotation.eulerAngles.y;
     }
     
     private void OnEnable()
