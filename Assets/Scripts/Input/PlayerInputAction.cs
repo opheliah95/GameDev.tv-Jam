@@ -99,6 +99,17 @@ public class @Player : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""up"",
+                    ""id"": ""4995ede7-c1f0-4db2-b233-7a5a24f3f332"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""down"",
                     ""id"": ""731d07d6-8971-4d5d-b175-3980513f596e"",
                     ""path"": ""<Keyboard>/s"",
@@ -113,6 +124,17 @@ public class @Player : IInputActionCollection, IDisposable
                     ""name"": ""left"",
                     ""id"": ""7aab7f33-aa1b-4e27-8141-cb6069705f37"",
                     ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""bbb24ee8-ff1d-421a-b9b0-535d59a9d87f"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
