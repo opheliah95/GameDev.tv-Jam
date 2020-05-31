@@ -27,7 +27,7 @@ public class InGameMenu : SingletonManager<InGameMenu>
 
     /// Is the in-game menu open?
     private bool m_Open = false;
-
+    public bool IsOpen() => m_Open;
 
     protected override void Init()
     {
