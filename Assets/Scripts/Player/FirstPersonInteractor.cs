@@ -69,6 +69,9 @@ public class FirstPersonInteractor : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
+        
+        InGameMenu.menuOpened += OnMenuOpened;
+        InGameMenu.menuClosed += OnMenuClosed;
     }
 
     private void OnDisable()
@@ -78,6 +81,9 @@ public class FirstPersonInteractor : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
+        
+        InGameMenu.menuOpened -= OnMenuOpened;
+        InGameMenu.menuClosed -= OnMenuClosed;
     }
 
     private void Update()
@@ -113,6 +119,12 @@ public class FirstPersonInteractor : MonoBehaviour
                 m_HoveredInteractable = interactable;
             }
         }
+    }
+
+    private void UpdateCanInteract()
+    {
+        bool canInteract = !GameplayEventManager.Instance.IsEventPlaying() && !InGameMenu.Instance.IsOpen();
+        SetCanInteract(canInteract);
     }
 
     /// Set m_CanInteract and update hovered item and cursor
@@ -215,25 +227,33 @@ public class FirstPersonInteractor : MonoBehaviour
         }
     }
     
-    // TODO: prefer detecting event sequences in general
-    
     private void OnDialogueStarted()
     {
+        // no need to update can interact, events include dialogue
     }
 
     private void OnDialogueEnded()
     {
+        // no need to update can interact, events include dialogue
     }
     
     private void OnMasterEventStarted()
     {
-        SetCanInteract(false);
-        Debug.Log("Master event started, Player cannot interact");
+        UpdateCanInteract();
     }
     
     private void OnMasterEventEnded()
     {
-        SetCanInteract(true);
-        Debug.Log("Master event ended, Player can interact");
+        UpdateCanInteract();
+    }
+    
+    private void OnMenuOpened()
+    {
+        UpdateCanInteract();
+    }
+
+    private void OnMenuClosed()
+    {
+        UpdateCanInteract();
     }
 }

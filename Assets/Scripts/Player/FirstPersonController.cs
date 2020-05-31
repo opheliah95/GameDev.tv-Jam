@@ -49,8 +49,14 @@ public class FirstPersonController : MonoBehaviour
     float xRotation = 0;
     
     /// Tracks if a dialogue is active
-    /// Superseded by GameplayEventManager.Instance.IsEventPlaying, which contains both dialogue and cinematic sequences
+    /// Superseded by canMove and canLook
     public static bool isTalking = false;
+    
+    /// Can the character move now?
+    private bool m_CanMove;
+    
+    /// Can the character look now?
+    private bool m_CanLook;
 
     /// Last move intention
     private Vector2 move = Vector2.zero;
@@ -84,6 +90,9 @@ public class FirstPersonController : MonoBehaviour
         // use internal version to make sure all members are updated according to initial value
         SetCursorLockInternal(true);
 #endif
+
+        m_CanLook = true;
+        m_CanMove = true;
     }
     
     private void OnEnable()
@@ -93,6 +102,9 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
+        
+        InGameMenu.menuOpened += OnMenuOpened;
+        InGameMenu.menuClosed += OnMenuClosed;
     }
 
     private void OnDisable()
@@ -102,14 +114,20 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
+        
+        InGameMenu.menuOpened -= OnMenuOpened;
+        InGameMenu.menuClosed -= OnMenuClosed;
     }
     
     private void Update()
     {
-        // IsEventPlaying should cover isTalking anyway
-        if (!isTalking && !GameplayEventManager.Instance.IsEventPlaying())
+        if (m_CanMove)
         {
             playerMove();
+        }
+
+        if (m_CanLook)
+        {
             playerLook();
         }
     }
@@ -247,20 +265,48 @@ public class FirstPersonController : MonoBehaviour
     {
         SetCursorLockInternal(!m_IsCursorLocked);
     }
+
+    private void UpdateCanMoveAndLook()
+    {
+        bool canMove = !GameplayEventManager.Instance.IsEventPlaying() && !InGameMenu.Instance.IsOpen();
+        bool canLook = !GameplayEventManager.Instance.IsEventPlaying() && !InGameMenu.Instance.IsOpen();
+        
+        SetCanMove(canMove);
+        SetCanLook(canLook);
+    }
+    
+    private void SetCanMove(bool newValue)
+    {
+        if (m_CanMove != newValue)
+        {
+            m_CanMove = newValue;
+            
+            if (!newValue)
+            {
+                // cannot move anymore, clear related members
+                move = Vector2.zero;
+                isRunning = false;
+            }
+        }
+    }
+    
+    private void SetCanLook(bool newValue)
+    {
+        if (m_CanLook != newValue)
+        {
+            m_CanLook = newValue;
+            
+            if (!newValue)
+            {
+                // cannot look anymore, clear related members
+                cameraGamepadKeyboardRotation = Vector2.zero;
+                cameraMouseRotation = Vector2.zero;
+            }
+        }
+    }
     
     
     /* Event callbacks */
-    
-    private void OnMenuOpened()
-    {
-        m_WasCursorLockedBeforeMenu = m_IsCursorLocked;
-        SetCursorLock(false);
-    }
-
-    private void OnMenuClosed()
-    {
-        SetCursorLock(m_WasCursorLockedBeforeMenu);
-    }
     
     private void OnMasterEventStarted()
     {
@@ -270,37 +316,66 @@ public class FirstPersonController : MonoBehaviour
         // So for now, comment out the switch and keep the default Gameplay + magic event system click enabled
         // Instead, use runtime flag test to check if events are running and we shouldn't move, etc.
 //        playerInput.SwitchCurrentActionMap("UI");
+        UpdateCanMoveAndLook();
     }
     
     private void OnMasterEventEnded()
     {
 //        playerInput.SwitchCurrentActionMap("Gameplay");
+        UpdateCanMoveAndLook();
     }
     
+    private void OnMenuOpened()
+    {
+        m_WasCursorLockedBeforeMenu = m_IsCursorLocked;
+        SetCursorLock(false);
+        
+        UpdateCanMoveAndLook();
+    }
+
+    private void OnMenuClosed()
+    {
+        SetCursorLock(m_WasCursorLockedBeforeMenu);
+        
+        UpdateCanMoveAndLook();
+    }
+
     
     /* Input Action callbacks */
 
     private void OnLook(InputValue value)
     {
-        // set rotation for gamepad/keyboard
-        cameraGamepadKeyboardRotation = value.Get<Vector2>();
+        if (m_CanLook)
+        {
+            // set rotation for gamepad/keyboard
+            cameraGamepadKeyboardRotation = value.Get<Vector2>();
+        }
     }
 
     private void OnLookDelta(InputValue value)
     {
-        // accumulate rotation (may be called multiple times between Updates)
-        cameraMouseRotation += value.Get<Vector2>();
+        if (m_CanLook)
+        {
+            // accumulate rotation (may be called multiple times between Updates)
+            cameraMouseRotation += value.Get<Vector2>();
+        }
     }
 
     private void OnMovement(InputValue value)
     {
-        move = value.Get<Vector2>();
+        if (m_CanMove)
+        {
+            move = value.Get<Vector2>();
+        }
     }
 
     private void OnRun(InputValue value)
     {
-        isRunning = value.isPressed;
-        Debug.LogFormat("isRunning: {0}", isRunning);
+        if (m_CanMove)
+        {
+            isRunning = value.isPressed;
+            Debug.LogFormat("isRunning: {0}", isRunning);
+        }
     }
     
     private void OnToggleCursorLock(InputValue value)
