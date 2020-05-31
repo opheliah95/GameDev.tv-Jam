@@ -31,7 +31,7 @@ public class CaseFilePageScenes : CaseFilePage
         InitSceneWidgets(CaseSceneType.Reconstruction, reconstructionSceneGrid, caseData.reconstructionSceneDataArray, reconstructionSceneButtonPrefab);
     }
 
-    private static void InitSceneWidgets(CaseSceneType sceneType, GridLayoutGroup sceneGrid, CaseData.SceneData[] sceneDataArray, GameObject sceneButtonPrefab)
+    private static void InitSceneWidgets(CaseSceneType sceneType, GridLayoutGroup sceneGrid, SceneData[] sceneDataArray, GameObject sceneButtonPrefab)
     {
         // First, create enough scene widgets for the current case
         // there may already be one or more scene widgets under sceneGrid to visualize better
@@ -63,7 +63,7 @@ public class CaseFilePageScenes : CaseFilePage
             var widget = sceneWidgetTr.GetComponentOrFail<CaseFileSceneWidget>();
             
             // get scene data
-            CaseData.SceneData sceneData = sceneDataArray[i];
+            SceneData sceneData = sceneDataArray[i];
             
             // check if scene is unlocked
             bool isSceneUnlocked = sceneData.unlockedOnStart || CaseManager.Instance.HasUnlockedScene(sceneType, sceneData.sceneEnum);

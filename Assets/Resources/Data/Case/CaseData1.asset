@@ -14,19 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Case Title
   realSceneDataArray:
-  - sceneEnum: 1
-    name: Forest
-    unlockedOnStart: 1
-  - sceneEnum: 2
-    name: Hotel
-    unlockedOnStart: 0
-  - sceneEnum: 4
-    name: Bedroom
-    unlockedOnStart: 0
+  - {fileID: 11400000, guid: cd236aba6946ac34eb16fc653ac4cb41, type: 2}
+  - {fileID: 11400000, guid: 54a6b1e27ac2eb741992f16c1118290d, type: 2}
+  - {fileID: 11400000, guid: 059ab1578bf6a2c4e959d2f92a0425fb, type: 2}
   reconstructionSceneDataArray:
-  - sceneEnum: 3
-    name: Hotel_Past
-    unlockedOnStart: 0
-  - sceneEnum: 5
-    name: Bedroom_Past
-    unlockedOnStart: 0
+  - {fileID: 11400000, guid: 947e9d64374df0b4488035a2fcc25dbf, type: 2}
+  - {fileID: 11400000, guid: b2ddaf2cbb1f9014e95138037f092d07, type: 2}

@@ -28,10 +28,10 @@ public class CaseFileSceneWidget : MonoBehaviour
         button = this.GetComponentOrFail<Button>();
     }
 
-    public void Init(CaseData.SceneData sceneData, bool isSceneUnlocked)
+    public void Init(SceneData sceneData, bool isSceneUnlocked)
     {
         m_SceneEnum = sceneData.sceneEnum;
-        sceneNameText.text = sceneData.name;
+        sceneNameText.text = sceneData.sceneName;
         button.interactable = isSceneUnlocked;
     }
 

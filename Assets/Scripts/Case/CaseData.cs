@@ -8,19 +8,6 @@ using UnityConstants;
 [CreateAssetMenu(fileName = "CaseData", menuName = "ScriptableObjects/Case Data")]
 public class CaseData : ScriptableObject
 {
-    [System.Serializable]
-    public struct SceneData
-    {
-        [Tooltip("Scene ID")]
-        public ScenesEnum sceneEnum;
-
-        [Tooltip("Readable scene name")]
-        public string name;
-
-        [Tooltip("Is the scene unlocked on case start?")]
-        public bool unlockedOnStart;
-    }
-    
     [Tooltip("Readable title for the case")]
     public string title = "Case Title";
 
