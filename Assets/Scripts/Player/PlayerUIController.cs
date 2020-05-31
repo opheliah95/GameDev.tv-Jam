@@ -31,6 +31,10 @@ public class PlayerUIController : MonoBehaviour
 
     private void OnToggleInGameMenu(InputValue value)
     {
-        InGameMenu.Instance.Toggle();
+        // see FirstPersonController.OnMasterEventStarted comment, we prefer checking flag than switching action map
+        if (!GameplayEventManager.Instance.IsEventPlaying())
+        {
+            InGameMenu.Instance.Toggle();
+        }
     }
 }

@@ -256,13 +256,17 @@ public class FirstPersonController : MonoBehaviour
     
     private void OnMasterEventStarted()
     {
-        playerInput.SwitchCurrentActionMap("UI");
+        // Known issue: switching to UI then back to Gameplay
+        // loses the EventSystem UI bindings, almost disabling normal button click in the in-game menu
+        // after an event has happened
+        // So for now, comment out the switch and keep the default Gameplay + magic event system click enabled
+        // Instead, use runtime flag test to check if events are running and we shouldn't move, etc.
+//        playerInput.SwitchCurrentActionMap("UI");
     }
     
     private void OnMasterEventEnded()
     {
-        playerInput.SwitchCurrentActionMap("Gameplay");
-        Debug.Log("switched to Gameplay map");
+//        playerInput.SwitchCurrentActionMap("Gameplay");
     }
     
     
