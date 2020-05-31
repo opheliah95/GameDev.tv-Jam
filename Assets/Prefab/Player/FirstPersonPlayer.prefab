@@ -295,13 +295,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 2660603383783624705}
   freeCursorRotateScreenRatioMarginX: 0.3
-  freeCursorMaxRotateYawSpeed: 90
+  freeCursorMaxRotateYawSpeed: 180
   freeCursorRotateScreenRatioMarginY: 0.3
-  freeCursorMaxRotatePitchSpeed: 90
+  freeCursorMaxRotatePitchSpeed: 180
   freeCursorScreenEdgeDeadMargin: 15
+  smoothMouseDelta: 1
+  smoothMouseDeltaTimeFactor: 0.5
   walkSpeed: 10
   runSpeed: 20
-  mouseSensitivity: 100
+  mouseSensitivity: 0.1
+  gamepadKeyboardSensitivity: 100
 --- !u!114 &2660603384332830772
 MonoBehaviour:
   m_ObjectHideFlags: 0
