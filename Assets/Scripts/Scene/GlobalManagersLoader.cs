@@ -9,7 +9,9 @@ public class GlobalManagersLoader : MonoBehaviour
     void Start()
     {
         // lazily load Global Managers scene, so they are only loaded once in every scene setup
-        if (!SceneManager.GetSceneByBuildIndex(Scenes._GlobalManagers).IsValid())
+        // !SceneManager.GetSceneByBuildIndex(Scenes._GlobalManagers).IsValid() is not reliable
+        // when adding sub-scenes in editor, so check for presence of representative singleton instead
+        if (GlobalManager.Instance == null)
         {
             SceneManager.LoadScene(Scenes._GlobalManagers, LoadSceneMode.Additive);
         }
