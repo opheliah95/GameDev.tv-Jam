@@ -43,7 +43,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 5d5d5492f0c6830a79c89d79385fb67f, type: 3}
-    totalSpriteSurfaceArea: 10407444
+    totalSpriteSurfaceArea: 10466545
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -83,7 +83,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 998f6b4d06b7dee479bb0dc307b022f8, type: 3}
   - {fileID: 21300000, guid: b8b0368e11ad10064ae0394aba597673, type: 3}
   - {fileID: 21300000, guid: 3f27954f571ca5b4ea31af02483221c6, type: 3}
+  - {fileID: 21300000, guid: 62f6a05ffb7900c40971b0249e2554c9, type: 3}
   - {fileID: 21300000, guid: 8cc0765f2f86905b4961a56418646df0, type: 3}
+  - {fileID: 21300000, guid: 741f6c7fb0b27c448b333500eb5e5487, type: 3}
   m_PackedSpriteNamesToIndex:
   - SPR_UI_CluesTab_Left
   - SPR_button_hovered
@@ -121,6 +123,8 @@ SpriteAtlas:
   - SPR_Box_Options
   - SPR_UI_FrameScene
   - SPR_Eye_Cursor
+  - SPR_checkmark_UI
   - SPR_UI_BriefTab_Left
+  - SPR_Forest_Brief
   m_Tag: SPRATL_UI
   m_IsVariant: 0
