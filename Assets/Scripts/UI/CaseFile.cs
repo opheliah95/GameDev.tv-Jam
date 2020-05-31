@@ -17,33 +17,44 @@ public class CaseFile : MonoBehaviour
     
     /* State */
 
+    /// Lazy init flag. Allows to init after CaseManager singleton init (done in Awake),
+    /// but before InGameMenu.Open > RefreshBothSides > side.RefreshCurrentPage
+    /// which would be the first to activate CaseFile canvas game object,
+    /// if it was deactivated in the editor (and unlike Awake, Start would not
+    /// be run immediately on activation but 1 frame after)
+    private bool m_Initialized = false;
+    
     /// Is the case file open itself under the in-game menu? (even if hidden because parent menu is closed)
     private bool m_Open = false;
     public bool IsOpen => m_Open;
 
-    private void Awake()
+    private void LazyInit()
     {
-        // setup is done on Awake so we are sure that pages are ready during Open before side.RefreshCurrentPage
-        // even if CaseFile is deactivated in the editor, unlike Start, Awake is immediately called on SetActive(true)
-        
-        // all pages should be on Pages_Left on start
-        Debug.AssertFormat(sides.Length == 2, this, "sides has length {0}, expected 2", sides.Length);
-        Debug.AssertFormat(sides[1].GetAllPages().Length == 0, sides[1], "Right Side has {0} child(ren), expected 0", sides[1].transform.childCount);
+        if (!m_Initialized)
+        {
+            m_Initialized = true;
+            
+            // all pages should be on Pages_Left on start
+            Debug.AssertFormat(sides.Length == 2, this, "sides has length {0}, expected 2", sides.Length);
+            Debug.AssertFormat(sides[1].GetAllPages().Length == 0, sides[1], "Right Side has {0} child(ren), expected 0", sides[1].transform.childCount);
 
-        // store references to all pages on left side now, we'll move them later between sides
-        pages = sides[0].GetAllPages();
+            // store references to all pages on left side now, we'll move them later between sides
+            pages = sides[0].GetAllPages();
         
-        // on left side, start by showing page 1 (Brief)
-        sides[0].HideAllPages();
-        sides[0].ShowPage(1, pages);
+            // on left side, start by showing page 1 (Brief)
+            sides[0].HideAllPages();
+            sides[0].ShowPage(1, pages);
         
-        // on right side, start by showing page 0 (None)
-        // there are no pages to start with, according to assertions above, so no need to hide first
-        sides[1].ShowPage(0, pages);
+            // on right side, start by showing page 0 (None)
+            // there are no pages to start with, according to assertions above, so no need to hide first
+            sides[1].ShowPage(0, pages);
+        }
     }
 
     public void Open()
     {
+        LazyInit();
+        
         m_Open = true;
         
         // will call Awake immediately if activated for the first time
