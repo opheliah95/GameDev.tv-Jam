@@ -9,7 +9,7 @@ public class InGameManagersLoader : MonoBehaviour
     void Start()
     {
         // lazily load Global Managers scene, so they are only loaded once in every scene setup
-        if (!SceneManager.GetSceneByBuildIndex(Scenes._InGameManagers).isLoaded)
+        if (!SceneManager.GetSceneByBuildIndex(Scenes._InGameManagers).IsValid())
         {
             SceneManager.LoadScene(Scenes._InGameManagers, LoadSceneMode.Additive);
         }
