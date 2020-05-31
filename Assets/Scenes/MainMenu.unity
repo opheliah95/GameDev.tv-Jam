@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2499,6 +2499,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.3870966
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: ea214d7835ad29c46bb80aadb34426e3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6ecf20d2bf207a47a85a41788b32978, type: 2}
     - target: {fileID: -927199367670048503, guid: ea214d7835ad29c46bb80aadb34426e3,
         type: 3}
       propertyPath: m_Name
@@ -2568,6 +2573,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: ea214d7835ad29c46bb80aadb34426e3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 767953f56029d644da01f06e13f8ca62, type: 2}
     - target: {fileID: -927199367670048503, guid: ea214d7835ad29c46bb80aadb34426e3,
         type: 3}
       propertyPath: m_Name
@@ -4453,6 +4463,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.9453225
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: ea214d7835ad29c46bb80aadb34426e3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 767953f56029d644da01f06e13f8ca62, type: 2}
     - target: {fileID: -927199367670048503, guid: ea214d7835ad29c46bb80aadb34426e3,
         type: 3}
       propertyPath: m_Name
