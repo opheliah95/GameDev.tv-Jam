@@ -8,6 +8,10 @@ public class GlobalManagersLoader : MonoBehaviour
 {
     void Start()
     {
-        SceneManager.LoadScene(Scenes._GlobalManagers, LoadSceneMode.Additive);
+        // lazily load Global Managers scene, so they are only loaded once in every scene setup
+        if (!SceneManager.GetSceneByBuildIndex(Scenes._GlobalManagers).isLoaded)
+        {
+            SceneManager.LoadScene(Scenes._GlobalManagers, LoadSceneMode.Additive);
+        }
     }
 }
