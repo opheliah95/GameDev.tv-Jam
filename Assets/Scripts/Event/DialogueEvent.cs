@@ -7,12 +7,12 @@ public class DialogueEvent : GameplayEvent
     [Tooltip("Dialogue sequence played on interaction")]
     public List<Dialogue> dialogues;
 
-    public override void Execute()
+    protected override void Execute()
     {
         // register callback on dialogue end so we can notify this event as ended
         DialogueManager.onDialogueEnded += OnDialogueEnded;
         
-        DialogueManager.Instance.startDialogue(dialogues);
+        DialogueManager.Instance.StartDialogue(dialogues);
     }
 
     private void OnDialogueEnded()

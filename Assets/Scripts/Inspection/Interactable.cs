@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     {
         Debug.AssertFormat(targetEvent != null, this, "targetEvent not set on Interactable {0}", this);
         
-        targetEvent.Execute();
+        targetEvent.ExecuteAsMaster();
     }
 
 }

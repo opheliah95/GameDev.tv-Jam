@@ -9,7 +9,7 @@ public class UnlockSceneEvent : GameplayEvent
     [Tooltip("Type of scene to unlock")]
     public CaseSceneType sceneType;
 
-    public override void Execute()
+    protected override void Execute()
     {
         CaseManager.Instance.UnlockScene(sceneType, sceneEnum);
         End();

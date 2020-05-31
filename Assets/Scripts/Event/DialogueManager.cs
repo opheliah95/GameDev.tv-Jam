@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,8 @@ using CommonsPattern;
 public class DialogueManager : SingletonManager<DialogueManager> {
 
 	// Events
-	public delegate void DialogueEndedEventHandler();
-	public static event DialogueEndedEventHandler onDialogueEnded;
+	public static event Action onDialogueStarted;
+	public static event Action onDialogueEnded;
 	
     public GameObject dialogueBox;
 	public TextMeshProUGUI nameText;
@@ -32,9 +33,11 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 	    dialogueBox.SetActive(false);
     }
 
-    public void startDialogue(List<Dialogue> dialogues)
+    public void StartDialogue(List<Dialogue> dialogues)
     {
         if (dialogueBox == null) return;
+        
+        onDialogueStarted?.Invoke();
 
         // if player is talking then he cannot move
         FirstPersonController.isTalking = true;
@@ -45,17 +48,17 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         if(dialogueChunks.Count != 0)
             dialogueChunks.Clear();
 
-        // add dialgoues again to the queue
+        // add dialogues again to the queue
         foreach (Dialogue chunks in dialogues)
         {
             dialogueChunks.Enqueue(chunks);
         }
 
-        nextChunk(); // read next chunk of dialogue
+        NextChunk(); // read next chunk of dialogue
     }
 
     // got to the next character's turn
-    public void nextChunk()
+    private void NextChunk()
     {
         if (dialogueChunks.Count > 0)
         {
@@ -75,7 +78,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
     }
 
     // start a chunk of individual dialogue
-    public void StartIndividualDialogue (Dialogue dialogue)
+    private void StartIndividualDialogue (Dialogue dialogue)
 	{
 		nameText.text = dialogue.speakerName;
 
@@ -95,7 +98,7 @@ public class DialogueManager : SingletonManager<DialogueManager> {
 	{
 		if (sentences.Count == 0)
 		{
-            nextChunk(); // move on to the next chunk
+            NextChunk(); // move on to the next chunk
 			return;
 		}
 
@@ -127,7 +130,4 @@ public class DialogueManager : SingletonManager<DialogueManager> {
         
         onDialogueEnded?.Invoke();
 	}
-
-   
-
 }

@@ -37,13 +37,7 @@ public class FirstPersonInteractor : MonoBehaviour
     
     /* State vars */
 
-    /// Is the character inspecting something?
-    private bool m_IsInteracting;
-    
-    /// Is a cinematic playing (automated dialogue sequence preventing other interactions)?
-    private bool m_IsCinematicPlaying;
-    
-    /// Derived attribute: can the character interact now?
+    /// Can the character interact now?
     private bool m_CanInteract;
     
     /// Interactable currently hovered (cleared on interaction start)
@@ -60,9 +54,7 @@ public class FirstPersonInteractor : MonoBehaviour
 
     public void Setup()
     {
-        m_IsInteracting = false;
-        m_IsCinematicPlaying = false;
-        UpdateCanInteract();  // to be rigorous, but currently does nothing
+        SetCanInteractInternal(true);
         
         m_HoveredInteractable = null;
         m_ActiveInteractable = null;
@@ -72,12 +64,20 @@ public class FirstPersonInteractor : MonoBehaviour
     
     private void OnEnable()
     {
+        DialogueManager.onDialogueStarted += OnDialogueStarted;
         DialogueManager.onDialogueEnded += OnDialogueEnded;
+        
+        GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
+        GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
     }
 
     private void OnDisable()
     {
+        DialogueManager.onDialogueStarted -= OnDialogueStarted;
         DialogueManager.onDialogueEnded -= OnDialogueEnded;
+        
+        GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
+        GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
     }
 
     private void Update()
@@ -114,35 +114,28 @@ public class FirstPersonInteractor : MonoBehaviour
             }
         }
     }
-    
 
-    private void SetIsInteracting(bool value)
+    /// Set m_CanInteract and update hovered item and cursor
+    private void SetCanInteract(bool newValue)
     {
-        m_IsInteracting = value;
-        UpdateCanInteract();
-    }
-    
-    private void SetIsCinematicPlaying(bool value)
-    {
-        m_IsCinematicPlaying = value;
-        UpdateCanInteract();
-    }
-    
-    private void UpdateCanInteract()
-    {
-        bool newValue = !m_IsInteracting && !m_IsCinematicPlaying;
         if (m_CanInteract != newValue)
         {
-            m_CanInteract = newValue;
+            SetCanInteractInternal(newValue);
+        }
+    }
+    
+    /// Like SetCanInteract, but no difference check. Useful on Setup.
+    private void SetCanInteractInternal(bool newValue)
+    {
+        m_CanInteract = newValue;
 
-            if (newValue)
-            {
-                OnCanInteractStart();
-            }
-            else
-            {
-                OnCanInteractEnd();
-            }
+        if (newValue)
+        {
+            OnCanInteractStart();
+        }
+        else
+        {
+            OnCanInteractEnd();
         }
     }
     
@@ -212,24 +205,35 @@ public class FirstPersonInteractor : MonoBehaviour
     {
         if (value.isPressed && m_HoveredInteractable != null)
         {
-            // transfer hovered to active interactable
+            // Transfer hovered to active interactable
+            // (do not set m_HoveredInteractable to true, we need it to pass
+            // the test inside SetIsInteracting, which will then clear m_HoveredInteractable)
             m_ActiveInteractable = m_HoveredInteractable;
-            m_HoveredInteractable = null;
-            
-            // flag we are interacting to prevent further interaction and update cursor
-            // (this also normally clears the hovered interactable, but it's already done here)
-            SetIsInteracting(true);
             
             // start interaction sequence
             m_ActiveInteractable.Interact();
         }
     }
+    
+    // TODO: prefer detecting event sequences in general
+    
+    private void OnDialogueStarted()
+    {
+    }
 
     private void OnDialogueEnded()
     {
-        // for now, we only leave interacting state when dialogue is over
-        // later, we'll have a broader variety of interaction events and will need to check for the
-        // end of the current event sequence
-        SetIsInteracting(false);
+    }
+    
+    private void OnMasterEventStarted()
+    {
+        SetCanInteract(false);
+        Debug.Log("Master event started, Player cannot interact");
+    }
+    
+    private void OnMasterEventEnded()
+    {
+        SetCanInteract(true);
+        Debug.Log("Master event ended, Player can interact");
     }
 }

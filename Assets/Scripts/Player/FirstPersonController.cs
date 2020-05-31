@@ -1,8 +1,16 @@
-﻿using UnityEngine.InputSystem;
+﻿using CommonsHelper;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
+    /* Sibling components */
+
+    private Transform trans;
+    private CharacterController controller;
+    private PlayerInput playerInput;
+    
+    
     /* Child references */
     
     [SerializeField, Tooltip("Player camera")]
@@ -35,14 +43,13 @@ public class FirstPersonController : MonoBehaviour
     /// Tracked cursor lock state to restore after menu choice
     private bool m_WasCursorLockedBeforeMenu;
     
-    
-    Transform trans;
-    CharacterController controller;
     public float walkSpeed = 3f, runSpeed = 6f;
     public float mouseSensitivity = 100f;
     float xRotation = 0;
+    
+    /// Tracks if a dialogue is active
+    /// Superseded by GameplayEventManager.Instance.IsEventPlaying, which contains both dialogue and cinematic sequences
     public static bool isTalking = false;
-
 
     /// Last move intention
     private Vector2 move = Vector2.zero;
@@ -56,7 +63,8 @@ public class FirstPersonController : MonoBehaviour
     private void Awake()
     {
         trans = transform;
-        controller = GetComponent<CharacterController>();
+        controller = this.GetComponentOrFail<CharacterController>();
+        playerInput = this.GetComponentOrFail<PlayerInput>();
     }
 
     private void Start()
@@ -78,22 +86,28 @@ public class FirstPersonController : MonoBehaviour
     {
         InGameMenu.menuOpened += OnMenuOpened;
         InGameMenu.menuClosed += OnMenuClosed;
+        
+        GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
+        GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
     }
 
     private void OnDisable()
     {
         InGameMenu.menuOpened -= OnMenuOpened;
         InGameMenu.menuClosed -= OnMenuClosed;
+        
+        GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
+        GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
     }
     
     private void Update()
     {
-        if(!isTalking)
+        // IsEventPlaying should cover isTalking anyway
+        if (!isTalking && !GameplayEventManager.Instance.IsEventPlaying())
         {
             playerMove();
             playerLook();
         }
-       
     }
 
     void playerMove()
@@ -240,8 +254,19 @@ public class FirstPersonController : MonoBehaviour
         SetCursorLock(m_WasCursorLockedBeforeMenu);
     }
     
+    private void OnMasterEventStarted()
+    {
+        playerInput.SwitchCurrentActionMap("UI");
+    }
     
-    /* put Action callbacks */
+    private void OnMasterEventEnded()
+    {
+        playerInput.SwitchCurrentActionMap("Gameplay");
+        Debug.Log("switched to Gameplay map");
+    }
+    
+    
+    /* Input Action callbacks */
 
     private void OnLook(InputValue value)
     {

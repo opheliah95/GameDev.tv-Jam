@@ -13,8 +13,8 @@ public class GameplayEventSequence : GameplayEvent
     
     /// Current event index
     int m_CurrentEventIndex;
-    
-    public override void Execute()
+
+    protected override void Execute()
     {
         m_CurrentEventIndex = 0;
         TryExecuteEventAtCurrentIndex();
@@ -28,14 +28,18 @@ public class GameplayEventSequence : GameplayEvent
 
     private void TryExecuteEventAtCurrentIndex()
     {
-        if (m_CurrentEventIndex < eventSequence.Count) {
+        if (m_CurrentEventIndex < eventSequence.Count)
+        {
             GameplayEvent gameplayEvent = eventSequence[m_CurrentEventIndex];
             // we will continue sequence as soon as this event ends
             // register end callback now in case Execute immediately ends
             gameplayEvent.end += OnEventEnd;
             // actually execute the next event
-            gameplayEvent.Execute();
-        } else {
+            gameplayEvent.ExecuteAsSlave();
+        }
+        else
+        {
+            End();
             Debug.LogFormat(this, "Event sequence {0} over after {1} events", this, eventSequence.Count);
         }
     }
