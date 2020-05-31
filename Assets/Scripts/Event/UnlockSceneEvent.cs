@@ -11,7 +11,7 @@ public class UnlockSceneEvent : GameplayEvent
 
     protected override void Execute()
     {
-        CaseManager.Instance.UnlockScene(sceneType, sceneEnum);
+        CaseManager.Instance.CurrentCaseProgress.UnlockScene(sceneType, sceneEnum);
         End();
     }
 }

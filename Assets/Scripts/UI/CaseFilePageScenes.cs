@@ -66,7 +66,7 @@ public class CaseFilePageScenes : CaseFilePage
             SceneData sceneData = sceneDataArray[i];
             
             // check if scene is unlocked
-            bool isSceneUnlocked = sceneData.unlockedOnStart || CaseManager.Instance.HasUnlockedScene(sceneType, sceneData.sceneEnum);
+            bool isSceneUnlocked = sceneData.unlockedOnStart || CaseManager.Instance.CurrentCaseProgress.HasUnlockedScene(sceneType, sceneData.sceneEnum);
             
             // init scene button widget
             widget.Init(sceneData, isSceneUnlocked);

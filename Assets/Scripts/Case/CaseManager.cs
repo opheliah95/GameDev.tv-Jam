@@ -11,7 +11,8 @@ public class CaseManager : SingletonManager<CaseManager>
     public CaseData CurrentCaseData => m_CurrentCaseData;
 
     private CaseProgress m_CurrentCaseProgress;
-    
+    public CaseProgress CurrentCaseProgress => m_CurrentCaseProgress;
+
     protected override void Init()
     {
         // only one case for the demo, so just hardcode load it
@@ -19,15 +20,5 @@ public class CaseManager : SingletonManager<CaseManager>
         Debug.AssertFormat(m_CurrentCaseData != null, this, "CaseManager could not find CaseData at Resources/Data/Case/CaseData1.");
         
         m_CurrentCaseProgress = new CaseProgress();
-    }
-
-    public bool HasUnlockedScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
-    {
-        return m_CurrentCaseProgress.HasUnlockedScene(sceneType, sceneEnum);
-    }
-    
-    public void UnlockScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
-    {
-        m_CurrentCaseProgress.UnlockScene(sceneType, sceneEnum);
     }
 }
