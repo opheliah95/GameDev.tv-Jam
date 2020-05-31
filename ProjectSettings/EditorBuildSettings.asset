@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Art/MainMenu_WithEffects.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 2a9a655b98d296c41b98255edfce2990
   - enabled: 1
     path: Assets/Scenes/Levels/Level0_Forest.unity
@@ -29,18 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_InGameManagers.unity
     guid: 4af5aded8303e3c83ad0298f9b7c9784
-  - enabled: 1
-    path: Assets/Scenes/Art/Shader_Oph.unity
-    guid: 4b77802a2ea2d724b94a9f0f2875b478
-  - enabled: 1
-    path: Assets/Scenes/Test/TestScene_Long.unity
-    guid: 0ebb2421f0fa211be8acf2edda2f6aa8
-  - enabled: 1
-    path: Assets/Scenes/Test/TestScene_Long2.unity
-    guid: 332a6b91ecdb5a817a1a96ab230ae256
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 8c9a09d2f9efd49e29a5105197233f7c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 57fe8fc94229ae54cb579f70b1c187a5,
       type: 2}
