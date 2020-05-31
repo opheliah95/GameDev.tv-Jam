@@ -142,9 +142,9 @@ namespace UnityConstants
     public static class Scenes
     {
         /// <summary>
-        /// ID of scene 'MainMenu_WithEffects'.
+        /// ID of scene 'MainMenu'.
         /// </summary>
-        public const int MainMenu_WithEffects = 0;
+        public const int MainMenu = 0;
         /// <summary>
         /// ID of scene 'Level0_Forest'.
         /// </summary>
@@ -173,27 +173,11 @@ namespace UnityConstants
         /// ID of scene '_InGameManagers'.
         /// </summary>
         public const int _InGameManagers = 7;
-        /// <summary>
-        /// ID of scene 'Shader_Oph'.
-        /// </summary>
-        public const int Shader_Oph = 8;
-        /// <summary>
-        /// ID of scene 'TestScene_Long'.
-        /// </summary>
-        public const int TestScene_Long = 9;
-        /// <summary>
-        /// ID of scene 'TestScene_Long2'.
-        /// </summary>
-        public const int TestScene_Long2 = 10;
-        /// <summary>
-        /// ID of scene 'MainMenu'.
-        /// </summary>
-        public const int MainMenu = 11;
     }
 
     public enum ScenesEnum
     {
-        MainMenu_WithEffects = 0,
+        MainMenu = 0,
         Level0_Forest = 1,
         Level0_HotelRoom_Present = 2,
         Level0_HotelRoom_Past = 3,
@@ -201,10 +185,6 @@ namespace UnityConstants
         Level0_Bedroom_Past = 5,
         _GlobalManagers = 6,
         _InGameManagers = 7,
-        Shader_Oph = 8,
-        TestScene_Long = 9,
-        TestScene_Long2 = 10,
-        MainMenu = 11,
     }
 
     public static class Axes
