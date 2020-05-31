@@ -47,10 +47,18 @@ public class GameplayEventSequence : GameplayEvent
     // Callback for individual event ending in the sequence
     private void OnEventEnd()
     {
-        // unsubscribe now to avoid duplicate End signal on this event if this sequence is replayed (one-time event)
-        GameplayEvent gameplayEvent = eventSequence[m_CurrentEventIndex];
-        gameplayEvent.end -= OnEventEnd;
-        
+        if (m_CurrentEventIndex < eventSequence.Count)
+        {
+            // unsubscribe now to avoid duplicate End signal on this event if this sequence is replayed (one-time event)
+            GameplayEvent gameplayEvent = eventSequence[m_CurrentEventIndex];
+            gameplayEvent.end -= OnEventEnd;
+        }
+        else
+        {
+            Debug.LogErrorFormat(this, "Event sequence {0} ends with index {1}, but count is {2}",
+                this, m_CurrentEventIndex, eventSequence.Count);
+        }
+
         Continue();
     }
 }
