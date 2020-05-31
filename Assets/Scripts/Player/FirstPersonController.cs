@@ -45,6 +45,7 @@ public class FirstPersonController : MonoBehaviour
     
     public float walkSpeed = 3f, runSpeed = 6f;
     public float mouseSensitivity = 100f;
+    public float gamepadKeyboardSensitivity = 100f;
     float xRotation = 0;
     
     /// Tracks if a dialogue is active
@@ -56,6 +57,9 @@ public class FirstPersonController : MonoBehaviour
 
     /// Accumulated mouse movement to rotate camera
     private Vector2 cameraMouseRotation = Vector2.zero;
+
+    /// Camera rotation input by gamepad right stick or keyboard arrows
+    private Vector2 cameraGamepadKeyboardRotation = Vector2.zero;
 
     /// Is the character running?
     private bool isRunning;
@@ -195,6 +199,10 @@ public class FirstPersonController : MonoBehaviour
         // consume/clear rotation accumulated over the last frames
         cameraMouseRotation = Vector2.zero;
         
+        // apply gamepad/keyboard look input independently from cursor mode
+        yRotationDelta += cameraGamepadKeyboardRotation.x * gamepadKeyboardSensitivity * Time.deltaTime;
+        xRotationDelta += cameraGamepadKeyboardRotation.y * gamepadKeyboardSensitivity * Time.deltaTime;
+        
         // cumulate pitch
         xRotation -= xRotationDelta;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
@@ -273,6 +281,12 @@ public class FirstPersonController : MonoBehaviour
     /* Input Action callbacks */
 
     private void OnLook(InputValue value)
+    {
+        // set rotation for gamepad/keyboard
+        cameraGamepadKeyboardRotation = value.Get<Vector2>();
+    }
+
+    private void OnLookDelta(InputValue value)
     {
         // accumulate rotation (may be called multiple times between Updates)
         cameraMouseRotation += value.Get<Vector2>();

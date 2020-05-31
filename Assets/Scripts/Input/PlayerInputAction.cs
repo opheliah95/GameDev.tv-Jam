@@ -51,6 +51,14 @@ public class @Player : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""LookDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""faa9f5ea-d11c-4bac-836e-bf09c1ecdfcb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""ToggleInGameMenu"",
                     ""type"": ""Button"",
                     ""id"": ""9ac537ff-3ea9-42f8-81b1-84a13f89ef1b"",
@@ -202,17 +210,6 @@ public class @Player : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""91cbd842-020b-4669-af39-2953adefe041"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""a56ba994-5b3c-4872-a4d8-6125629f1dd5"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
@@ -318,6 +315,17 @@ public class @Player : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleCursorLock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91cbd842-020b-4669-af39-2953adefe041"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -868,6 +876,7 @@ public class @Player : IInputActionCollection, IDisposable
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
         m_Gameplay_Inspect = m_Gameplay.FindAction("Inspect", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
+        m_Gameplay_LookDelta = m_Gameplay.FindAction("LookDelta", throwIfNotFound: true);
         m_Gameplay_ToggleInGameMenu = m_Gameplay.FindAction("ToggleInGameMenu", throwIfNotFound: true);
         m_Gameplay_ToggleCursorLock = m_Gameplay.FindAction("ToggleCursorLock", throwIfNotFound: true);
         // UI
@@ -936,6 +945,7 @@ public class @Player : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Run;
     private readonly InputAction m_Gameplay_Inspect;
     private readonly InputAction m_Gameplay_Look;
+    private readonly InputAction m_Gameplay_LookDelta;
     private readonly InputAction m_Gameplay_ToggleInGameMenu;
     private readonly InputAction m_Gameplay_ToggleCursorLock;
     public struct GameplayActions
@@ -946,6 +956,7 @@ public class @Player : IInputActionCollection, IDisposable
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
         public InputAction @Inspect => m_Wrapper.m_Gameplay_Inspect;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
+        public InputAction @LookDelta => m_Wrapper.m_Gameplay_LookDelta;
         public InputAction @ToggleInGameMenu => m_Wrapper.m_Gameplay_ToggleInGameMenu;
         public InputAction @ToggleCursorLock => m_Wrapper.m_Gameplay_ToggleCursorLock;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
@@ -969,6 +980,9 @@ public class @Player : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLook;
+                @LookDelta.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLookDelta;
+                @LookDelta.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLookDelta;
+                @LookDelta.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLookDelta;
                 @ToggleInGameMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
                 @ToggleInGameMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
                 @ToggleInGameMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnToggleInGameMenu;
@@ -991,6 +1005,9 @@ public class @Player : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @LookDelta.started += instance.OnLookDelta;
+                @LookDelta.performed += instance.OnLookDelta;
+                @LookDelta.canceled += instance.OnLookDelta;
                 @ToggleInGameMenu.started += instance.OnToggleInGameMenu;
                 @ToggleInGameMenu.performed += instance.OnToggleInGameMenu;
                 @ToggleInGameMenu.canceled += instance.OnToggleInGameMenu;
@@ -1120,6 +1137,7 @@ public class @Player : IInputActionCollection, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnInspect(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnLookDelta(InputAction.CallbackContext context);
         void OnToggleInGameMenu(InputAction.CallbackContext context);
         void OnToggleCursorLock(InputAction.CallbackContext context);
     }
