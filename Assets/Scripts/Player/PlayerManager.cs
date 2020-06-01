@@ -1,27 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityConstants;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+using CommonsPattern;
+using UnityConstants;
+
+public class PlayerManager : SingletonManager<PlayerManager>
 {
     [Tooltip("Player Character prefab")]
     public GameObject playerCharacterPrefab;
 
-    /// Spawn transform (only position and rotation are used). Depends on the level. Retrieved by tag.
-    private Transform m_SpawnTransform;
-    
+    private bool m_HasSpawnedPlayerCharacterForCurrentLevel = false;
+
     private void Start()
     {
+        // convenient when testing level directly in the editor
+        SpawnPlayerCharacterIfNotAlready();
+    }
+
+    public void SpawnPlayerCharacterIfNotAlready()
+    {
+        if (m_HasSpawnedPlayerCharacterForCurrentLevel)
+        {
+            return;
+        }
+        
+        // retrieve spawn transform in this level
         GameObject spawnTransformObj = GameObject.FindWithTag(Tags.SpawnTransform);
         Debug.Assert(spawnTransformObj != null, "No game object with Tag \"SpawnTransform\" found in the scenes.", this);
         
-        m_SpawnTransform = GameObject.FindWithTag(Tags.SpawnTransform).transform;
-        SpawnPlayerCharacter();
+        Transform spawnTransform = GameObject.FindWithTag(Tags.SpawnTransform).transform;
+        Instantiate(playerCharacterPrefab, spawnTransform.position, spawnTransform.rotation);
+        
+        m_HasSpawnedPlayerCharacterForCurrentLevel = true;
     }
 
-    private void SpawnPlayerCharacter()
+    public void OnChangeLevel()
     {
-        Instantiate(playerCharacterPrefab, m_SpawnTransform.position, m_SpawnTransform.rotation);
+        m_HasSpawnedPlayerCharacterForCurrentLevel = false;
     }
 }
