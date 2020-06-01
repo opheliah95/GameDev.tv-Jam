@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appName: Anima
   majorVersion: 0
-  minorVersion: 0
-  stageVersion: 2
+  minorVersion: 1
+  stageVersion: 0
