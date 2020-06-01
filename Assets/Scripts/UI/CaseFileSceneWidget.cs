@@ -38,6 +38,6 @@ public class CaseFileSceneWidget : MonoBehaviour
     /// Button event callback: load target scene
     public void LoadScene()
     {
-        SceneManager.LoadScene((int) m_SceneEnum);
+        SceneLoader.Instance.UnloadActiveSceneAndLoadLevelAsNewActiveSceneAsync((int) m_SceneEnum);
     }
 }

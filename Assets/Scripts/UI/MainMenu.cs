@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneLoader.Instance.UnloadMainMenuAndLoadLevelAsync();
+        SceneLoader.Instance.UnloadActiveSceneAndLoadLevelAsNewActiveSceneAsync(Scenes.Level0_Forest);
     }
 
     public void ShowOptions()
