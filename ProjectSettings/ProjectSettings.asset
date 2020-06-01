@@ -127,6 +127,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -598,12 +599,12 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend:
-    Standalone: 0
+    Standalone: 1
   il2cppCompilerConfiguration:
     Standalone: 1
     WebGL: 1
   managedStrippingLevel:
-    Standalone: 2
+    Standalone: 3
     WebGL: 1
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0

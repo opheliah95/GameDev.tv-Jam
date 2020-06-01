@@ -3388,11 +3388,11 @@ GameObject:
   - component: {fileID: 1498899974}
   - component: {fileID: 1498899973}
   - component: {fileID: 1498899972}
-  - component: {fileID: 1498899971}
   - component: {fileID: 1498899970}
   - component: {fileID: 1498899969}
   - component: {fileID: 1498899968}
   - component: {fileID: 1498899967}
+  - component: {fileID: 1498899971}
   m_Layer: 20
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -3456,19 +3456,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEvent: {fileID: 1498899969}
---- !u!135 &1498899971
-SphereCollider:
+--- !u!65 &1498899971
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498899966}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 57.225853, y: 2.7956648, z: 85.07274}
+  m_Center: {x: -1.2800682, y: 0.8667474, z: -1.4185864}
 --- !u!64 &1498899972
 MeshCollider:
   m_ObjectHideFlags: 0
