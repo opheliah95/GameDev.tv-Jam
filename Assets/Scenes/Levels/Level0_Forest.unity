@@ -445,7 +445,7 @@ PrefabInstance:
     - target: {fileID: 794739747779410830, guid: cc1b10b773e03368c9e1fd293ca7cd12,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 794739747779410830, guid: cc1b10b773e03368c9e1fd293ca7cd12,
         type: 3}
@@ -1179,7 +1179,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650637702}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.1219764
