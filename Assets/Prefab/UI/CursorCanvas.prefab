@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 410009676789355424}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.021000002, y: -0.149, z: -8.001}
-  m_AnchorMin: {x: 0.5, y: 0.39668623}
-  m_AnchorMax: {x: 0.573, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -6}
-  m_SizeDelta: {x: 76, y: 79}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 15.252799, y: -19.704056}
+  m_SizeDelta: {x: 118, y: 112}
   m_Pivot: {x: 0.41078094, y: 0.5847255}
 --- !u!222 &410009676121590621
 CanvasRenderer:
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 410009676374609128}
   - component: {fileID: 410009676374609129}
   m_Layer: 5
-  m_Name: CursorHand
+  m_Name: CursorEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.4, y: 8.499985}
+  m_AnchoredPosition: {x: -25.7, y: 25.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &410009676374609128
