@@ -186,8 +186,9 @@ public class FirstPersonInteractor : MonoBehaviour
         Cursor.SetCursor(defaultCursor, defaultHotspot, cursorMode);
         
         CursorCanvas.Instance.SetCursorImage(isHovering: false);
-        
-        OnCursorChange();
+
+        // this should only be done on Reset, and even though, it doesn't seem needed in Unity 2019 anymore
+//        OnCursorReset();
     }
     
     
@@ -197,11 +198,9 @@ public class FirstPersonInteractor : MonoBehaviour
         Cursor.SetCursor(hoverCursor, hoverHotspot, cursorMode);
         
         CursorCanvas.Instance.SetCursorImage(isHovering: true);
-        
-        OnCursorChange();
     }
 
-    private void OnCursorChange()
+    private void OnCursorReset()
     {
         if (cursorMode == CursorMode.Auto)
         {
