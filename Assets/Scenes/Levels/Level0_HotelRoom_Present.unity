@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1160,6 +1160,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &531137407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 472.75223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 521.91895
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 295.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558418, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_Name
+      value: MainMusic_Exploration Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d183c3b7539428044a8f3b56814cd616, type: 3}
 --- !u!4 &566282407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0de6d16776eab67418bbc85c70da0c4c,

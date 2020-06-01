@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.496
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.010006185, g: 0.044240143, b: 0.086666636, a: 0.496}
+  m_IndirectSpecularColor: {r: 0.010006243, g: 0.044240348, b: 0.08666704, a: 0.496}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1996,6 +1996,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4aad8c7f1737fc4b86e9989ae288515, type: 3}
+--- !u!1001 &2889398063742534143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 472.75223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 521.91895
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 295.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558416, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558418, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_Name
+      value: MainMusic_RealityCrimeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558419, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730993345160558419, guid: d183c3b7539428044a8f3b56814cd616,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a863dbe466c422d449c89ab22371db9b, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d183c3b7539428044a8f3b56814cd616, type: 3}
 --- !u!1 &2972476003181335122
 GameObject:
   m_ObjectHideFlags: 0
