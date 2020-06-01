@@ -3874,8 +3874,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Credits</b>\n@Leyn      Programming\r\n@Kaylee  Music\r\t\n@Oph       
-    Art\r               \n@Cicero    Design"
+  m_text: "<b>Credits</b>\n@komehara  Programming\r\n@Kaylee        Music\r \n@Oph             
+    Art\r               \n@Cicero         Design"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f60bfa1b30b8144dbae34214b273f55, type: 2}
   m_sharedMaterial: {fileID: -8628020471155957782, guid: 3f60bfa1b30b8144dbae34214b273f55,
