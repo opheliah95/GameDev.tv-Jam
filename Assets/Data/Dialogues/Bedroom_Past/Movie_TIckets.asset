@@ -15,4 +15,9 @@ MonoBehaviour:
   speakerName: Player
   sentences:
   - Two movie tickets for a romantic film
+  - 'You found what you needed in the past! (clue A)
+
+    If you also found the tickets
+    (clue B) in the present, you can stop playing this prototype now.'
+  - Otherwise, go back to previous scenes and try to reach the bedroom in the present!
   characterImage: {fileID: 21300000, guid: 648d1df9162383d4487139b1653f321d, type: 3}
