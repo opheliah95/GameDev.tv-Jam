@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1418,10 +1418,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860198089}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.074999996, y: 0.015, z: 0.13154617}
+  m_Size: {x: 0.22, y: 0.22, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0.033297125}
 --- !u!1 &1033541705
 GameObject:
@@ -2781,7 +2781,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.074999996, y: 0.015, z: 0.13154617}
+  m_Size: {x: 0.22, y: 0.22, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0.033297125}
 --- !u!23 &449343604502298155
 MeshRenderer:
