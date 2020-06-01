@@ -442,10 +442,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstPersonCamera: {fileID: 2660603383783624705}
-  defaultCursor: {fileID: 2800000, guid: 6743e8d7e3430064e8ab3dcb796ed438, type: 3}
+  defaultCursor: {fileID: 2800000, guid: a723124030dd52940b6b3fc2f0b5191b, type: 3}
   defaultHotspot: {x: 0, y: 0}
-  hoverCursor: {fileID: 2800000, guid: 525046af68db89c46bb0a9d19f464f36, type: 3}
-  hoverHotspot: {x: 22, y: 0}
+  hoverCursor: {fileID: 2800000, guid: eb58ba42954fc9d49bc9a41182d893a5, type: 3}
+  hoverHotspot: {x: 32, y: 32}
   cursorMode: 0
   maxInteractDistance: 4
 --- !u!114 &1417588806
