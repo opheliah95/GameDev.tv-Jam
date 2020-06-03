@@ -44,6 +44,7 @@ public class FirstPersonController : MonoBehaviour
     
     /// Is the cursor is lock mode?
     private bool m_IsCursorLocked;
+    public bool IsCursorLocked => m_IsCursorLocked;
     
     /// Tracked cursor lock state to restore after menu choice
     private bool m_WasCursorLockedBeforeMenu;
@@ -256,7 +257,6 @@ public class FirstPersonController : MonoBehaviour
         {
             // apply yaw on body, but pitch on camera head
             trans.localRotation = characterRotationTarget;
-//            trans.Rotate(Vector3.up * yRotationDelta);
             playerCamera.transform.localRotation = cameraRotationTarget;
         }
     }
