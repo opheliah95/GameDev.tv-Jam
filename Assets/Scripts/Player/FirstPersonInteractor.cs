@@ -4,10 +4,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using CommonsDebug;
+using CommonsHelper;
 using UnityConstants;
 
 public class FirstPersonInteractor : MonoBehaviour
 {
+    /* Sibling components */
+
+    private FirstPersonController firstPersonController;
+    
+    
     /* Children references */
     
     public Camera firstPersonCamera;
@@ -46,6 +52,10 @@ public class FirstPersonInteractor : MonoBehaviour
     /// Object currently interacted with
     private Interactable m_ActiveInteractable;
 
+    private void Awake()
+    {
+        firstPersonController = this.GetComponentOrFail<FirstPersonController>();
+    }
 
     private void Start()
     {
@@ -93,9 +103,22 @@ public class FirstPersonInteractor : MonoBehaviour
         if (m_CanInteract)
         {
             Interactable interactable = null;
+
+            Vector2 mousePosition;
+            if (firstPersonController.IsCursorLocked)
+            {
+                // force value to screen center, since when cursor is locked, the mouse position is set
+                // to some position near the bottom but not at the center of the screen (e.g. (938.0, 259.0) on 1080p),
+                // causing detection offset in locked cursor mode
+                mousePosition = new Vector2(0.5f * Screen.width, 0.5f * Screen.height);
+            }
+            else
+            {
+                // use actual cursor position, since in unlocked cursor mode it's not always the screen center
+                mousePosition = Mouse.current.position.ReadValue();
+            }
             
-            // use actual cursor position, since in unlocked cursor mode it's not always the screen center
-            Ray mouseRay = firstPersonCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Ray mouseRay = firstPersonCamera.ScreenPointToRay((Vector3) mousePosition);
 
             // detect Interactable objects with rays blocked by various obstacles
             if (Physics.Raycast(mouseRay, out RaycastHit hitInfo, maxInteractDistance, 
