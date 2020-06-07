@@ -6,6 +6,8 @@ using CommonsPattern;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : SingletonManager<SoundManager>
 {
+    [SerializeField]
+    AudioSource audioSource;
 
     public void startPlaySound(SoundData soundsToPlay)
     {
@@ -14,23 +16,25 @@ public class SoundManager : SingletonManager<SoundManager>
 
     protected void playSound(SoundData soundsToPlay)
     {
-       
-        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
-            Debug.LogFormat("{0} sound has stoped", GetComponent<AudioSource>().clip);
+        // assign the next sound to subsequent audio source
+        // if the sound is still playing or it hasn't gone through 1/3 of original length
+        // if the sound has gone through 1/3 of original length, just overwrite it with a new sound to play
+        if (audioSource.isPlaying && audioSource.time <= audioSource.clip.length/3)
+            audioSource = transform.GetChild(0).GetComponent<AudioSource>();
 
-        }
 
         //randomly generate a sound to play
         int index = Random.Range(0, soundsToPlay.sounds.Count - 1);
         audioSource.clip = soundsToPlay.sounds[index];
-        Debug.LogFormat("{0} sound is playing...", audioSource.clip);
+      
         // play the sound
         audioSource.Play();
 
     }
+
+   
+    
 
 }
