@@ -9,6 +9,7 @@ public class SoundManager : SingletonManager<SoundManager>
     [SerializeField]
     AudioSource audioSource;
 
+    public float playbackPercent = 10f;
     public void startPlaySound(SoundData soundsToPlay)
     {
         playSound(soundsToPlay);
@@ -19,9 +20,9 @@ public class SoundManager : SingletonManager<SoundManager>
         audioSource = GetComponent<AudioSource>();
 
         // assign the next sound to subsequent audio source
-        // if the sound is still playing or it hasn't gone through 1/3 of original length
+        // if the sound is still playing or it hasn't gone through 1/10 of original length
         // if the sound has gone through 1/3 of original length, just overwrite it with a new sound to play
-        if (audioSource.isPlaying && audioSource.time <= audioSource.clip.length/3)
+        if (audioSource.isPlaying && audioSource.time <= audioSource.clip.length/playbackPercent)
             audioSource = transform.GetChild(0).GetComponent<AudioSource>();
 
 
