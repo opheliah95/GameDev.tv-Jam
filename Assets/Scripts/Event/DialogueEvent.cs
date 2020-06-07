@@ -7,8 +7,12 @@ public class DialogueEvent : GameplayEvent
     [Tooltip("Dialogue sequence played on interaction")]
     public List<Dialogue> dialogues;
 
+    public SoundData soundData;
     protected override void Execute()
     {
+        // play sound if there is any
+        if (soundData != null)
+            SoundManager.Instance.startPlaySound(soundData);
         // register callback on dialogue end so we can notify this event as ended
         DialogueManager.onDialogueEnded += OnDialogueEnded;
         

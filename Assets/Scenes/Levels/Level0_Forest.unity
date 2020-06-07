@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &7204686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &43936795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,7 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneEnum: 3
   sceneType: 1
-  unlockSound: {fileID: 11400000, guid: 323bcb5a33ebbb441b50bddfbab17e89, type: 2}
+  soundsToPlay: {fileID: 0}
 --- !u!4 &650637705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f073c48223f64e84895af292cb06b04e,
@@ -1144,6 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2c5e5c924fb8be34ea345ce100412e33, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &650637707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,6 +1537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &700750580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,6 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &863589284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &883080348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,6 +2277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1011785018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,6 +2523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1092323526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2637,6 +2645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 67113e4a41cfb4e409cc09ebb84a4298, type: 2}
+  soundData: {fileID: 11400000, guid: 54b09e1f0cd04bd4d9a61fb8d7d375da, type: 2}
 --- !u!114 &1136561934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,105 +2658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2228f95bc7c244579b8ae7afdd6c5d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneEnum: 2
+  sceneEnum: 0
   sceneType: 0
-  unlockSound: {fileID: 11400000, guid: 323bcb5a33ebbb441b50bddfbab17e89, type: 2}
---- !u!82 &1136561935
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136561932}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!114 &1136561936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2830,6 +2743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1226515980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2982,6 +2896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1289366708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3260,6 +3175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1379386473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3654,6 +3570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1581893564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3745,6 +3662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1605357712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4572,6 +4490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 2b016c446bc88de4490e0a1ff1103f8b, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &1883333923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4825,6 +4744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: 8aa7a3678556064448718002d9f09920, type: 2}
+  soundData: {fileID: 0}
 --- !u!114 &2126614319
 MonoBehaviour:
   m_ObjectHideFlags: 0
