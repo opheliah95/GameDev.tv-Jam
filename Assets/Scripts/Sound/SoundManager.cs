@@ -20,7 +20,7 @@ public class SoundManager : SingletonManager<SoundManager>
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
-            Debug.LogFormat("{0} sound has stoped", soundsToPlay);
+            Debug.LogFormat("{0} sound has stoped", GetComponent<AudioSource>().clip);
 
         }
 

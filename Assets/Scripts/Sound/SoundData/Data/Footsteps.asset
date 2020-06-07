@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Footsteps
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 4bea58e3f28b9804990d455c526748a7, type: 3}
+  - {fileID: 8300000, guid: 105f7785bbcd687448faec44f52c7882, type: 3}
   - {fileID: 8300000, guid: ca546fc3bc74b4f429cd36591c355c33, type: 3}
   - {fileID: 8300000, guid: 7491c00d6aa1d5a4d9c81492059c4434, type: 3}
-  - {fileID: 8300000, guid: cc43c64d157233045b11d15da0731f8a, type: 3}
-  - {fileID: 8300000, guid: 105f7785bbcd687448faec44f52c7882, type: 3}
   - {fileID: 8300000, guid: a4e3ea25ebdcc1e4a8ee2975d6d31241, type: 3}
-  - {fileID: 8300000, guid: 12324393dbd92fb48a82220db2e3181e, type: 3}
-  - {fileID: 8300000, guid: 1210f22695467854580268c3be426c78, type: 3}
