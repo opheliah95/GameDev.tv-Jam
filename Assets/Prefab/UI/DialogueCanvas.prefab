@@ -65,8 +65,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Look I found something
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f60bfa1b30b8144dbae34214b273f55, type: 2}
+  m_sharedMaterial: {fileID: -8628020471155957782, guid: 3f60bfa1b30b8144dbae34214b273f55,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -371,8 +372,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 81d83b3c5b419114cb75869ee77d6e5f, type: 2}
+  m_sharedMaterial: {fileID: 4080362373672928520, guid: 81d83b3c5b419114cb75869ee77d6e5f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
