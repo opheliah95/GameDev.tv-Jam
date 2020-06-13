@@ -119,9 +119,6 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
-        
-        InGameMenu.menuOpened += OnMenuOpened;
-        InGameMenu.menuClosed += OnMenuClosed;
     }
 
     private void OnDisable()
@@ -131,9 +128,6 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
-        
-        InGameMenu.menuOpened -= OnMenuOpened;
-        InGameMenu.menuClosed -= OnMenuClosed;
     }
 
     private void Update()
