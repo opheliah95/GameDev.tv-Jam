@@ -79,7 +79,7 @@ public class FirstPersonController : MonoBehaviour
 
     /// footstep sound
     public SoundData footstep;
-    bool isPlaying;
+    bool isPlaying = false;
     AudioSource audioSource;
 
     private void Awake()
