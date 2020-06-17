@@ -77,11 +77,17 @@ public class FirstPersonController : MonoBehaviour
     /// Is the character running?
     private bool isRunning;
 
+    /// footstep sound
+    public SoundData footstep;
+    bool isPlaying = false;
+    AudioSource audioSource;
+
     private void Awake()
     {
         trans = transform;
         controller = this.GetComponentOrFail<CharacterController>();
         playerInput = this.GetComponentOrFail<PlayerInput>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -113,9 +119,6 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
-        
-        InGameMenu.menuOpened += OnMenuOpened;
-        InGameMenu.menuClosed += OnMenuClosed;
     }
 
     private void OnDisable()
@@ -125,9 +128,6 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
-        
-        InGameMenu.menuOpened -= OnMenuOpened;
-        InGameMenu.menuClosed -= OnMenuClosed;
     }
 
     private void Update()
@@ -154,6 +154,19 @@ public class FirstPersonController : MonoBehaviour
 
         controller.Move(trans.right * xMovement * tempSpeed * Time.deltaTime);
         controller.Move(trans.forward * yMovement * tempSpeed * Time.deltaTime);
+
+        if (xMovement != 0 || yMovement != 0)
+        {
+            isPlaying = true;
+            playSound(footstep);
+            
+        }
+        else
+        {
+            audioSource.Stop();
+            isPlaying = false;
+        }
+            
     }
 
     void playerLook()
@@ -413,5 +426,21 @@ public class FirstPersonController : MonoBehaviour
         Debug.Assert(value.isPressed, "OnToggleCursorLock received value not isPressed, make sure not to set " +
                                       "ToggleCursorLock interaction to Pass Through nor Press and Release so it only detects press.");
         ToggleCursorLock();
+    }
+
+
+    // function to play player related sound
+    protected void playSound(SoundData soundsToPlay)
+    {
+        //randomly generate a sound to play
+        if(!audioSource.isPlaying)
+        {
+            int index = Random.Range(0, soundsToPlay.sounds.Count - 1);
+            audioSource.clip = soundsToPlay.sounds[index];
+            // play the sound
+            audioSource.Play();
+        }
+       
+
     }
 }

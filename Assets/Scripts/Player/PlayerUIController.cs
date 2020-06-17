@@ -31,6 +31,9 @@ public class PlayerUIController : MonoBehaviour
 
     private void OnToggleInGameMenu(InputValue value)
     {
+        Debug.Assert(value.isPressed, "OnToggleInGameMenu called with value.isPressed: false, " +
+                                      "action should only be set for Press, not Release.");
+        
         // see FirstPersonController.OnMasterEventStarted comment, we prefer checking flag than switching action map
         if (!GameplayEventManager.Instance.IsEventPlaying())
         {
