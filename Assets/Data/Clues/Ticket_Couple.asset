@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dedba98942374135be2fbe590281c42e, type: 3}
-  m_Name: SceneData_Bedroom_Past
+  m_Script: {fileID: 11500000, guid: fcaa614aa69c4a32b47545013ffb7a09, type: 3}
+  m_Name: Ticket_Couple
   m_EditorClassIdentifier: 
-  sceneEnum: 5
-  sceneName: Bedroom (Past)
-  unlockedOnStart: 0
+  stringID: ticket_couple
+  picture: {fileID: 2800000, guid: 16c87683f61dcc74e81f40399fed9dbd, type: 3}
+  clueName: Ticket for two

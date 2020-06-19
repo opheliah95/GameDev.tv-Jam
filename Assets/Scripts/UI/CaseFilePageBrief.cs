@@ -22,10 +22,10 @@ public class CaseFilePageBrief : CaseFilePage
     public Button closeCaseButton;
     
     [Tooltip("Text: initial brief")]
-    public TextMeshPro briefTextBasic;
+    public TextMeshProUGUI briefTextBasic;
     
     [Tooltip("Text: extra info on brief")]
-    public TextMeshPro briefTextExtra;
+    public TextMeshProUGUI briefTextExtra;
     
     public override void OnShow()
     {
@@ -35,17 +35,17 @@ public class CaseFilePageBrief : CaseFilePage
         InitText(caseData);
     }
 
-    public void InitToggles(CaseData caseData)
+    void InitToggles(CaseData caseData)
     {
         
     }
     
-    public void InitButton(CaseData caseData)
+    void InitButton(CaseData caseData)
     {
         
     }
     
-    public void InitText(CaseData caseData)
+    void InitText(CaseData caseData)
     {
         
     }

@@ -11,7 +11,7 @@ public class CaseProgress
     private readonly HashSet<ScenesEnum>[] m_UnlockedSceneEnumsSetBySceneType = {new HashSet<ScenesEnum>(), new HashSet<ScenesEnum>()};
     
     /// Set of found clues
-    private HashSet<string> m_FoundClues = new HashSet<string>();
+    private readonly HashSet<string> m_FoundClues = new HashSet<string>();
     
     public bool HasUnlockedScene(CaseSceneType sceneType, ScenesEnum sceneEnum)
     {

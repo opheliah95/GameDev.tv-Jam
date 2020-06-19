@@ -1835,6 +1835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f82157542f89e49bc3b5114abaf948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathLocationValue: {fileID: 7010971815934680922}
+  murderWeaponValue: {fileID: 4334790061596387528}
 --- !u!1 &3821762308035450293
 GameObject:
   m_ObjectHideFlags: 0

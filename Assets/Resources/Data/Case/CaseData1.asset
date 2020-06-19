@@ -20,3 +20,7 @@ MonoBehaviour:
   reconstructionSceneDataArray:
   - {fileID: 11400000, guid: 947e9d64374df0b4488035a2fcc25dbf, type: 2}
   - {fileID: 11400000, guid: b2ddaf2cbb1f9014e95138037f092d07, type: 2}
+  deathLocationSceneData: {fileID: 11400000, guid: 947e9d64374df0b4488035a2fcc25dbf,
+    type: 2}
+  murderWeaponClueData: {fileID: 11400000, guid: f879d569d912f3336b49c64f63284355,
+    type: 2}
