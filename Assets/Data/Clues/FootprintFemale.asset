@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringID: footprint_female
   picture: {fileID: 2800000, guid: 2ad273c859c732f448c041129607c395, type: 3}
-  clueName: Footprint (Female)
+  clueName: Footprint (Woman)
+  description: Footprints belonging to a woman.

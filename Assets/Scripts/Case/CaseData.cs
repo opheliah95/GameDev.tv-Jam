@@ -20,6 +20,9 @@ public class CaseData : ScriptableObject
     [Tooltip("Actual scene where victim died, must be found by player")]
     public SceneData deathLocationSceneData;
     
-    [Tooltip("Weapon used to kill the victim, must be found by player")]
+    [Tooltip("Clues that can be found by player")]
+    public ClueData[] clueDataArray;
+    
+    [Tooltip("Weapon used to kill the victim, must be found by player. Should also be in clueDataArray.")]
     public ClueData murderWeaponClueData;
 }

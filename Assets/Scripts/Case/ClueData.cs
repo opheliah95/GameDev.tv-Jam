@@ -16,4 +16,7 @@ public class ClueData : ScriptableObject
 
     [Tooltip("Readable name")]
     public string clueName;
+    
+    [Tooltip("Clue description")]
+    public string description;
 }
