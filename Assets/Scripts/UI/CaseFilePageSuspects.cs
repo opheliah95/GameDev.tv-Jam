@@ -40,6 +40,9 @@ public class CaseFilePageSuspects : CaseFilePage
         Debug.AssertFormat(caseData.suspectDataArray.Contains(caseData.culpritData), caseData, "caseData.suspectDataArray does not contain culpritData in CaseData {0}", caseData);
 
         InitSuspectWidgets(caseData);
+        
+        // clear suspect bio until one is selected
+        suspectDescriptionWidget.text = "";
     }
 
     private void InitSuspectWidgets(CaseData caseData)

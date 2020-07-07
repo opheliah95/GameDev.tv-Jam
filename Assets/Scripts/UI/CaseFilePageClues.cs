@@ -40,6 +40,9 @@ public class CaseFilePageClues : CaseFilePage
         Debug.AssertFormat(caseData.clueDataArray.Contains(caseData.murderWeaponClueData), caseData, "caseData.clueDataArray does not contain murderWeaponClueData in CaseData {0}", caseData);
 
         InitClueWidgets(caseData);
+        
+        // clear clue description until one is selected
+        clueDescriptionWidget.text = "";
     }
 
     private void InitClueWidgets(CaseData caseData)
