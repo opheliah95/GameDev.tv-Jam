@@ -25,4 +25,10 @@ public class CaseData : ScriptableObject
     
     [Tooltip("Weapon used to kill the victim, must be found by player. Should also be in clueDataArray.")]
     public ClueData murderWeaponClueData;
+    
+    [Tooltip("Suspects in this case.")]
+    public SuspectData[] suspectDataArray;
+    
+    [Tooltip("Culprit of the case. Should also be in suspectDataArray.")]
+    public SuspectData culpritData;
 }

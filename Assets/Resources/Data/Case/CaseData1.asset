@@ -33,3 +33,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad8b3b449cc891a79a83ba3ec5655e0d, type: 2}
   murderWeaponClueData: {fileID: 11400000, guid: f879d569d912f3336b49c64f63284355,
     type: 2}
+  suspectDataArray:
+  - {fileID: 11400000, guid: 9287f72d614aea74c9acaf1d2a34a85a, type: 2}
+  - {fileID: 11400000, guid: e31ddf54d094c9448b2a30fae2cf6c9f, type: 2}
+  - {fileID: 11400000, guid: 6804f05a3895428418689d33434910b0, type: 2}
+  - {fileID: 11400000, guid: dbd812f1237a08b4dbad2dd417bc0d60, type: 2}
+  - {fileID: 11400000, guid: 21af6579a44d84240bd84eef67f18be5, type: 2}
+  culpritData: {fileID: 11400000, guid: 9287f72d614aea74c9acaf1d2a34a85a, type: 2}

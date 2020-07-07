@@ -33,11 +33,6 @@ public class CaseFileClueWidget : MonoBehaviour
         button.interactable = isClueFound;
     }
 
-    public void PrintItemDescription()
-    {
-        Debug.Log(m_ClueData.description);
-    }
-
     // Event callback
     public void OnClueSelected()
     {
