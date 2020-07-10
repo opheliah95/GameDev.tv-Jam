@@ -747,6 +747,7 @@ MonoBehaviour:
   eventSequence:
   - {fileID: 801230289}
   - {fileID: 801230289}
+  - {fileID: 801230285}
 --- !u!114 &801230291
 MonoBehaviour:
   m_ObjectHideFlags: 0
