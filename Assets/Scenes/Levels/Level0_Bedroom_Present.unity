@@ -690,6 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 636623124}
+  - {fileID: 636623127}
 --- !u!114 &636623126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +704,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEvent: {fileID: 636623125}
+--- !u!114 &636623127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636623123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: ticket_single
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!65 &636623129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1575,6 +1590,7 @@ GameObject:
   - component: {fileID: 1692200646}
   - component: {fileID: 1692200645}
   - component: {fileID: 1692200644}
+  - component: {fileID: 1692200647}
   m_Layer: 20
   m_Name: HusbandsShoes
   m_TagString: Untagged
@@ -1640,6 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 1692200644}
+  - {fileID: 1692200647}
 --- !u!114 &1692200646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,6 +1670,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEvent: {fileID: 1692200645}
+--- !u!114 &1692200647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692200641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: husband_shoes
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!1 &1830902315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 1e3d5b093a20349469fea46eef53143a,
@@ -1688,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 1830902316}
+  - {fileID: 1830902321}
 --- !u!4 &1830902318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 1e3d5b093a20349469fea46eef53143a,
@@ -1720,6 +1752,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.18
   m_Center: {x: 0.00033563748, y: -0.00011098012, z: 0.0018449686}
+--- !u!114 &1830902321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830902315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: bank_letter
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!1 &1843887983
 GameObject:
   m_ObjectHideFlags: 0

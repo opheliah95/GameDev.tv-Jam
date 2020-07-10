@@ -15,4 +15,5 @@ MonoBehaviour:
   stringID: ticket_single
   picture: {fileID: 2800000, guid: 16c87683f61dcc74e81f40399fed9dbd, type: 3}
   clueName: Ticket for one
-  description: (not done yet)
+  description: A moive ticket to a romantic comedy film 2 hours before the death
+    of Lucy Griffiths.

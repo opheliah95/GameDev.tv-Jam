@@ -15,4 +15,4 @@ MonoBehaviour:
   stringID: flower
   picture: {fileID: 2800000, guid: fc01998ede17a7248a042422f06f782b, type: 3}
   clueName: Flower
-  description: (not done yet)
+  description: A rose carefully wrapped in some paper
