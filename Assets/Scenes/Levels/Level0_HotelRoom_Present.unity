@@ -1126,6 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 408050256}
+  - {fileID: 408050260}
 --- !u!114 &408050258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.572815, y: 0.05, z: 2.7591686}
   m_Center: {x: -0.19365668, y: 0, z: -0.3275199}
+--- !u!114 &408050260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408050254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: broken_glass
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!1 &438728422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1587,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 60449593}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &860198095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860198089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: car_key
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!1 &1033541705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1617,7 @@ GameObject:
   - component: {fileID: 1033541713}
   - component: {fileID: 1033541712}
   - component: {fileID: 1033541711}
+  - component: {fileID: 1033541714}
   m_Layer: 20
   m_Name: Blood
   m_TagString: Untagged
@@ -1712,6 +1742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 1033541711}
+  - {fileID: 1033541714}
 --- !u!114 &1033541713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,6 +1756,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEvent: {fileID: 1033541712}
+--- !u!114 &1033541714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033541705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: blood
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!4 &1038176795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 0d3f8ba08458fe04f92cae457bec2160,
@@ -2179,6 +2224,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1225123811}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1426147075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426147072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: takeaway_recepit
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!114 &1426147077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2193,6 +2252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 1426147078}
+  - {fileID: 1426147075}
 --- !u!114 &1426147078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3234,6 +3294,7 @@ GameObject:
   - component: {fileID: 8296172667482873093}
   - component: {fileID: 8296172667482873092}
   - component: {fileID: 2023957598}
+  - component: {fileID: 8296172667482873094}
   m_Layer: 20
   m_Name: House_Key
   m_TagString: Untagged
@@ -3271,6 +3332,21 @@ MonoBehaviour:
   eventSequence:
   - {fileID: 8296172667482873092}
   - {fileID: 2023957598}
+  - {fileID: 8296172667482873094}
+--- !u!114 &8296172667482873094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172667482873091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: house_key
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!4 &8569827606617792172
 Transform:
   m_ObjectHideFlags: 0
