@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
   m_Name: stalker
   m_EditorClassIdentifier: 
-  stringID: 
-  picture: {fileID: 0}
-  suspectName: 
-  description: 
+  stringID: stalker
+  picture: {fileID: 2800000, guid: ff146faec40e72d42a650b77da0ecffc, type: 3}
+  suspectName: Jerome Martinez
+  description: 'Age: 35
+
+    Height: 187cm
+
+    Weight: 80kg
+
+    Footsize: 10
+
+    Jerome
+    Martinez has previously commited several crimes, including theft, burglary, harressment
+    and refusing arrest. Recently, the decreased has filed a restraining order against
+    Mr Martinez.'

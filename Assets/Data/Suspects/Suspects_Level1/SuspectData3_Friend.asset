@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: SuspectData3_Friend
   m_EditorClassIdentifier: 
   stringID: friend
-  picture: {fileID: 0}
-  suspectName: Mr Friend
-  description: Her friend.
+  picture: {fileID: 2800000, guid: 73af1f5860e1cf54299914a760e298a3, type: 3}
+  suspectName: Amy Jones
+  description: 'Age: 34
+
+    Height: 165cm
+
+    Weight: 60kg
+
+    Footsize: 6
+
+    Amy
+    claims to be one of the victim''s cloest friend. She have a history of drink
+    driving and debt problems.
+
+    In an interview, she mentioned that deceased
+    had been stalked for some period by Jerome Martinez, against whom Mrs Griffiths
+    had filed a restraining order.
+
+'

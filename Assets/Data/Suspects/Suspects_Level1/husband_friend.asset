@@ -12,7 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
   m_Name: husband_friend
   m_EditorClassIdentifier: 
-  stringID: 
-  picture: {fileID: 0}
-  suspectName: 
-  description: 
+  stringID: husband_friend
+  picture: {fileID: 2800000, guid: 3bd8a9f458c0c5a45bb82fe1dc200f29, type: 3}
+  suspectName: John Hummel
+  description: 'Age: 38
+
+    Height: 178cm
+
+    Weight: 75kg
+
+    Footsize: 10
+
+    John
+    ran a consultancy business which is currently in adminstration. John confirmed
+    that when the crime took place, him and Mr Griffith went out for a drink and
+    moive. John describes Mr Griffith as a caring figure and had mentioned that Luch
+    could be having an affair with someone else.'

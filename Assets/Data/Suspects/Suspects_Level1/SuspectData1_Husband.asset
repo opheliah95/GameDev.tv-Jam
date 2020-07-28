@@ -13,6 +13,20 @@ MonoBehaviour:
   m_Name: SuspectData1_Husband
   m_EditorClassIdentifier: 
   stringID: husband
-  picture: {fileID: 0}
-  suspectName: Mr Husband
-  description: The husband.
+  picture: {fileID: 2800000, guid: 4de4e50fce448b24cab93a7b4347029f, type: 3}
+  suspectName: Jake Griffiths
+  description: 'Age: 35
+
+    Height: 185cm
+
+    Weight: 86kg
+
+    Footsize: 10
+
+    Mr
+    Griffiths lived at 25 Eastwell road in Newdale South with the victim. They have
+    been married for 10 years. Whilst Mr Griffiths does admit to arguing with his
+    wife, he had never once acted violently towards his late wife. On the night of
+    murder, he claimed to be out with his friend, John Hammel,  for a drink and moive.
+
+'

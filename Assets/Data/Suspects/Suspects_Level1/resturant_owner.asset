@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
   m_Name: resturant_owner
   m_EditorClassIdentifier: 
-  stringID: 
-  picture: {fileID: 0}
-  suspectName: 
-  description: 
+  stringID: resturant_owner
+  picture: {fileID: 2800000, guid: a1b7a95556e67f1429dc54ea3098878e, type: 3}
+  suspectName: Lilly Zhu
+  description: 'Age: 55
+
+    Height: 150cm
+
+    Weight: 55kg
+
+    Footsize: 5
+
+    Lilly
+    owns Golden Dragon takeaway. She confirmed seeing the decedent at 4:45 PM on
+    Saturday 3rd March, which is when the decreased was seen last. She received a
+    call from Luch Griffith on 3:13 for an takeway order.'
