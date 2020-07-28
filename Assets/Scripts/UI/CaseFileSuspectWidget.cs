@@ -65,8 +65,10 @@ public class CaseFileSuspectWidget : MonoBehaviour
         CaseFilePageSuspects.InvokeSuspectHovered(m_SuspectData);
     }
     
-    // Event callback
-    public void OnSuspectClicked()
+    // Event callback (named Submit because it is bound to button On Click
+    // and supports pointer click and keyboard/gamepad Submit; do not use
+    // EventTrigger component which would require both Pointer Click and Submit)
+    public void OnSuspectSubmitted()
     {
         ToggleCrossSuspect();
         CaseFilePageSuspects.InvokeSuspectCrossingChanged(m_SuspectData);
