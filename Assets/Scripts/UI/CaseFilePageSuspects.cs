@@ -10,8 +10,8 @@ using CommonsHelper;
 
 public class CaseFilePageSuspects : CaseFilePage
 {
-    private static event Action<SuspectData> suspectSelected;
     private static event Action<SuspectData> suspectHovered;
+    private static event Action<SuspectData> suspectCrossingChanged;
     
     [Tooltip("Grid containing widgets for suspects to find")]
     public GridLayoutGroup suspectsGrid;
@@ -24,14 +24,14 @@ public class CaseFilePageSuspects : CaseFilePage
 
     private void OnEnable()
     {
-        suspectSelected += OnSuspectSelected;
         suspectHovered += OnSuspectHovered;
+        suspectCrossingChanged += OnSuspectCrossingChanged;
     }
 
     private void OnDisable()
     {
-        suspectSelected -= OnSuspectSelected;
         suspectHovered -= OnSuspectHovered;
+        suspectCrossingChanged -= OnSuspectCrossingChanged;
     }
 
     public override void OnShow()
@@ -81,14 +81,12 @@ public class CaseFilePageSuspects : CaseFilePage
             // get suspect data
             SuspectData suspectData = caseData.suspectDataArray[i];
             
+            // check if suspect has been crossed
+            bool isCrossed = CaseManager.Instance.CurrentCaseProgress.HasCrossedSuspect(suspectData.stringID);
+            
             // init suspect button widget
-            widget.Init(suspectData);
+            widget.Init(suspectData, isCrossed);
         }
-    }
-
-    public static void InvokeSuspectSelected(SuspectData suspectData)
-    {
-        suspectSelected?.Invoke(suspectData);
     }
 
     public static void InvokeSuspectHovered(SuspectData suspectData)
@@ -96,14 +94,21 @@ public class CaseFilePageSuspects : CaseFilePage
         suspectHovered?.Invoke(suspectData);
     }
 
-    private void OnSuspectSelected(SuspectData suspectData)
+    public static void InvokeSuspectCrossingChanged(SuspectData suspectData)
     {
-        suspectDescriptionWidget.text = suspectData.description;
+        suspectCrossingChanged?.Invoke(suspectData);
     }
     
     private void OnSuspectHovered(SuspectData suspectData)
     {
         // show suspect description text
         suspectDescriptionWidget.text = suspectData.description;
+    }
+    
+    private void OnSuspectCrossingChanged(SuspectData suspectData)
+    {
+        // check if only one suspect remains (go through CaseProgress
+        // ie model rather than CaseFileSuspectWidget to benefit from helper
+        // method)
     }
 }
