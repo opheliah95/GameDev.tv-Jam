@@ -18,5 +18,6 @@ public class SuspectData : ScriptableObject
     public string suspectName;
     
     [Tooltip("Suspect bio, testimony, etc.")]
+    [TextArea(10,10)]
     public string description;
 }
