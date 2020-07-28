@@ -39,4 +39,10 @@ public class CaseFileSuspectWidget : MonoBehaviour
         // without using a singleton, nor passing CaseFilePageSuspects instance in CaseFileSuspectWidget.Init
         CaseFilePageSuspects.InvokeSuspectSelected(m_SuspectData);
     }
+    
+    // Event callback
+    public void OnSuspectHoveredStart()
+    {
+        CaseFilePageSuspects.InvokeSuspectHovered(m_SuspectData);
+    }
 }

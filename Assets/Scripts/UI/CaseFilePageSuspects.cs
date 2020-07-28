@@ -11,6 +11,7 @@ using CommonsHelper;
 public class CaseFilePageSuspects : CaseFilePage
 {
     private static event Action<SuspectData> suspectSelected;
+    private static event Action<SuspectData> suspectHovered;
     
     [Tooltip("Grid containing widgets for suspects to find")]
     public GridLayoutGroup suspectsGrid;
@@ -24,11 +25,13 @@ public class CaseFilePageSuspects : CaseFilePage
     private void OnEnable()
     {
         suspectSelected += OnSuspectSelected;
+        suspectHovered += OnSuspectHovered;
     }
 
     private void OnDisable()
     {
         suspectSelected -= OnSuspectSelected;
+        suspectHovered -= OnSuspectHovered;
     }
 
     public override void OnShow()
@@ -88,8 +91,19 @@ public class CaseFilePageSuspects : CaseFilePage
         suspectSelected?.Invoke(suspectData);
     }
 
+    public static void InvokeSuspectHovered(SuspectData suspectData)
+    {
+        suspectHovered?.Invoke(suspectData);
+    }
+
     private void OnSuspectSelected(SuspectData suspectData)
     {
+        suspectDescriptionWidget.text = suspectData.description;
+    }
+    
+    private void OnSuspectHovered(SuspectData suspectData)
+    {
+        // show suspect description text
         suspectDescriptionWidget.text = suspectData.description;
     }
 }
