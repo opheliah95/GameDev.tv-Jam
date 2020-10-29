@@ -20,3 +20,26 @@ MonoBehaviour:
   reconstructionSceneDataArray:
   - {fileID: 11400000, guid: 947e9d64374df0b4488035a2fcc25dbf, type: 2}
   - {fileID: 11400000, guid: b2ddaf2cbb1f9014e95138037f092d07, type: 2}
+  deathLocationSceneData: {fileID: 11400000, guid: 947e9d64374df0b4488035a2fcc25dbf,
+    type: 2}
+  clueDataArray:
+  - {fileID: 11400000, guid: 018231e9264ca7143bc19d8755f794cd, type: 2}
+  - {fileID: 11400000, guid: 73b266331c8c3f7c2828d6de2ef0af74, type: 2}
+  - {fileID: 11400000, guid: 7c955188e67d0ef4cbe12dd508367ca3, type: 2}
+  - {fileID: 11400000, guid: 907608f788d268ac5ac12358e788a986, type: 2}
+  - {fileID: 11400000, guid: 1e3f0606b0f81e8d2a8e746d7a70b709, type: 2}
+  - {fileID: 11400000, guid: f879d569d912f3336b49c64f63284355, type: 2}
+  - {fileID: 11400000, guid: 5043532e78380cff8a97a4b23899f8dc, type: 2}
+  - {fileID: 11400000, guid: ad8b3b449cc891a79a83ba3ec5655e0d, type: 2}
+  murderWeaponClueData: {fileID: 11400000, guid: f879d569d912f3336b49c64f63284355,
+    type: 2}
+  suspectDataArray:
+  - {fileID: 11400000, guid: 9287f72d614aea74c9acaf1d2a34a85a, type: 2}
+  - {fileID: 11400000, guid: b90a6d3dbfe263441919aaf58d17c242, type: 2}
+  - {fileID: 11400000, guid: 7d3ea546d090574428847ec5dfc83d5c, type: 2}
+  - {fileID: 11400000, guid: 6804f05a3895428418689d33434910b0, type: 2}
+  - {fileID: 11400000, guid: 56ce3c1aed0b349489533dde8edcf29c, type: 2}
+  - {fileID: 11400000, guid: 4eb06dbd290c0ef4c9b44e830c27209a, type: 2}
+  - {fileID: 11400000, guid: fd2f607b414d8c648a8a5e722529ae5f, type: 2}
+  - {fileID: 11400000, guid: 401ae1171acf46a49a450873dada3ff0, type: 2}
+  culpritData: {fileID: 11400000, guid: 9287f72d614aea74c9acaf1d2a34a85a, type: 2}

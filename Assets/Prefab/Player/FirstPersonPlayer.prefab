@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 1434346050826542017}
   - component: {fileID: 1417588806}
   - component: {fileID: 523297865194733282}
-  - component: {fileID: 5876838577040264147}
+  - component: {fileID: -1444980886043735808}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -308,6 +308,7 @@ MonoBehaviour:
   mouseSensitivity: 0.1
   gamepadKeyboardSensitivity: 100
   footstep: {fileID: 11400000, guid: bae84cd163d792b4489e9e569bdb0f26, type: 2}
+  soundFrequency: 0.594
 --- !u!114 &2660603384332830772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +476,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.809
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -559,7 +560,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5876838577040264147
+--- !u!114 &-1444980886043735808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -568,6 +569,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2660603384332830767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2063c3a3c95844496db38e865ad0fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 286d6b33c86d5bb44b62395b36a75b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footstep: {fileID: 11400000, guid: bae84cd163d792b4489e9e569bdb0f26, type: 2}
+  soundLength: 0.8
+  soundInterval: 3

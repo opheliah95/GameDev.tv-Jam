@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
+  m_Name: jogger
+  m_EditorClassIdentifier: 
+  stringID: jogger
+  picture: {fileID: 2800000, guid: d232f8969fd6f0742951ea9d796792fd, type: 3}
+  suspectName: Sarah Miller
+  description: 'Age: 26
+
+    Height: 160cm
+
+    Weight: 60kg
+
+    Footsize: 5
+
+    Sarah
+    is a school teacher living 3km away from Laughton forest. Sarah is the first
+    to discover the body and informed Newdale Metropolitan Police DPT.'

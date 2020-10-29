@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaa614aa69c4a32b47545013ffb7a09, type: 3}
+  m_Name: DIvorce_Paper
+  m_EditorClassIdentifier: 
+  stringID: divorce_paper
+  picture: {fileID: 2800000, guid: b1b7bcc9c2b8e074abf8588e837bc31c, type: 3}
+  clueName: Divorce Paper
+  description: Divorce paper between Lucy Griffiths and Jake Griffiths.

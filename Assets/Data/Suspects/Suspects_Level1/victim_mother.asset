@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
+  m_Name: victim_mother
+  m_EditorClassIdentifier: 
+  stringID: victim_mother
+  picture: {fileID: 2800000, guid: cd2932d59f23b654d8bea040c1920193, type: 3}
+  suspectName: Karen Brown
+  description: 'Age: 66
+
+    Height: 160cm
+
+    Weight: 75kg
+
+    Footsize: 6
+
+    Biological
+    mother of the victim. Married to Martin Brown for 40 years and  is living with
+    Martin in a villa in Santa Rseyron. Karen told the police Lucy and Martin never
+    got alone. Lucy had privately phoned her several times complaining her relationship
+    with Griffith. But also she mentioned that a 30 years old male has been stalking
+    her for the past few months.'

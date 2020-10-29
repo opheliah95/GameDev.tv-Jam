@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
+  m_Name: victim_father
+  m_EditorClassIdentifier: 
+  stringID: victim_father
+  picture: {fileID: 2800000, guid: e25083001fd6a1f4c810686ea5bd94d8, type: 3}
+  suspectName: Martin Brown
+  description: "Age: 68\nHeight: 178cm\nWeight: 75kg\nFootsize: 10\nBiological father
+    of the victim. He used to be the owner of a large construction company.  He retried
+    6 years ago and is living in a villa in Santa Rseyron with his wife Karen Brown.
+    Martin told the police that in the past decades the victim seldomly contacted
+    him. He showed concern about his daughters\u2019 choice of friends and spouse."

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -684,6 +684,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2005148824}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &801230285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801230284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: divorce_paper
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!4 &801230287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 146d4a2836d7c12498d2290ec52253f1,
@@ -732,6 +746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 801230289}
+  - {fileID: 801230289}
+  - {fileID: 801230285}
 --- !u!114 &801230291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +917,7 @@ GameObject:
   - component: {fileID: 934135033}
   - component: {fileID: 934135032}
   - component: {fileID: 934135031}
+  - component: {fileID: 934135035}
   m_Layer: 20
   m_Name: Moive_TIckets
   m_TagString: Untagged
@@ -953,6 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 934135031}
+  - {fileID: 934135035}
 --- !u!114 &934135033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,6 +997,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.33686256, y: 0.037618637, z: 0.34497452}
   m_Center: {x: 0.07892132, y: -0.017018318, z: 0.043745995}
+--- !u!114 &934135035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934135029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: ticket_couple
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!1001 &956260432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,6 +1247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 1366840207}
+  - {fileID: 1366840211}
 --- !u!114 &1366840209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +1274,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1366840211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366840205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: suitcase
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!1001 &1371035201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1505,6 +1552,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2007707887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1464159199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464159198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d8432c4c0d467fa7a6fa61a1b7447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueStringID: life_insurance
+  soundsToPlay: {fileID: 11400000, guid: 9c0d3386028f7a94494a3637d42b8b18, type: 2}
 --- !u!4 &1464159201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 146d4a2836d7c12498d2290ec52253f1,
@@ -1540,6 +1601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSequence:
   - {fileID: 1464159202}
+  - {fileID: 1464159199}
 --- !u!114 &1464159204
 MonoBehaviour:
   m_ObjectHideFlags: 0

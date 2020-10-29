@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692e19055915427bae7573d42ecaddec, type: 3}
+  m_Name: SuspectData1_Husband
+  m_EditorClassIdentifier: 
+  stringID: husband
+  picture: {fileID: 2800000, guid: 4de4e50fce448b24cab93a7b4347029f, type: 3}
+  suspectName: Jake Griffiths
+  description: 'Age: 35
+
+    Height: 185cm
+
+    Weight: 86kg
+
+    Footsize: 10
+
+    Mr
+    Griffiths lived at 25 Eastwell road in Newdale South with the victim. They have
+    been married for 10 years. Whilst Mr Griffiths does admit to arguing with his
+    wife, he had never once acted violently towards his late wife. On the night of
+    murder, he claimed to be out with his friend, John Hammel,  for a drink and moive.
+
+'
