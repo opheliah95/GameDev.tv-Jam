@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SceneData_Bedroom_Past
   m_EditorClassIdentifier: 
   sceneEnum: 5
-  sceneName: Bedroom_Past
+  sceneName: Bedroom (Past)
   unlockedOnStart: 0

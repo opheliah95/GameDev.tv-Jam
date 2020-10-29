@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SceneData_HotelRoom_Past
   m_EditorClassIdentifier: 
   sceneEnum: 3
-  sceneName: Hotel_Past
+  sceneName: Hotel (Past)
   unlockedOnStart: 0

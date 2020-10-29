@@ -16,4 +16,19 @@ public class CaseData : ScriptableObject
     
     [Tooltip("Array of navigatable reconstruction scene data. Make sure that at least one of them is unlocked")]
     public SceneData[] reconstructionSceneDataArray;
+    
+    [Tooltip("Actual scene where victim died, must be found by player")]
+    public SceneData deathLocationSceneData;
+    
+    [Tooltip("Clues that can be found by player")]
+    public ClueData[] clueDataArray;
+    
+    [Tooltip("Weapon used to kill the victim, must be found by player. Should also be in clueDataArray.")]
+    public ClueData murderWeaponClueData;
+    
+    [Tooltip("Suspects in this case.")]
+    public SuspectData[] suspectDataArray;
+    
+    [Tooltip("Culprit of the case. Should also be in suspectDataArray.")]
+    public SuspectData culpritData;
 }

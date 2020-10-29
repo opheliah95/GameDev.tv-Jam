@@ -299,7 +299,18 @@ public class @Player : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ffdedc1e-ce93-4ab4-aa93-3a81700429ba"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleInGameMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5cbc9a17-c5f3-4f1b-9b7f-fe10f8ceb1e5"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -321,7 +332,18 @@ public class @Player : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""87671748-5876-442f-8e24-a73708b4039f"",
-                    ""path"": ""<Keyboard>/tab"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleCursorLock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fc97f13-8f77-4b9a-81bb-a8b7840eabc0"",
+                    ""path"": ""<Mouse>/middleButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

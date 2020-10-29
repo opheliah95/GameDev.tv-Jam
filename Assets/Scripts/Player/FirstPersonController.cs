@@ -1,6 +1,7 @@
 ﻿using CommonsHelper;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System.Collections;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -77,6 +78,9 @@ public class FirstPersonController : MonoBehaviour
     /// Is the character running?
     private bool isRunning;
 
+    // is player running
+    public static bool isPlayerMoving = false;
+
     private void Awake()
     {
         trans = transform;
@@ -113,9 +117,6 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted += OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded += OnMasterEventEnded;
-        
-        InGameMenu.menuOpened += OnMenuOpened;
-        InGameMenu.menuClosed += OnMenuClosed;
     }
 
     private void OnDisable()
@@ -125,9 +126,6 @@ public class FirstPersonController : MonoBehaviour
         
         GameplayEventManager.onMasterEventStarted -= OnMasterEventStarted;
         GameplayEventManager.onMasterEventEnded -= OnMasterEventEnded;
-        
-        InGameMenu.menuOpened -= OnMenuOpened;
-        InGameMenu.menuClosed -= OnMenuClosed;
     }
 
     private void Update()
@@ -154,6 +152,16 @@ public class FirstPersonController : MonoBehaviour
 
         controller.Move(trans.right * xMovement * tempSpeed * Time.deltaTime);
         controller.Move(trans.forward * yMovement * tempSpeed * Time.deltaTime);
+
+        if (xMovement != 0 || yMovement != 0)
+        {
+            isPlayerMoving = true;
+        }
+        else
+        {
+            isPlayerMoving = false;
+        }
+            
     }
 
     void playerLook()
@@ -414,4 +422,6 @@ public class FirstPersonController : MonoBehaviour
                                       "ToggleCursorLock interaction to Pass Through nor Press and Release so it only detects press.");
         ToggleCursorLock();
     }
+
+
 }
