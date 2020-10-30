@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "com.komehara.commons-debug": "https://hsandt@bitbucket.org/hsandt/unity-commons-debug.git",
+    "com.komehara.commons-editor": "https://hsandt@bitbucket.org/hsandt/unity-commons-editor.git",
+    "com.komehara.commons-helper": "https://hsandt@bitbucket.org/hsandt/unity-commons-helper.git",
+    "com.komehara.commons-pattern": "https://hsandt@bitbucket.org/hsandt/unity-commons-pattern.git",
     "com.unity.2d.psdimporter": "2.1.4",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.rider": "1.1.4",
@@ -7,7 +11,7 @@
     "com.unity.inputsystem": "1.0.0",
     "com.unity.render-pipelines.universal": "7.3.1",
     "com.unity.test-framework": "1.1.14",
-    "com.unity.textmeshpro": "2.0.1",
+    "com.unity.textmeshpro": "2.1.3",
     "com.unity.timeline": "1.2.14",
     "com.unity.ugui": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
@@ -40,10 +44,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.komehara.commons-debug": "https://hsandt@bitbucket.org/hsandt/unity-commons-debug.git",
-    "com.komehara.commons-helper": "https://hsandt@bitbucket.org/hsandt/unity-commons-helper.git",
-    "com.komehara.commons-pattern": "https://hsandt@bitbucket.org/hsandt/unity-commons-pattern.git",
-    "com.komehara.commons-editor": "https://hsandt@bitbucket.org/hsandt/unity-commons-editor.git"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
