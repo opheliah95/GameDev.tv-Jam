@@ -41,9 +41,9 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
-    "com.komehara.commons-debug": "file:CommonsDebug",
-    "com.komehara.commons-helper": "file:CommonsHelper",
-    "com.komehara.commons-pattern": "file:CommonsPattern",
-    "com.komehara.commons-editor": "file:CommonsEditor"
+    "com.komehara.commons-debug": "https://hsandt@bitbucket.org/hsandt/unity-commons-debug.git",
+    "com.komehara.commons-helper": "https://hsandt@bitbucket.org/hsandt/unity-commons-helper.git",
+    "com.komehara.commons-pattern": "https://hsandt@bitbucket.org/hsandt/unity-commons-pattern.git",
+    "com.komehara.commons-editor": "https://hsandt@bitbucket.org/hsandt/unity-commons-editor.git"
   }
 }
