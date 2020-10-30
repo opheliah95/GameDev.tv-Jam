@@ -121,7 +121,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: v0.1.5
+  bundleVersion: v0.1.6
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -597,13 +597,13 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend:
-    Standalone: 0
+    Standalone: 1
   il2cppCompilerConfiguration:
     Standalone: 1
     WebGL: 1
   managedStrippingLevel:
     Standalone: 3
-    WebGL: 3
+    WebGL: 2
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
